@@ -4,7 +4,14 @@ import { useState } from "react";
 
 function App() {
     const [polishLanguage, setPolishLanguage] = useState(false);
-   
+    const [questionIndex, setQuestionIndex] = useState(0);
+    const quiz = quizzes.quizzes[0];
+    console.log(quiz)
+    console.log(quizzes.quizzes[0].questions[0])
+    console.log(questionIndex)
+    console.log(quiz.questions[questionIndex].question.pl)
+    console.log(quiz.questions[questionIndex].answers.pl)
+
     return (
         <div>
             <div>
@@ -12,18 +19,31 @@ function App() {
                 <button onClick={()=> setPolishLanguage(false)}>EN</button>
             </div>
             <div>
-                {quizzes.quizzes.map((quiz) => (
-                    <div>
+                {quizzes.quizzes.map((quiz, id) => (
+                    <div key={id}>
                         <h1>{quiz.name}</h1>
-                        {quiz.questions.map((question) => (
-                            polishLanguage ? (
-                                <h2>{question.question.pl}</h2>
+                        <button onClick={()=>setQuestionIndex(1)}>Start quiz</button>
+
+                        <h2>{polishLanguage ? (quiz.questions[questionIndex].question.pl):(quiz.questions[questionIndex].question.en)}</h2>
+                        la
+
+                           <div> {polishLanguage ? (
+                                   <div>
+                                        {quiz.questions[questionIndex].answers.pl.map(answer => (
+                                        <button>{answer}</button>
+                                        ))}
+                                    </div>
                                 ) : (
-                                    <h2>{question.question.en}</h2>
-                                )
-                        ))}
+                                    <div>
+                                        {quiz.questions[questionIndex].answers.en.map(answer => (
+                                        <button>{answer}</button>
+                                        ))}
+                                    </div>
+                                )}
+                                </div>
                     </div>
                 ))}
+                <button>Next</button>
             </div>
         </div>
   );
