@@ -5,7 +5,13 @@ import { useState } from 'react';
 function App() {
     const [polishLanguage, setPolishLanguage] = useState(false);
     const [questionIndex, setQuestionIndex] = useState(0);
+    const [answers, setAnswers] = useState({
+        1: undefined,
+        2: undefined,
+    });
     const quiz = quizzes.quizzes[0];
+    const maxQusetions = quiz.questions.length;
+    console.log(maxQusetions);
     console.log(quiz);
     console.log(quizzes.quizzes[0].questions[0]);
     console.log(questionIndex);
