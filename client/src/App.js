@@ -28,7 +28,7 @@ function App() {
                 {quizzes.quizzes.map((quiz, id) => (
                     <div key={id}>
                         <h1>{quiz.name}</h1>
-                        <button>Start quiz</button>
+                        {questionIndex < 0 && <button>Start quiz</button>}
 
                         <h2>
                             {polishLanguage
