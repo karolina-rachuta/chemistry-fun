@@ -5,18 +5,23 @@ import { useState } from 'react';
 function App() {
     const [polishLanguage, setPolishLanguage] = useState(false);
     const [questionIndex, setQuestionIndex] = useState(0);
+    const [showQuiz, setShowQuiz] = useState(false);
+    const [finishedQuiz, setFinishedQuiz] = useState(false);
     const [answers, setAnswers] = useState({
         1: undefined,
         2: undefined,
     });
-    const quiz = quizzes.quizzes[0];
-    const maxQusetions = quiz.questions.length;
-    console.log(maxQusetions);
-    console.log(quiz);
-    console.log(quizzes.quizzes[0].questions[0]);
-    console.log(questionIndex);
-    console.log(quiz.questions[questionIndex].question.pl);
-    console.log(quiz.questions[questionIndex].answers.pl);
+    let allQuizzes = quizzes.quizzes;
+    const maxQuestions = allQuizzes[0].questions.length;
+
+    function handleAnswers() {}
+    function handleNext() {
+        if (questionIndex < maxQuestions - 1) {
+            setQuestionIndex((prev) => (prev += 1));
+        } else {
+            setFinishedQuiz(true);
+        }
+    }
 
     return (
         <div>
@@ -25,41 +30,58 @@ function App() {
                 <button onClick={() => setPolishLanguage(false)}>EN</button>
             </div>
             <div>
-                {quizzes.quizzes.map((quiz, id) => (
+                {allQuizzes.map((quiz, id) => (
                     <div key={id}>
                         <h1>{quiz.name}</h1>
-                        {questionIndex < 0 && <button>Start quiz</button>}
+                        <h3>Number of questions: {quiz.questions.length}</h3>
+                        {questionIndex < 1 && (
+                            <button onClick={() => setShowQuiz(true)}>
+                                Start quiz
+                            </button>
+                        )}
 
-                        <h2>
-                            {polishLanguage
-                                ? quiz.questions[questionIndex].question.pl
-                                : quiz.questions[questionIndex].question.en}
-                        </h2>
-
-                        <div>
-                            {polishLanguage ? (
-                                <div>
-                                    {quiz.questions[
-                                        questionIndex
-                                    ].answers.pl.map((answer) => (
-                                        <button>{answer}</button>
-                                    ))}
-                                </div>
-                            ) : (
-                                <div>
-                                    {quiz.questions[
-                                        questionIndex
-                                    ].answers.en.map((answer) => (
-                                        <button>{answer}</button>
-                                    ))}
-                                </div>
+                        {showQuiz &&
+                            questionIndex < maxQuestions &&
+                            !finishedQuiz && (
+                                <>
+                                    <h2>
+                                        {polishLanguage
+                                            ? quiz.questions[questionIndex]
+                                                  .question.pl
+                                            : quiz.questions[questionIndex]
+                                                  .question.en}
+                                    </h2>
+                                    <div>
+                                        {polishLanguage ? (
+                                            <div>
+                                                {quiz.questions[
+                                                    questionIndex
+                                                ].answers.pl.map((answer) => (
+                                                    <button>{answer}</button>
+                                                ))}
+                                            </div>
+                                        ) : (
+                                            <div>
+                                                {quiz.questions[
+                                                    questionIndex
+                                                ].answers.en.map((answer) => (
+                                                    <button
+                                                        onClick={handleAnswers}
+                                                    >
+                                                        {answer}
+                                                    </button>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </div>
+                                </>
                             )}
-                        </div>
                     </div>
                 ))}
-                <button onClick={() => setQuestionIndex((prev) => (prev += 1))}>
-                    Next
-                </button>
+                {showQuiz && !finishedQuiz && (
+                    <button onClick={handleNext}>Next</button>
+                )}
+                {showQuiz && finishedQuiz && <h2>Quiz Completed</h2>}
             </div>
         </div>
     );
