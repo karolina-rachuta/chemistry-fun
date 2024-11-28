@@ -7,14 +7,23 @@ function App() {
     const [questionIndex, setQuestionIndex] = useState(0);
     const [showQuiz, setShowQuiz] = useState(false);
     const [finishedQuiz, setFinishedQuiz] = useState(false);
-    const [answers, setAnswers] = useState({
-        1: undefined,
-        2: undefined,
-    });
+    const [answers, setAnswers] = useState({});
+    const [pointsCounter, setPointsCounter] = useState(0);
     let allQuizzes = quizzes.quizzes;
+    console.log(allQuizzes[0]);
     const maxQuestions = allQuizzes[0].questions.length;
 
-    function handleAnswers() {}
+    function handleAnswers(answer, id, quiz) {
+        setAnswers((prev) => ({
+            ...prev,
+            [questionIndex]: answer,
+        }));
+        const correctAnswer = quiz.questions[questionIndex].correctAnswer;
+        if (id === correctAnswer) setPointsCounter((prev) => prev + 1);
+    }
+    console.log(answers);
+    console.log(pointsCounter);
+
     function handleNext() {
         if (questionIndex < maxQuestions - 1) {
             setQuestionIndex((prev) => (prev += 1));
@@ -56,21 +65,41 @@ function App() {
                                             <div>
                                                 {quiz.questions[
                                                     questionIndex
-                                                ].answers.pl.map((answer) => (
-                                                    <button>{answer}</button>
-                                                ))}
+                                                ].answers.pl.map(
+                                                    (answer, id) => (
+                                                        <button
+                                                            key={id}
+                                                            onClick={() =>
+                                                                handleAnswers(
+                                                                    answer
+                                                                )
+                                                            }
+                                                        >
+                                                            {answer}
+                                                        </button>
+                                                    )
+                                                )}
                                             </div>
                                         ) : (
                                             <div>
                                                 {quiz.questions[
                                                     questionIndex
-                                                ].answers.en.map((answer) => (
-                                                    <button
-                                                        onClick={handleAnswers}
-                                                    >
-                                                        {answer}
-                                                    </button>
-                                                ))}
+                                                ].answers.en.map(
+                                                    (answer, id) => (
+                                                        <button
+                                                            key={id}
+                                                            onClick={() =>
+                                                                handleAnswers(
+                                                                    answer,
+                                                                    id,
+                                                                    quiz
+                                                                )
+                                                            }
+                                                        >
+                                                            {answer}
+                                                        </button>
+                                                    )
+                                                )}
                                             </div>
                                         )}
                                     </div>
@@ -81,7 +110,12 @@ function App() {
                 {showQuiz && !finishedQuiz && (
                     <button onClick={handleNext}>Next</button>
                 )}
-                {showQuiz && finishedQuiz && <h2>Quiz Completed</h2>}
+                {showQuiz && finishedQuiz && (
+                    <div>
+                        <h2>Quiz Completed</h2>
+                        <h3>Score: {(pointsCounter * 100) / maxQuestions} %</h3>
+                    </div>
+                )}
             </div>
         </div>
     );
