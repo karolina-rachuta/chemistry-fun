@@ -45,7 +45,9 @@ function App() {
                         <h3>Number of questions: {quiz.questions.length}</h3>
                         {questionIndex < 1 && (
                             <button onClick={() => setShowQuiz(true)}>
-                                Start quiz
+                                {polishLanguage
+                                    ? 'Rozpocznij quiz'
+                                    : 'Start quiz'}
                             </button>
                         )}
 
@@ -112,8 +114,20 @@ function App() {
                 )}
                 {showQuiz && finishedQuiz && (
                     <div>
-                        <h2>Quiz Completed</h2>
-                        <h3>Score: {(pointsCounter * 100) / maxQuestions} %</h3>
+                        {polishLanguage ? (
+                            <h2>Koniec quizu</h2>
+                        ) : (
+                            <h2>Quiz Completed</h2>
+                        )}
+                        {polishLanguage ? (
+                            <h3>
+                                Wynik: {(pointsCounter * 100) / maxQuestions} %
+                            </h3>
+                        ) : (
+                            <h3>
+                                Score: {(pointsCounter * 100) / maxQuestions} %
+                            </h3>
+                        )}
                     </div>
                 )}
             </div>
