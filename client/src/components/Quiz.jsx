@@ -10,6 +10,7 @@ function Quiz({ quiz }) {
         <>
             {showQuiz && questionIndex < maxQuestions && !finishedQuiz && (
                 <>
+                    <span>{`${questionIndex + 1} / ${maxQuestions}`}</span>
                     <Question quiz={quiz} />
                     <Answers quiz={quiz} />
                 </>
