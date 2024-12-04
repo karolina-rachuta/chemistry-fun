@@ -4,6 +4,7 @@ import quizzes from '../db.json';
 export const QuizContext = createContext();
 
 export function QuizProvider({ children }) {
+    const [selectedAnswer, setSelectedAnswer] = useState(null);
     const [polishLanguage, setPolishLanguage] = useState(false);
     const [questionIndex, setQuestionIndex] = useState(0);
     const [showQuiz, setShowQuiz] = useState(false);
@@ -17,6 +18,8 @@ export function QuizProvider({ children }) {
     return (
         <QuizContext.Provider
             value={{
+                selectedAnswer,
+                setSelectedAnswer,
                 allQuizzes,
                 maxQuestions,
                 polishLanguage,

@@ -1,28 +1,46 @@
-import React, { useContext, useState, useRef } from 'react';
+import React, { useContext, useState, useRef, useEffect } from 'react';
 import { QuizContext } from '../../context/QuizContext';
 
 function Answers({ quiz }) {
-    const [selectedAnswer, setSelectedAnswer] = useState(null);
-    const { setAnswers, questionIndex, setPointsCounter, polishLanguage } =
-        useContext(QuizContext);
+    const {
+        selectedAnswer,
+        setSelectedAnswer,
+        setAnswers,
+        questionIndex,
+        setPointsCounter,
+        polishLanguage,
+    } = useContext(QuizContext);
     const answerContainer = useRef(null);
 
-    function handleAnswers(answer, id, quiz) {
-        setSelectedAnswer(id);
-        setAnswers((prev) => ({
-            ...prev,
-            [questionIndex]: answer,
-        }));
+    const [isAnswered, setIsAnswered] = useState(false);
+
+    useEffect(() => {
+        setSelectedAnswer(null);
         const allAnswers = answerContainer.current.children;
         Array.from(allAnswers).forEach((button) => {
             button.style.background = '';
         });
+        setIsAnswered(false);
+    }, [questionIndex]);
 
-        allAnswers[id].style.background = 'yellow';
-        console.log(answer);
+    function handleAnswers(answer, id, quiz) {
+        if (isAnswered) return;
+        setSelectedAnswer(id);
+        setIsAnswered(true);
+        const allAnswers = answerContainer.current.children;
+
+        setAnswers((prev) => ({
+            ...prev,
+            [questionIndex]: answer,
+        }));
 
         const correctAnswer = quiz.questions[questionIndex].correctAnswer;
-        if (id === correctAnswer) setPointsCounter((prev) => prev + 1);
+        if (id === correctAnswer) {
+            setPointsCounter((prev) => prev + 1);
+            allAnswers[correctAnswer].style.background = 'green';
+        } else {
+            allAnswers[id].style.background = 'red';
+        }
     }
 
     return (
@@ -33,7 +51,7 @@ function Answers({ quiz }) {
                         (answer, id) => (
                             <button
                                 key={id}
-                                value={id}
+                                disabled={isAnswered}
                                 onClick={() => handleAnswers(answer, id, quiz)}
                             >
                                 {answer}
@@ -47,6 +65,7 @@ function Answers({ quiz }) {
                         (answer, id) => (
                             <button
                                 key={id}
+                                disabled={isAnswered}
                                 onClick={() => handleAnswers(answer, id, quiz)}
                             >
                                 {answer}

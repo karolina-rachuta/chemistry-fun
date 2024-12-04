@@ -3,6 +3,8 @@ import { QuizContext } from '../context/QuizContext';
 
 function Navigation() {
     const {
+        selectedAnswer,
+        setSelectedAnswer,
         questionIndex,
         maxQuestions,
         setQuestionIndex,
@@ -12,6 +14,7 @@ function Navigation() {
     } = useContext(QuizContext);
 
     function handleNext() {
+        // setSelectedAnswer(null);
         if (questionIndex < maxQuestions - 1) {
             setQuestionIndex((prev) => (prev += 1));
         } else {
