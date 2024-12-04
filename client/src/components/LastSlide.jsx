@@ -3,6 +3,7 @@ import { QuizContext } from '../context/QuizContext';
 
 function LastSlide() {
     const {
+        setQuestionIndex,
         polishLanguage,
         showQuiz,
         finishedQuiz,
@@ -25,6 +26,7 @@ function LastSlide() {
                     )}
                 </div>
             )}
+            <button>Start again!</button>
         </div>
     );
 }
