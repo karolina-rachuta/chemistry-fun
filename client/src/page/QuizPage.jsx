@@ -1,6 +1,6 @@
 import React from 'react';
-import AllQuizes from '../components/AllQuizes';
-import LanguageNavigation from '../components/LanguageNavigation';
+import AllQuizes from '../components/allQuizes/AllQuizes';
+import LanguageNavigation from '../components/allQuizes/LanguageNavigation';
 import { QuizProvider } from '../context/QuizContext';
 
 function QuizPage() {

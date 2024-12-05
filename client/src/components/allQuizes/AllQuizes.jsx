@@ -3,7 +3,7 @@ import LastSlide from './LastSlide';
 import Navigation from './Navigation';
 import Quiz from './Quiz';
 import FirstSlide from './FirstSlide';
-import { QuizContext } from '../context/QuizContext';
+import { QuizContext } from '../../context/QuizContext';
 
 function AllQuizes() {
     const { page, maxQuestions, allQuizzes } = useContext(QuizContext);

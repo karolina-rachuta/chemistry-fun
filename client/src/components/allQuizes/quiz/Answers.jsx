@@ -1,5 +1,5 @@
 import React, { useContext, useState, useRef, useEffect } from 'react';
-import { QuizContext } from '../../context/QuizContext';
+import { QuizContext } from '../../../context/QuizContext';
 
 function Answers({ quiz }) {
     const {

@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
-import { QuizContext } from '../context/QuizContext';
-import FirstSlide from './FirstSlide';
+import { QuizContext } from '../../context/QuizContext';
 
 function LastSlide() {
     const {

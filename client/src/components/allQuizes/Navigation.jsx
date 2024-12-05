@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import { QuizContext } from '../context/QuizContext';
+import { QuizContext } from '../../context/QuizContext';
 
 function Navigation() {
-    const { page, setPage, maxQuestions, setQuestionIndex } =
+    const { page, setPage, maxQuestions, setQuestionIndex, polishLanguage } =
         useContext(QuizContext);
 
     function handlePrev() {
@@ -26,9 +26,15 @@ function Navigation() {
 
     return (
         <>
-            {page > 0 && <button onClick={handlePrev}>Prev</button>}
+            {page > 0 && (
+                <button onClick={handlePrev}>
+                    {polishLanguage ? 'Poprzedni' : 'Prev'}
+                </button>
+            )}
             {page > 0 && page < maxQuestions + 1 && (
-                <button onClick={handleNext}>Next</button>
+                <button onClick={handleNext}>
+                    {polishLanguage ? 'Następny' : 'Next'}
+                </button>
             )}
         </>
     );
