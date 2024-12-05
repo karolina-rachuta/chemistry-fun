@@ -5,3 +5,4 @@
 start again button
 fix prev button on the last page
 navigation using switch and steps
+nie moc zrobic next jak sie nie odpowie na pytanie

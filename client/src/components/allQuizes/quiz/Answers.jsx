@@ -46,10 +46,11 @@ function Answers({ quiz }) {
     return (
         <div>
             {polishLanguage ? (
-                <div ref={answerContainer}>
+                <div className="answers-container" ref={answerContainer}>
                     {quiz.questions[questionIndex].answers.pl.map(
                         (answer, id) => (
                             <button
+                                className="btn"
                                 key={id}
                                 disabled={isAnswered}
                                 onClick={() => handleAnswers(answer, id, quiz)}
@@ -60,10 +61,11 @@ function Answers({ quiz }) {
                     )}
                 </div>
             ) : (
-                <div ref={answerContainer}>
+                <div ref={answerContainer} className="answers-container">
                     {quiz.questions[questionIndex].answers.en.map(
                         (answer, id) => (
                             <button
+                                className="btn"
                                 key={id}
                                 disabled={isAnswered}
                                 onClick={() => handleAnswers(answer, id, quiz)}

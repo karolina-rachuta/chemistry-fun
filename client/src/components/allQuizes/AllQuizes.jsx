@@ -8,10 +8,10 @@ import { QuizContext } from '../../context/QuizContext';
 function AllQuizes() {
     const { page, maxQuestions, allQuizzes } = useContext(QuizContext);
     return (
-        <div>
+        <div className="quizzes-container">
             {allQuizzes && allQuizzes.length > 0 ? (
                 allQuizzes?.map((quiz, id) => (
-                    <div key={id}>
+                    <div key={id} className="quiz-container">
                         {page === 0 && <FirstSlide quiz={quiz} />}
                         {page > 0 && page < maxQuestions + 1 && (
                             <Quiz quiz={quiz} />
@@ -21,8 +21,8 @@ function AllQuizes() {
             ) : (
                 <p>Loading quizzes...</p>
             )}
-            <Navigation />
             {page === maxQuestions + 1 && <LastSlide />}
+            <Navigation />
         </div>
     );
 }

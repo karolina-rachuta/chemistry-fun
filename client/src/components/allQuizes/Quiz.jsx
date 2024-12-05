@@ -9,11 +9,11 @@ function Quiz({ quiz }) {
     return (
         <>
             {questionIndex < maxQuestions && !finishedQuiz && (
-                <>
+                <div className="quiz-slide">
                     <span>{`${questionIndex + 1} / ${maxQuestions}`}</span>
                     <Question quiz={quiz} />
                     <Answers quiz={quiz} />
-                </>
+                </div>
             )}
         </>
     );

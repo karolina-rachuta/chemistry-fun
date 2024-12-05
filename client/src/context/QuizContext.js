@@ -8,9 +8,6 @@ export function QuizProvider({ children }) {
     const [polishLanguage, setPolishLanguage] = useState(false);
     const [page, setPage] = useState(0);
     const [questionIndex, setQuestionIndex] = useState(0);
-    // const [showQuiz, setShowQuiz] = useState(false);
-    // const [finishedQuiz, setFinishedQuiz] = useState(false);
-    // const [startedQuiz, setStarteddQuiz] = useState(true);
     const [pointsCounter, setPointsCounter] = useState(0);
     const [answers, setAnswers] = useState({});
 
@@ -22,8 +19,6 @@ export function QuizProvider({ children }) {
             value={{
                 page,
                 setPage,
-                // startedQuiz,
-                // setStarteddQuiz,
                 selectedAnswer,
                 setSelectedAnswer,
                 allQuizzes,
@@ -32,10 +27,6 @@ export function QuizProvider({ children }) {
                 setPolishLanguage,
                 questionIndex,
                 setQuestionIndex,
-                // showQuiz,
-                // setShowQuiz,
-                // setFinishedQuiz,
-                // finishedQuiz,
                 answers,
                 setAnswers,
                 pointsCounter,

@@ -9,7 +9,7 @@ function QuizPage() {
         <QuizProvider>
             <>
                 <Header />
-                <div className="container">
+                <div className="container quizzes-page-container">
                     <LanguageNavigation />
                     <AllQuizes />
                 </div>

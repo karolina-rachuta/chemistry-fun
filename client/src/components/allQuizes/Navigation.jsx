@@ -25,18 +25,18 @@ function Navigation() {
     }
 
     return (
-        <>
-            {page > 0 && (
-                <button onClick={handlePrev}>
+        <div className="navigation-container">
+            {page > 0 && page < maxQuestions + 1 && (
+                <button onClick={handlePrev} className="btn-reverse">
                     {polishLanguage ? 'Poprzedni' : 'Prev'}
                 </button>
             )}
             {page > 0 && page < maxQuestions + 1 && (
-                <button onClick={handleNext}>
+                <button onClick={handleNext} className="btn-reverse">
                     {polishLanguage ? 'Następny' : 'Next'}
                 </button>
             )}
-        </>
+        </div>
     );
 }
 

@@ -50,6 +50,114 @@ body {
     color: #fff;
     text-transform: uppercase;
     border-radius: 10px;
-    background-color: #9abf80;
+    background-color: #6a669d;
     padding: 10px 20px;
+}
+.header-link:hover {
+    background-color: #9abf80;
+}
+
+/* quiz page */
+.quizzes-page-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.language-nav {
+    margin-top: 20px;
+    align-self: flex-end;
+}
+
+/* buttons style */
+.btn {
+    padding: 8px;
+    background-color: #6a669d;
+    color: #fff;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #9abf80;
+}
+
+.btn.active {
+    background-color: #9abf80;
+}
+
+.btn-reverse {
+    padding: 8px;
+    background-color: #9abf80;
+    color: #fff;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-reverse:hover {
+    background-color: #6a669d;
+}
+
+.btn-reverse.active {
+    background-color: #6a669d;
+}
+
+/* quizzes */
+.quizzes-page-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.quizzes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.quiz-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.quiz-slide {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.answers-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.navigation-container {
+    display: flex;
+    justify-content: space-between;
+    min-width: 100px;
+}
+
+.navigation-container button {
+    min-width: 100px;
+}
+
+.last-slide-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }

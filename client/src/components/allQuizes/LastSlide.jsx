@@ -18,7 +18,7 @@ function LastSlide() {
     }
     return (
         <div>
-            <div>
+            <div className="last-slide-container">
                 {polishLanguage ? (
                     <h2>Koniec quizu</h2>
                 ) : (
@@ -29,8 +29,10 @@ function LastSlide() {
                 ) : (
                     <h3>Score: {(pointsCounter * 100) / maxQuestions} %</h3>
                 )}
+                <button onClick={handleStart} className="btn">
+                    Start again!
+                </button>
             </div>
-            <button onClick={handleStart}>Start again!</button>
         </div>
     );
 }
