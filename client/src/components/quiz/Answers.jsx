@@ -31,7 +31,7 @@ function Answers({ quiz }) {
 
         setAnswers((prev) => ({
             ...prev,
-            [questionIndex]: answer,
+            [questionIndex + 1]: answer,
         }));
 
         const correctAnswer = quiz.questions[questionIndex].correctAnswer;
