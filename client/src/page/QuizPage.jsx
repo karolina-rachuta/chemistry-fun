@@ -1,15 +1,19 @@
 import React from 'react';
+import { QuizProvider } from '../context/QuizContext';
 import AllQuizes from '../components/allQuizes/AllQuizes';
 import LanguageNavigation from '../components/allQuizes/LanguageNavigation';
-import { QuizProvider } from '../context/QuizContext';
+import Header from '../components/Header';
 
 function QuizPage() {
     return (
         <QuizProvider>
-            <div>
-                <LanguageNavigation />
-                <AllQuizes />
-            </div>
+            <>
+                <Header />
+                <div className="container">
+                    <LanguageNavigation />
+                    <AllQuizes />
+                </div>
+            </>
         </QuizProvider>
     );
 }
