@@ -4,11 +4,11 @@ import Answers from './quiz/Answers';
 import { QuizContext } from '../context/QuizContext';
 
 function Quiz({ quiz }) {
-    const { showQuiz, questionIndex, maxQuestions, finishedQuiz } =
+    const { questionIndex, maxQuestions, finishedQuiz } =
         useContext(QuizContext);
     return (
         <>
-            {showQuiz && questionIndex < maxQuestions && !finishedQuiz && (
+            {questionIndex < maxQuestions && !finishedQuiz && (
                 <>
                     <span>{`${questionIndex + 1} / ${maxQuestions}`}</span>
                     <Question quiz={quiz} />
