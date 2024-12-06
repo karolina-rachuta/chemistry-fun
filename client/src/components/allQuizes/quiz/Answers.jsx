@@ -3,7 +3,8 @@ import { QuizContext } from '../../../context/QuizContext';
 
 function Answers({ quiz }) {
     const {
-        selectedAnswer,
+        isAnswered,
+        setIsAnswered,
         setSelectedAnswer,
         setAnswers,
         questionIndex,
@@ -11,8 +12,6 @@ function Answers({ quiz }) {
         polishLanguage,
     } = useContext(QuizContext);
     const answerContainer = useRef(null);
-
-    const [isAnswered, setIsAnswered] = useState(false);
 
     useEffect(() => {
         setSelectedAnswer(null);

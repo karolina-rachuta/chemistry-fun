@@ -10,6 +10,7 @@ export function QuizProvider({ children }) {
     const [questionIndex, setQuestionIndex] = useState(0);
     const [pointsCounter, setPointsCounter] = useState(0);
     const [answers, setAnswers] = useState({});
+    const [isAnswered, setIsAnswered] = useState(false);
 
     let allQuizzes = quizzes.quizzes;
     const maxQuestions = allQuizzes[0].questions.length;
@@ -17,6 +18,8 @@ export function QuizProvider({ children }) {
     return (
         <QuizContext.Provider
             value={{
+                isAnswered,
+                setIsAnswered,
                 page,
                 setPage,
                 selectedAnswer,
@@ -33,7 +36,8 @@ export function QuizProvider({ children }) {
                 setPointsCounter,
             }}
         >
-            {children}
+            {' '}
+            {children}{' '}
         </QuizContext.Provider>
     );
 }
