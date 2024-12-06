@@ -14,10 +14,12 @@ export function QuizProvider({ children }) {
 
     let allQuizzes = quizzes.quizzes;
     const maxQuestions = allQuizzes[0].questions.length;
+    const storedAnswer = answers[questionIndex + 1];
 
     return (
         <QuizContext.Provider
             value={{
+                storedAnswer,
                 isAnswered,
                 setIsAnswered,
                 page,

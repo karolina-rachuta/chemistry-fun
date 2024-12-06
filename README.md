@@ -1,8 +1,11 @@
 # chemistry&fun
 
-1.  next i previous, albo bez next, napisac ktore pytania i odpowiedzi zle
+1. napisac ktore pytania i odpowiedzi zle
 
-start again button
 fix prev button on the last page
-navigation using switch and steps
-nie moc zrobic next jak sie nie odpowie na pytanie
+prev- all the answers stay
+ddoac kolejne quizy i zrobic na quiz page kafelki
+
+2. tablica pierwiastkow, kalkulator masy, przeliczenie jednostek (imperial na metric)
+
+3. ang quizy z c1 vocabulary

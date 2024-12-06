@@ -4,7 +4,6 @@ import { QuizContext } from '../../context/QuizContext';
 function Navigation() {
     const {
         isAnswered,
-        setIsAnswered,
         page,
         setPage,
         maxQuestions,

@@ -82,7 +82,7 @@ body {
 
 /* buttons style */
 .btn {
-    padding: 8px;
+    padding: 10px 8px;
     background-color: #6a669d;
     color: #fff;
     border-radius: 5px;
@@ -101,8 +101,8 @@ body {
 }
 
 .btn-reverse {
-    padding: 8px;
-    background-color: #9abf80;
+    padding: 10px 8px;
+    background-color: var(--primary-color);
     color: #fff;
     border-radius: 5px;
     border: 1px solid #fff;
@@ -112,11 +112,11 @@ body {
 }
 
 .btn-reverse:hover {
-    background-color: #6a669d;
+    background-color: var(--secondary-color);
 }
 
-.btn-reverse.active {
-    background-color: #6a669d;
+.btn-reverse:disabled {
+    background-color: var(--secondary-color);
 }
 
 /* quizzes */
@@ -169,5 +169,6 @@ body {
 .last-slide-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 20px;
 }

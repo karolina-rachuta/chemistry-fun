@@ -3,9 +3,10 @@ import { QuizContext } from '../../../context/QuizContext';
 
 function Answers({ quiz }) {
     const {
+        storedAnswer,
+        answers,
         isAnswered,
         setIsAnswered,
-        setSelectedAnswer,
         setAnswers,
         questionIndex,
         setPointsCounter,
@@ -13,18 +14,14 @@ function Answers({ quiz }) {
     } = useContext(QuizContext);
     const answerContainer = useRef(null);
 
+    const correctAnswer = quiz.questions[questionIndex].correctAnswer;
+
     useEffect(() => {
-        setSelectedAnswer(null);
-        const allAnswers = answerContainer.current.children;
-        Array.from(allAnswers).forEach((button) => {
-            button.style.background = '';
-        });
-        setIsAnswered(false);
+        setIsAnswered(!!storedAnswer);
     }, [questionIndex]);
 
-    function handleAnswers(answer, id, quiz) {
+    function handleAnswers(answer, id) {
         if (isAnswered) return;
-        setSelectedAnswer(id);
         setIsAnswered(true);
         const allAnswers = answerContainer.current.children;
 
@@ -33,7 +30,8 @@ function Answers({ quiz }) {
             [questionIndex + 1]: answer,
         }));
 
-        const correctAnswer = quiz.questions[questionIndex].correctAnswer;
+        console.log(answer, id);
+
         if (id === correctAnswer) {
             setPointsCounter((prev) => prev + 1);
             allAnswers[correctAnswer].style.background = 'green';
@@ -47,31 +45,57 @@ function Answers({ quiz }) {
             {polishLanguage ? (
                 <div className="answers-container" ref={answerContainer}>
                     {quiz.questions[questionIndex].answers.pl.map(
-                        (answer, id) => (
-                            <button
-                                className="btn"
-                                key={id}
-                                disabled={isAnswered}
-                                onClick={() => handleAnswers(answer, id, quiz)}
-                            >
-                                {answer}
-                            </button>
-                        )
+                        (answer, id) => {
+                            const isSelected =
+                                answers[questionIndex + 1] === answer;
+                            const isCorrect = id === correctAnswer;
+                            return (
+                                <button
+                                    className="btn"
+                                    value={answer}
+                                    key={id}
+                                    disabled={isAnswered}
+                                    onClick={() => handleAnswers(answer, id)}
+                                    style={{
+                                        background: isSelected
+                                            ? isCorrect
+                                                ? 'green'
+                                                : 'red'
+                                            : '',
+                                    }}
+                                >
+                                    {answer}
+                                </button>
+                            );
+                        }
                     )}
                 </div>
             ) : (
                 <div ref={answerContainer} className="answers-container">
                     {quiz.questions[questionIndex].answers.en.map(
-                        (answer, id) => (
-                            <button
-                                className="btn"
-                                key={id}
-                                disabled={isAnswered}
-                                onClick={() => handleAnswers(answer, id, quiz)}
-                            >
-                                {answer}
-                            </button>
-                        )
+                        (answer, id) => {
+                            const isSelected =
+                                answers[questionIndex + 1] === answer;
+                            const isCorrect = id === correctAnswer;
+                            return (
+                                <button
+                                    className="btn"
+                                    value={answer}
+                                    key={id}
+                                    disabled={isAnswered}
+                                    onClick={() => handleAnswers(answer, id)}
+                                    style={{
+                                        background: isSelected
+                                            ? isCorrect
+                                                ? 'green'
+                                                : 'red'
+                                            : '',
+                                    }}
+                                >
+                                    {answer}
+                                </button>
+                            );
+                        }
                     )}
                 </div>
             )}
