@@ -99,6 +99,9 @@ body {
 .btn.active {
     background-color: #9abf80;
 }
+.btn:disabled {
+    background-color: var(--secondary-color);
+}
 
 .btn-reverse {
     padding: 10px 8px;
@@ -171,4 +174,8 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 20px;
+}
+
+.correct-answers-container {
+    width: 100%;
 }

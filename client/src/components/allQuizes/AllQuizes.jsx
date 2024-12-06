@@ -16,12 +16,12 @@ function AllQuizes() {
                         {page > 0 && page < maxQuestions + 1 && (
                             <Quiz quiz={quiz} />
                         )}
+                        {page === maxQuestions + 1 && <LastSlide quiz={quiz} />}
                     </div>
                 ))
             ) : (
                 <p>Loading quizzes...</p>
             )}
-            {page === maxQuestions + 1 && <LastSlide />}
             <Navigation />
         </div>
     );

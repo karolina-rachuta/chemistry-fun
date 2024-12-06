@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 import { QuizContext } from '../../context/QuizContext';
 
-function LastSlide() {
+function LastSlide({ quiz }) {
     const {
+        answers,
         setAnswers,
         setPage,
         setQuestionIndex,
@@ -31,6 +32,28 @@ function LastSlide() {
                 ) : (
                     <h3>Score: {(pointsCounter * 100) / maxQuestions} %</h3>
                 )}
+                {quiz.questions.map((questionObj, id) => (
+                    <div key={id} className="correct-answers-container">
+                        <p>
+                            {questionObj.question.id}.{' '}
+                            {polishLanguage
+                                ? questionObj.question.pl
+                                : questionObj.question.en}
+                        </p>
+                        <p>
+                            {' '}
+                            -{' '}
+                            {polishLanguage
+                                ? questionObj.answers.pl[
+                                      questionObj.correctAnswer
+                                  ]
+                                : questionObj.answers.en[
+                                      questionObj.correctAnswer
+                                  ]}
+                        </p>
+                    </div>
+                ))}
+
                 <button onClick={handleStart} className="btn">
                     Start again!
                 </button>

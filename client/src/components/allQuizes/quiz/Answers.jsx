@@ -30,8 +30,6 @@ function Answers({ quiz }) {
             [questionIndex + 1]: answer,
         }));
 
-        console.log(answer, id);
-
         if (id === correctAnswer) {
             setPointsCounter((prev) => prev + 1);
             allAnswers[correctAnswer].style.background = 'green';
