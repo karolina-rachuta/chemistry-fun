@@ -49,7 +49,7 @@ function Answers({ quiz }) {
                             const isCorrect = id === correctAnswer;
                             return (
                                 <button
-                                    className="btn"
+                                    className="btn-answers btn"
                                     value={answer}
                                     key={id}
                                     disabled={isAnswered}

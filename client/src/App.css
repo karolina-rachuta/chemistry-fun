@@ -25,6 +25,8 @@ body {
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-height: 79px;
+    display: flex;
 }
 
 .container {
@@ -36,7 +38,11 @@ body {
 .container-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
+
+    @media screen and (max-width: 500px) {
+        flex-direction: column;
+    }
 }
 
 .logo {
@@ -53,6 +59,36 @@ body {
     display: flex;
     gap: 20px;
     align-items: center;
+
+    @media screen and (max-width: 500px) {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-top: 100px;
+    }
+}
+
+.hamburger {
+    display: none;
+    @media screen and (max-width: 500px) {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        cursor: pointer;
+    }
+}
+
+.hamburger span {
+    background-color: #000;
+    width: 30px;
+    height: 4px;
+    border-radius: 3px;
+}
+
+.header-navbar.open {
+    display: flex;
 }
 
 .header-link {
@@ -62,6 +98,10 @@ body {
     border-radius: 10px;
     background-color: #6a669d;
     padding: 10px 20px;
+    @media screen and (max-width: 500px) {
+        width: 100%;
+        text-align: center;
+    }
 }
 .header-link:hover {
     background-color: #9abf80;
@@ -99,27 +139,11 @@ body {
 .btn.active {
     background-color: #9abf80;
 }
-.btn:disabled {
+.btn-nav:disabled {
     background-color: var(--secondary-color);
 }
-
-.btn-reverse {
-    padding: 10px 8px;
+.btn-answers:disabled {
     background-color: var(--primary-color);
-    color: #fff;
-    border-radius: 5px;
-    border: 1px solid #fff;
-    margin-right: 10px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.btn-reverse:hover {
-    background-color: var(--secondary-color);
-}
-
-.btn-reverse:disabled {
-    background-color: var(--secondary-color);
 }
 
 /* quizzes */

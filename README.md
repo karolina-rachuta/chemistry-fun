@@ -5,6 +5,7 @@
 fix prev button on the last page
 prev- all the answers stay
 ddoac kolejne quizy i zrobic na quiz page kafelki
+routing quizez:id
 
 2. tablica pierwiastkow, kalkulator masy, przeliczenie jednostek (imperial na metric)
 

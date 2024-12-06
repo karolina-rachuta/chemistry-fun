@@ -33,14 +33,14 @@ function Navigation() {
     return (
         <div className="navigation-container">
             {page > 0 && (
-                <button onClick={handlePrev} className="btn">
+                <button onClick={handlePrev} className="btn btn-nav">
                     {polishLanguage ? 'Poprzedni' : 'Prev'}
                 </button>
             )}
             {page > 0 && page < maxQuestions + 1 && (
                 <button
                     onClick={handleNext}
-                    className="btn"
+                    className="btn btn-nav"
                     disabled={!isAnswered}
                 >
                     {polishLanguage ? 'Następny' : 'Next'}

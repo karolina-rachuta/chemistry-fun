@@ -1,7 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { QuizContext } from '../../context/QuizContext';
 
 function LastSlide({ quiz }) {
+    const [showcorrectAnswers, setShowCorrectAnswers] = useState(false);
     const {
         answers,
         setAnswers,
@@ -19,6 +20,11 @@ function LastSlide({ quiz }) {
         setPage(0);
         setAnswers({});
     }
+
+    function handleShowCorrectAnswers() {
+        setShowCorrectAnswers((prev) => !prev);
+    }
+
     return (
         <div>
             <div className="last-slide-container">
@@ -32,31 +38,44 @@ function LastSlide({ quiz }) {
                 ) : (
                     <h3>Score: {(pointsCounter * 100) / maxQuestions} %</h3>
                 )}
-                {quiz.questions.map((questionObj, id) => (
-                    <div key={id} className="correct-answers-container">
-                        <p>
-                            {questionObj.question.id}.{' '}
-                            {polishLanguage
-                                ? questionObj.question.pl
-                                : questionObj.question.en}
-                        </p>
-                        <p>
-                            {' '}
-                            -{' '}
-                            {polishLanguage
-                                ? questionObj.answers.pl[
-                                      questionObj.correctAnswer
-                                  ]
-                                : questionObj.answers.en[
-                                      questionObj.correctAnswer
-                                  ]}
-                        </p>
-                    </div>
-                ))}
-
-                <button onClick={handleStart} className="btn">
-                    Start again!
-                </button>
+                {showcorrectAnswers &&
+                    quiz.questions.map((questionObj, id) => (
+                        <div key={id} className="correct-answers-container">
+                            <p>
+                                {questionObj.question.id}.{' '}
+                                {polishLanguage
+                                    ? questionObj.question.pl
+                                    : questionObj.question.en}
+                            </p>
+                            <p>
+                                {' '}
+                                -{' '}
+                                {polishLanguage
+                                    ? questionObj.answers.pl[
+                                          questionObj.correctAnswer
+                                      ]
+                                    : questionObj.answers.en[
+                                          questionObj.correctAnswer
+                                      ]}
+                            </p>
+                        </div>
+                    ))}
+                <div>
+                    <button onClick={handleStart} className="btn">
+                        {polishLanguage
+                            ? 'Rozpocznij jeszcze raz!'
+                            : 'Start again!'}
+                    </button>
+                    <button onClick={handleShowCorrectAnswers} className="btn">
+                        {showcorrectAnswers
+                            ? polishLanguage
+                                ? 'Schowaj poprawne odpowiedzi'
+                                : 'Hide correct answers'
+                            : polishLanguage
+                            ? 'Pokaż poprawne odpowiedzi'
+                            : 'Show correct answers'}
+                    </button>
+                </div>
             </div>
         </div>
     );
