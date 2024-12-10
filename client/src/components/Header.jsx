@@ -9,20 +9,30 @@ function Header() {
     return (
         <header className="header">
             <div className="container container-header">
-                <span className="logo">Chemistry&Fun</span>
-                <nav className={`header-navbar ${isOpen ? 'open' : ''}`}>
-                    <Link to="/" className="header-link">
-                        Home
-                    </Link>
-                    <Link to="/quizes" className="header-link">
-                        Chemistry Quizes
-                    </Link>
-                </nav>
-            </div>
-            <div onClick={handleMenu} className="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+                <div className="header-navigation">
+                    <div className="header-top">
+                        <span className="logo">Chemistry&Fun</span>
+                        <div onClick={handleMenu} className="hamburger">
+                            {isOpen ? (
+                                <>X</>
+                            ) : (
+                                <>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </>
+                            )}
+                        </div>
+                    </div>
+                    <nav className={`header-menu ${isOpen ? 'open' : ''}`}>
+                        <Link to="/" className="header-link">
+                            Home
+                        </Link>
+                        <Link to="/quizes" className="header-link">
+                            Chemistry Quizes
+                        </Link>
+                    </nav>
+                </div>
             </div>
         </header>
     );
