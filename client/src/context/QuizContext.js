@@ -12,7 +12,9 @@ export function QuizProvider({ children }) {
     const [isAnswered, setIsAnswered] = useState(false);
 
     let allQuizzes = quizzes.quizzes;
-    const maxQuestions = allQuizzes[0].questions.length;
+    const getNumberOfQuestions = (id) => allQuizzes[id].questions.length;
+    // const maxQuestions = getNumberOfQuestions(id);
+
     let storedAnswer = answers[questionIndex + 1];
 
     return (
@@ -24,7 +26,7 @@ export function QuizProvider({ children }) {
                 page,
                 setPage,
                 allQuizzes,
-                maxQuestions,
+                getNumberOfQuestions,
                 polishLanguage,
                 setPolishLanguage,
                 questionIndex,

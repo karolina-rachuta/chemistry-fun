@@ -1,15 +1,9 @@
 import React, { useContext } from 'react';
 import { QuizContext } from '../../context/QuizContext';
 
-function Navigation() {
-    const {
-        isAnswered,
-        page,
-        setPage,
-        maxQuestions,
-        setQuestionIndex,
-        polishLanguage,
-    } = useContext(QuizContext);
+function Navigation({ maxQuestions }) {
+    const { isAnswered, page, setPage, setQuestionIndex, polishLanguage } =
+        useContext(QuizContext);
 
     function handlePrev() {
         if (page > 1 && page <= maxQuestions) {
@@ -32,20 +26,21 @@ function Navigation() {
 
     return (
         <div className="navigation-container">
-            {page > 0 && (
-                <button onClick={handlePrev} className="btn btn-nav">
-                    {polishLanguage ? 'Poprzedni' : 'Prev'}
-                </button>
-            )}
-            {page > 0 && page < maxQuestions + 1 && (
-                <button
-                    onClick={handleNext}
-                    className="btn btn-nav"
-                    disabled={!isAnswered}
-                >
-                    {polishLanguage ? 'Następny' : 'Next'}
-                </button>
-            )}
+            {/* {page > 0 && ( */}
+            <button onClick={handlePrev} className="btn btn-nav">
+                {polishLanguage ? 'Poprzedni' : 'Prev'}
+            </button>
+            {/* )} */}
+            {/* { */}
+            {/* page > 0 && page < maxQuestions + 1 && ( */}
+            <button
+                onClick={handleNext}
+                className="btn btn-nav"
+                disabled={!isAnswered}
+            >
+                {polishLanguage ? 'Następny' : 'Next'}
+            </button>
+            {/* )} */}
         </div>
     );
 }

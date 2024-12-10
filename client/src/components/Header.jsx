@@ -29,7 +29,7 @@ function Header() {
                         <Link to="/" className="header-link">
                             Home
                         </Link>
-                        <Link to="/quizes" className="header-link">
+                        <Link to="/quizzes" className="header-link">
                             Chemistry Quizes
                         </Link>
                     </nav>

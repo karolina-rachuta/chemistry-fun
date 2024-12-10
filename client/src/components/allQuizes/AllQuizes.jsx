@@ -1,28 +1,48 @@
 import React, { useContext } from 'react';
-import LastSlide from './LastSlide';
-import Navigation from './Navigation';
-import Quiz from './Quiz';
-import FirstSlide from './FirstSlide';
+import { Link } from 'react-router-dom';
 import { QuizContext } from '../../context/QuizContext';
 
 function AllQuizes() {
-    const { page, maxQuestions, allQuizzes } = useContext(QuizContext);
+    const { allQuizzes, setPage, polishLanguage, setQuestionIndex } =
+        useContext(QuizContext);
+
     return (
         <div className="quizzes-container">
             {allQuizzes && allQuizzes.length > 0 ? (
-                allQuizzes?.map((quiz, id) => (
-                    <div key={id} className="quiz-container">
-                        {page === 0 && <FirstSlide quiz={quiz} />}
-                        {page > 0 && page < maxQuestions + 1 && (
-                            <Quiz quiz={quiz} />
-                        )}
-                        {page === maxQuestions + 1 && <LastSlide quiz={quiz} />}
-                    </div>
-                ))
+                allQuizzes?.map((quiz, id) => {
+                    return (
+                        <div key={id} className="quiz-container">
+                            <h1>
+                                {polishLanguage
+                                    ? quiz?.name_pl
+                                    : quiz?.name_eng}
+                            </h1>
+                            <div className="quiz-container-bottom">
+                                <h3>
+                                    {polishLanguage
+                                        ? 'Liczba pytań: '
+                                        : 'Number of questions: '}
+                                    {quiz?.questions.length}
+                                </h3>
+                                <Link
+                                    to={`/quizzes/${id}`}
+                                    // onClick={() => {
+                                    //     setPage(1);
+                                    //     setQuestionIndex(1);
+                                    // }}
+                                    className="btn"
+                                >
+                                    {polishLanguage
+                                        ? 'Rozpocznij quiz'
+                                        : 'Start quiz'}
+                                </Link>
+                            </div>
+                        </div>
+                    );
+                })
             ) : (
                 <p>Loading quizzes...</p>
             )}
-            <Navigation />
         </div>
     );
 }

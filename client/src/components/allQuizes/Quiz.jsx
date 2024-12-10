@@ -2,20 +2,17 @@ import React, { useContext } from 'react';
 import Question from './quiz/Question';
 import Answers from './quiz/Answers';
 import { QuizContext } from '../../context/QuizContext';
+import Navigation from './Navigation';
 
-function Quiz({ quiz }) {
-    const { questionIndex, maxQuestions, finishedQuiz } =
-        useContext(QuizContext);
+function Quiz({ quiz, id, maxQuestions }) {
+    const { questionIndex } = useContext(QuizContext);
     return (
-        <>
-            {questionIndex < maxQuestions && !finishedQuiz && (
-                <div className="quiz-slide">
-                    <span>{`${questionIndex + 1} / ${maxQuestions}`}</span>
-                    <Question quiz={quiz} />
-                    <Answers quiz={quiz} />
-                </div>
-            )}
-        </>
+        <div className="quiz-slide">
+            <span>{`${questionIndex + 1} / ${maxQuestions}`}</span>
+            <Question quiz={quiz} id={id} />
+            <Answers quiz={quiz} id={id} />
+            <Navigation id={id} maxQuestions={maxQuestions} />
+        </div>
     );
 }
 

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { QuizContext } from '../../../context/QuizContext';
 
-function Question({ quiz }) {
+function Question({ quiz, id }) {
     const { polishLanguage, questionIndex } = useContext(QuizContext);
 
     return (

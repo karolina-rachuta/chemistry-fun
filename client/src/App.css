@@ -62,8 +62,6 @@ body {
 
     @media screen and (max-width: 634px) {
         justify-content: space-between;
-        /* position: absolute;
-        top: 27px; */
     }
 }
 .logo {
@@ -71,15 +69,12 @@ body {
     font-style: italic;
     font-weight: bold;
     font-size: 16px;
+
     @media screen and (max-width: 634px) {
         position: absolute;
         left: 20px;
         top: 30px;
     }
-    /* margin-top: 5px; */
-    /* background-color: var(--bg-color);
-    padding: 10px;
-    border-radius: 5px; */
 }
 
 .header-menu {
@@ -152,14 +147,6 @@ body {
     background-color: #9abf80;
 }
 
-/* quiz page */
-.quizzes-page-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
 .language-nav {
     margin-top: 20px;
     align-self: flex-end;
@@ -172,9 +159,14 @@ body {
     color: #fff;
     border-radius: 5px;
     border: 1px solid #fff;
-    margin-right: 10px;
+    /* margin-right: 10px; */
     cursor: pointer;
     font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    text-align: center;
 }
 
 .btn:hover {
@@ -192,26 +184,48 @@ body {
 }
 
 /* quizzes */
+
+/* quiz page */
 .quizzes-page-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.quizzes-container {
+    width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    background-color: #fff;
-    padding: 20px;
+}
+
+.quizzes-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    flex-wrap: wrap;
+    gap: 20px;
     width: 100%;
-    max-width: 800px;
+
+    @media screen and (max-width: 634px) {
+        grid-template-columns: 1fr 1fr;
+    }
+    @media screen and (max-width: 500px) {
+        grid-template-columns: 1fr;
+    }
 }
 
 .quiz-container {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 20px;
+    min-height: 200px;
+}
+
+.quiz-container-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     gap: 20px;
 }
 
@@ -219,6 +233,12 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 40px;
 }
 
 .answers-container {

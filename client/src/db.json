@@ -1,128 +1,387 @@
 {
     "quizzes": [{
-        "id": 1,
-        "name_pl": "Atom",
-        "name_eng": "Atom",
-        "questions": [{
-                "question": {
-                    "id": 1,
-                    "pl": "Co to jest atom?",
-                    "en": "What is an atom?"
+            "id": 1,
+            "name_pl": "Atom",
+            "name_eng": "Atom",
+            "questions": [{
+                    "question": {
+                        "id": 1,
+                        "pl": "Co to jest atom?",
+                        "en": "What is an atom?"
+                    },
+                    "answers": {
+                        "pl": ["Najmniejsza cząstka materii", "Cząstka światła", "Związek chemiczny", "Rodzaj pierwiastka"],
+                        "en": ["The smallest particle of matter", "A particle of light", "A chemical compound", "A type of element"]
+                    },
+                    "correctAnswer": 0
                 },
-                "answers": {
-                    "pl": ["Najmniejsza cząstka materii", "Cząstka światła", "Związek chemiczny", "Rodzaj pierwiastka"],
-                    "en": ["The smallest particle of matter", "A particle of light", "A chemical compound", "A type of element"]
+                {
+                    "question": {
+                        "id": 2,
+                        "pl": "Jak nazywa się środek atomu?",
+                        "en": "What is the center of an atom called?"
+                    },
+                    "answers": {
+                        "pl": ["Proton", "Neutron", "Jądro", "Elektron"],
+                        "en": ["Proton", "Neutron", "Nucleus", "Electron"]
+                    },
+                    "correctAnswer": 2
                 },
-                "correctAnswer": 0
-            },
-            {
-                "question": {
-                    "id": 2,
-                    "pl": "Jak nazywa się środek atomu?",
-                    "en": "What is the center of an atom called?"
+                {
+                    "question": {
+                        "id": 3,
+                        "pl": "Która cząstka w atomie ma ładunek ujemny?",
+                        "en": "Which particle in an atom has a negative charge?"
+                    },
+                    "answers": {
+                        "pl": ["Proton", "Neutron", "Elektron", "Jądro"],
+                        "en": ["Proton", "Neutron", "Electron", "Nucleus"]
+                    },
+                    "correctAnswer": 2
                 },
-                "answers": {
-                    "pl": ["Proton", "Neutron", "Jądro", "Elektron"],
-                    "en": ["Proton", "Neutron", "Nucleus", "Electron"]
+                {
+                    "question": {
+                        "id": 4,
+                        "pl": "Co określa liczba atomowa?",
+                        "en": "What does the atomic number indicate?"
+                    },
+                    "answers": {
+                        "pl": ["Liczbę neutronów", "Liczbę protonów", "Masę atomową", "Wielkość atomu"],
+                        "en": ["Number of neutrons", "Number of protons", "Atomic mass", "Size of the atom"]
+                    },
+                    "correctAnswer": 1
                 },
-                "correctAnswer": 2
-            },
-            {
-                "question": {
-                    "id": 3,
-                    "pl": "Która cząstka w atomie ma ładunek ujemny?",
-                    "en": "Which particle in an atom has a negative charge?"
+                {
+                    "question": {
+                        "id": 5,
+                        "pl": "Który pierwiastek ma jeden proton w jądrze?",
+                        "en": "Which element has one proton in its nucleus?"
+                    },
+                    "answers": {
+                        "pl": ["Hel", "Wodór", "Tlen", "Lit"],
+                        "en": ["Helium", "Hydrogen", "Oxygen", "Lithium"]
+                    },
+                    "correctAnswer": 1
                 },
-                "answers": {
-                    "pl": ["Proton", "Neutron", "Elektron", "Jądro"],
-                    "en": ["Proton", "Neutron", "Electron", "Nucleus"]
+                {
+                    "question": {
+                        "id": 6,
+                        "pl": "Która cząstka ma masę prawie równą masie protonu?",
+                        "en": "Which particle has a mass nearly equal to a proton?"
+                    },
+                    "answers": {
+                        "pl": ["Elektron", "Jądro", "Neutron", "Cząstka alfa"],
+                        "en": ["Electron", "Nucleus", "Neutron", "Alpha particle"]
+                    },
+                    "correctAnswer": 2
                 },
-                "correctAnswer": 2
-            },
-            {
-                "question": {
-                    "id": 4,
-                    "pl": "Co określa liczba atomowa?",
-                    "en": "What does the atomic number indicate?"
+                {
+                    "question": {
+                        "id": 7,
+                        "pl": "Jak nazywa się obszar, gdzie poruszają się elektrony?",
+                        "en": "What is the region where electrons move called?"
+                    },
+                    "answers": {
+                        "pl": ["Orbital", "Powłoka elektronowa", "Jądro atomowe", "Płaszczyzna"],
+                        "en": ["Orbital", "Electron shell", "Atomic nucleus", "Plane"]
+                    },
+                    "correctAnswer": 1
                 },
-                "answers": {
-                    "pl": ["Liczbę neutronów", "Liczbę protonów", "Masę atomową", "Wielkość atomu"],
-                    "en": ["Number of neutrons", "Number of protons", "Atomic mass", "Size of the atom"]
+                {
+                    "question": {
+                        "id": 8,
+                        "pl": "Która cząstka jest bez ładunku?",
+                        "en": "Which particle has no charge?"
+                    },
+                    "answers": {
+                        "pl": ["Proton", "Elektron", "Neutron", "Jądro"],
+                        "en": ["Proton", "Electron", "Neutron", "Nucleus"]
+                    },
+                    "correctAnswer": 2
                 },
-                "correctAnswer": 1
-            },
-            {
-                "question": {
-                    "id": 5,
-                    "pl": "Który pierwiastek ma jeden proton w jądrze?",
-                    "en": "Which element has one proton in its nucleus?"
+                {
+                    "question": {
+                        "id": 9,
+                        "pl": "Co to jest izotop?",
+                        "en": "What is an isotope?"
+                    },
+                    "answers": {
+                        "pl": ["Atom z większą liczbą protonów", "Atom o różnej liczbie neutronów", "Atom o mniejszej masie", "Atom, który nie występuje naturalnie"],
+                        "en": ["Atom with more protons", "Atom with a different number of neutrons", "Atom with less mass", "Atom that doesn't occur naturally"]
+                    },
+                    "correctAnswer": 1
                 },
-                "answers": {
-                    "pl": ["Hel", "Wodór", "Tlen", "Lit"],
-                    "en": ["Helium", "Hydrogen", "Oxygen", "Lithium"]
+                {
+                    "question": {
+                        "id": 10,
+                        "pl": "Który pierwiastek ma symbol O?",
+                        "en": "Which element has the symbol O?"
+                    },
+                    "answers": {
+                        "pl": ["Tlen", "Wodór", "Azot", "Fluor"],
+                        "en": ["Oxygen", "Hydrogen", "Nitrogen", "Fluorine"]
+                    },
+                    "correctAnswer": 0
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name_pl": "Odkrycia związane z atomem",
+            "name_eng": "Discoveries About the Atom",
+            "questions": [{
+                    "question": {
+                        "id": 1,
+                        "pl": "Kto zaproponował pierwszy model atomu?",
+                        "en": "Who proposed the first atomic model?"
+                    },
+                    "answers": {
+                        "pl": ["Ernest Rutherford", "John Dalton", "Niels Bohr", "Marie Curie"],
+                        "en": ["Ernest Rutherford", "John Dalton", "Niels Bohr", "Marie Curie"]
+                    },
+                    "correctAnswer": 1
                 },
-                "correctAnswer": 1
-            },
-            {
-                "question": {
-                    "id": 6,
-                    "pl": "Która cząstka ma masę prawie równą masie protonu?",
-                    "en": "Which particle has a mass nearly equal to a proton?"
+                {
+                    "question": {
+                        "id": 2,
+                        "pl": "Który naukowiec odkrył jądro atomowe?",
+                        "en": "Which scientist discovered the atomic nucleus?"
+                    },
+                    "answers": {
+                        "pl": ["Niels Bohr", "J.J. Thomson", "Ernest Rutherford", "Dmitrij Mendelejew"],
+                        "en": ["Niels Bohr", "J.J. Thomson", "Ernest Rutherford", "Dmitri Mendeleev"]
+                    },
+                    "correctAnswer": 2
                 },
-                "answers": {
-                    "pl": ["Elektron", "Jądro", "Neutron", "Cząstka alfa"],
-                    "en": ["Electron", "Nucleus", "Neutron", "Alpha particle"]
+                {
+                    "question": {
+                        "id": 3,
+                        "pl": "Co odkrył J.J. Thomson?",
+                        "en": "What did J.J. Thomson discover?"
+                    },
+                    "answers": {
+                        "pl": ["Elektron", "Neutron", "Jądro atomowe", "Cząstki alfa"],
+                        "en": ["Electron", "Neutron", "Atomic nucleus", "Alpha particles"]
+                    },
+                    "correctAnswer": 0
                 },
-                "correctAnswer": 2
-            },
-            {
-                "question": {
-                    "id": 7,
-                    "pl": "Jak nazywa się obszar, gdzie poruszają się elektrony?",
-                    "en": "What is the region where electrons move called?"
+                {
+                    "question": {
+                        "id": 4,
+                        "pl": "Który model atomu nazywany jest modelem planetarnym?",
+                        "en": "Which atomic model is called the planetary model?"
+                    },
+                    "answers": {
+                        "pl": ["Model Thomsona", "Model Bohra", "Model Daltona", "Model kwantowy"],
+                        "en": ["Thomson's model", "Bohr's model", "Dalton's model", "Quantum model"]
+                    },
+                    "correctAnswer": 1
                 },
-                "answers": {
-                    "pl": ["Orbital", "Powłoka elektronowa", "Jądro atomowe", "Płaszczyzna"],
-                    "en": ["Orbital", "Electron shell", "Atomic nucleus", "Plane"]
+                {
+                    "question": {
+                        "id": 5,
+                        "pl": "Jakie odkrycie uczyniła Maria Skłodowska-Curie?",
+                        "en": "What discovery did Marie Curie make?"
+                    },
+                    "answers": {
+                        "pl": ["Elektrony", "Promieniotwórczość", "Jądro atomowe", "Kwarki"],
+                        "en": ["Electrons", "Radioactivity", "Atomic nucleus", "Quarks"]
+                    },
+                    "correctAnswer": 1
                 },
-                "correctAnswer": 1
-            },
-            {
-                "question": {
-                    "id": 8,
-                    "pl": "Która cząstka jest bez ładunku?",
-                    "en": "Which particle has no charge?"
+                {
+                    "question": {
+                        "id": 6,
+                        "pl": "Co wprowadził Niels Bohr w swoim modelu atomu?",
+                        "en": "What did Niels Bohr introduce in his atomic model?"
+                    },
+                    "answers": {
+                        "pl": ["Orbity elektronowe", "Protony", "Neutrony", "Kwanty energii"],
+                        "en": ["Electron orbits", "Protons", "Neutrons", "Energy quanta"]
+                    },
+                    "correctAnswer": 0
                 },
-                "answers": {
-                    "pl": ["Proton", "Elektron", "Neutron", "Jądro"],
-                    "en": ["Proton", "Electron", "Neutron", "Nucleus"]
+                {
+                    "question": {
+                        "id": 7,
+                        "pl": "Jak nazywa się obecny model atomu?",
+                        "en": "What is the current atomic model called?"
+                    },
+                    "answers": {
+                        "pl": ["Model kwantowy", "Model planetarny", "Model Thomsona", "Model Daltona"],
+                        "en": ["Quantum model", "Planetary model", "Thomson's model", "Dalton's model"]
+                    },
+                    "correctAnswer": 0
                 },
-                "correctAnswer": 2
-            },
-            {
-                "question": {
-                    "id": 9,
-                    "pl": "Co to jest izotop?",
-                    "en": "What is an isotope?"
+                {
+                    "question": {
+                        "id": 8,
+                        "pl": "Który naukowiec odkrył neutrony?",
+                        "en": "Which scientist discovered neutrons?"
+                    },
+                    "answers": {
+                        "pl": ["James Chadwick", "Niels Bohr", "Ernest Rutherford", "Marie Curie"],
+                        "en": ["James Chadwick", "Niels Bohr", "Ernest Rutherford", "Marie Curie"]
+                    },
+                    "correctAnswer": 0
                 },
-                "answers": {
-                    "pl": ["Atom z większą liczbą protonów", "Atom o różnej liczbie neutronów", "Atom o mniejszej masie", "Atom, który nie występuje naturalnie"],
-                    "en": ["Atom with more protons", "Atom with a different number of neutrons", "Atom with less mass", "Atom that doesn't occur naturally"]
+                {
+                    "question": {
+                        "id": 9,
+                        "pl": "Co badał Ernest Rutherford w swoim eksperymencie złotej folii?",
+                        "en": "What did Ernest Rutherford study in his gold foil experiment?"
+                    },
+                    "answers": {
+                        "pl": ["Rozpraszanie cząstek alfa", "Ruchy elektronów", "Promieniowanie rentgenowskie", "Izotopy"],
+                        "en": ["Scattering of alpha particles", "Movement of electrons", "X-ray radiation", "Isotopes"]
+                    },
+                    "correctAnswer": 0
                 },
-                "correctAnswer": 1
-            },
-            {
-                "question": {
-                    "id": 10,
-                    "pl": "Który pierwiastek ma symbol O?",
-                    "en": "Which element has the symbol O?"
+                {
+                    "question": {
+                        "id": 10,
+                        "pl": "Czym są kwarki w kontekście atomu?",
+                        "en": "What are quarks in the context of the atom?"
+                    },
+                    "answers": {
+                        "pl": ["Cząstki składowe protonów i neutronów", "Cząstki światła", "Cząstki w jądrach atomów", "Cząstki alfa"],
+                        "en": ["Particles that make up protons and neutrons", "Particles of light", "Particles in atomic nuclei", "Alpha particles"]
+                    },
+                    "correctAnswer": 0
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name_pl": "Molekuły",
+            "name_eng": "Molecules",
+            "questions": [{
+                    "question": {
+                        "id": 1,
+                        "pl": "Co to jest molekuła?",
+                        "en": "What is a molecule?"
+                    },
+                    "answers": {
+                        "pl": ["Zbiór atomów połączonych wiązaniami chemicznymi", "Cząsteczka światła", "Jądro atomowe", "Izotop"],
+                        "en": ["A group of atoms bonded together", "A particle of light", "Atomic nucleus", "Isotope"]
+                    },
+                    "correctAnswer": 0
                 },
-                "answers": {
-                    "pl": ["Tlen", "Wodór", "Azot", "Fluor"],
-                    "en": ["Oxygen", "Hydrogen", "Nitrogen", "Fluorine"]
+                {
+                    "question": {
+                        "id": 2,
+                        "pl": "Który związek chemiczny jest przykładem molekuły?",
+                        "en": "Which chemical compound is an example of a molecule?"
+                    },
+                    "answers": {
+                        "pl": ["H2O", "O2", "CO2", "Wszystkie powyższe"],
+                        "en": ["H2O", "O2", "CO2", "All of the above"]
+                    },
+                    "correctAnswer": 3
                 },
-                "correctAnswer": 0
-            }
-        ]
-    }]
+                {
+                    "question": {
+                        "id": 3,
+                        "pl": "Jak nazywa się molekuła składająca się z dwóch atomów?",
+                        "en": "What is a molecule made of two atoms called?"
+                    },
+                    "answers": {
+                        "pl": ["Monoatomowa", "Dwuatomowa", "Wieloatomowa", "Polimerowa"],
+                        "en": ["Monoatomic", "Diatomic", "Polyatomic", "Polymeric"]
+                    },
+                    "correctAnswer": 1
+                },
+                {
+                    "question": {
+                        "id": 4,
+                        "pl": "Która molekuła zawiera trzy atomy tlenu?",
+                        "en": "Which molecule contains three oxygen atoms?"
+                    },
+                    "answers": {
+                        "pl": ["O2", "CO2", "O3", "H2O"],
+                        "en": ["O2", "CO2", "O3", "H2O"]
+                    },
+                    "correctAnswer": 2
+                },
+                {
+                    "question": {
+                        "id": 5,
+                        "pl": "Jaką nazwę nosi molekuła składająca się wyłącznie z atomów węgla i wodoru?",
+                        "en": "What is a molecule made only of carbon and hydrogen atoms called?"
+                    },
+                    "answers": {
+                        "pl": ["Węglowodór", "Izotop", "Tlenek", "Siarczek"],
+                        "en": ["Hydrocarbon", "Isotope", "Oxide", "Sulfide"]
+                    },
+                    "correctAnswer": 0
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name_pl": "Wiązania chemiczne",
+            "name_eng": "Chemical Bonds",
+            "questions": [{
+                    "question": {
+                        "id": 1,
+                        "pl": "Które wiązanie chemiczne jest najsilniejsze?",
+                        "en": "Which chemical bond is the strongest?"
+                    },
+                    "answers": {
+                        "pl": ["Kowalencyjne", "Jonowe", "Wodorowe", "Van der Waalsa"],
+                        "en": ["Covalent", "Ionic", "Hydrogen", "Van der Waals"]
+                    },
+                    "correctAnswer": 0
+                },
+                {
+                    "question": {
+                        "id": 2,
+                        "pl": "Co to jest wiązanie jonowe?",
+                        "en": "What is an ionic bond?"
+                    },
+                    "answers": {
+                        "pl": ["Wiązanie między jonami o przeciwnych ładunkach", "Wiązanie kowalencyjne", "Oddziaływanie wodorowe", "Słabe oddziaływanie cząsteczkowe"],
+                        "en": ["A bond between oppositely charged ions", "A covalent bond", "A hydrogen interaction", "A weak molecular interaction"]
+                    },
+                    "correctAnswer": 0
+                },
+                {
+                    "question": {
+                        "id": 3,
+                        "pl": "Jaką nazwę nosi wiązanie, w którym elektrony są współdzielone?",
+                        "en": "What is the bond called where electrons are shared?"
+                    },
+                    "answers": {
+                        "pl": ["Jonowe", "Kowalencyjne", "Wodorowe", "Metaliczne"],
+                        "en": ["Ionic", "Covalent", "Hydrogen", "Metallic"]
+                    },
+                    "correctAnswer": 1
+                },
+                {
+                    "question": {
+                        "id": 4,
+                        "pl": "W jakim wiązaniu elektrony są przekazywane z jednego atomu na drugi?",
+                        "en": "In which bond are electrons transferred from one atom to another?"
+                    },
+                    "answers": {
+                        "pl": ["Jonowym", "Kowalencyjnym", "Metalicznym", "Wodorowym"],
+                        "en": ["Ionic", "Covalent", "Metallic", "Hydrogen"]
+                    },
+                    "correctAnswer": 0
+                },
+                {
+                    "question": {
+                        "id": 5,
+                        "pl": "Jakie wiązanie odpowiada za strukturę DNA?",
+                        "en": "Which bond is responsible for the structure of DNA?"
+                    },
+                    "answers": {
+                        "pl": ["Wodorowe", "Jonowe", "Kowalencyjne", "Van der Waalsa"],
+                        "en": ["Hydrogen", "Ionic", "Covalent", "Van der Waals"]
+                    },
+                    "correctAnswer": 0
+                }
+            ]
+        }
+    ]
 }

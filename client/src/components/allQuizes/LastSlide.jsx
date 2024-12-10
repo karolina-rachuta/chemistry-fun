@@ -1,17 +1,16 @@
 import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { QuizContext } from '../../context/QuizContext';
 
-function LastSlide({ quiz }) {
+function LastSlide({ quiz, id, maxQuestions }) {
     const [showcorrectAnswers, setShowCorrectAnswers] = useState(false);
     const {
-        answers,
         setAnswers,
         setPage,
         setQuestionIndex,
         polishLanguage,
         pointsCounter,
         setPointsCounter,
-        maxQuestions,
     } = useContext(QuizContext);
 
     function handleStart() {
@@ -42,13 +41,12 @@ function LastSlide({ quiz }) {
                     quiz.questions.map((questionObj, id) => (
                         <div key={id} className="correct-answers-container">
                             <p>
-                                {questionObj.question.id}.{' '}
+                                {questionObj.question.id}.
                                 {polishLanguage
                                     ? questionObj.question.pl
                                     : questionObj.question.en}
                             </p>
                             <p>
-                                {' '}
                                 -{' '}
                                 {polishLanguage
                                     ? questionObj.answers.pl[
@@ -76,6 +74,9 @@ function LastSlide({ quiz }) {
                             : 'Show correct answers'}
                     </button>
                 </div>
+                <Link class="btn" to="/quizzes">
+                    Back to All Quizzes
+                </Link>
             </div>
         </div>
     );
