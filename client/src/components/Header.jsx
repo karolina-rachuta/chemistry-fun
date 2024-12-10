@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function Header() {
     const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +15,7 @@ function Header() {
                         <span className="logo">Chemistry&Fun</span>
                         <div onClick={handleMenu} className="hamburger">
                             {isOpen ? (
-                                <>X</>
+                                <i className="fas fa-times"></i>
                             ) : (
                                 <>
                                     <span></span>
