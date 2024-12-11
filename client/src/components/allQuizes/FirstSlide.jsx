@@ -1,28 +1,34 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { QuizContext } from '../../context/QuizContext';
 
 function FirstSlide({ quiz, id }) {
-    const { setPage, polishLanguage, setQuestionIndex } =
-        useContext(QuizContext);
+    const navigate = useNavigate();
+    const { polishLanguage } = useContext(QuizContext);
+
+    function handleStart(id) {
+        navigate(`/quizzes/${id}`);
+    }
     return (
-        <>
+        <div key={id} className="quiz-container">
             <h1>{polishLanguage ? quiz?.name_pl : quiz?.name_eng}</h1>
-            <h3>
-                {polishLanguage ? 'Liczba pytań: ' : 'Number of questions: '}
-                {quiz?.questions.length}
-            </h3>
-            <Link
-                to={`/quizzes/${id}`}
-                onClick={() => {
-                    setPage(1);
-                    setQuestionIndex(1);
-                }}
-                className="btn"
-            >
-                {polishLanguage ? 'Rozpocznij quiz' : 'Start quiz'}
-            </Link>
-        </>
+            <div className="quiz-container-bottom">
+                <h3>
+                    {polishLanguage
+                        ? 'Liczba pytań: '
+                        : 'Number of questions: '}
+                    {quiz?.questions.length}
+                </h3>
+                <button
+                    onClick={() => {
+                        handleStart(id);
+                    }}
+                    className="btn"
+                >
+                    {polishLanguage ? 'Rozpocznij quiz' : 'Start quiz'}
+                </button>
+            </div>
+        </div>
     );
 }
 
