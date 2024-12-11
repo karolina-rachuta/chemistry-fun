@@ -1,11 +1,14 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import Question from './quiz/Question';
-import Answers from './quiz/Answers';
+
 import { QuizContext } from '../../context/QuizContext';
-import Navigation from './Navigation';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+
+import Question from './quiz/Question';
+import Answers from './quiz/Answers';
+import Navigation from './Navigation';
 
 function Quiz({ quiz, id, maxQuestions }) {
     const {

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import AllQuizes from '../components/allQuizes/AllQuizes';
 import LanguageNavigation from '../components/allQuizes/LanguageNavigation';
 import Header from '../components/Header';

@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+
 import { QuizContext } from '../../context/QuizContext';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

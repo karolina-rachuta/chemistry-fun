@@ -1,9 +1,12 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import { QuizProvider } from './context/QuizContext';
+
 import HomePage from './page/HomePage';
 import QuizzesPage from './page/QuizzesPage';
 import QuizPage from './page/QuizPage';
+
 import './App.css';
-import { QuizProvider } from './context/QuizContext';
 
 function App() {
     return (

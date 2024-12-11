@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import { Link, useNavigate } from 'react-router-dom';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 function Header() {
     const [isOpen, setIsOpen] = useState(false);
+    const navigate = useNavigate();
     function handleMenu() {
         setIsOpen((prev) => !prev);
     }
@@ -12,10 +15,15 @@ function Header() {
             <div className="container container-header">
                 <div className="header-navigation">
                     <div className="header-top">
-                        <span className="logo">Chemistry&Fun</span>
+                        <span className="logo" onClick={() => navigate('/')}>
+                            Chemistry&Fun
+                        </span>
                         <div onClick={handleMenu} className="hamburger">
                             {isOpen ? (
-                                <i className="fas fa-times"></i>
+                                <FontAwesomeIcon
+                                    icon={faTimes}
+                                    className="icon"
+                                />
                             ) : (
                                 <>
                                     <span></span>

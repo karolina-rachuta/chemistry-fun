@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { useParams } from 'react-router';
+
 import { QuizContext } from '../context/QuizContext';
+
 import Header from '../components/Header';
 import LanguageNavigation from '../components/allQuizes/LanguageNavigation';
 import Quiz from '../components/allQuizes/Quiz';

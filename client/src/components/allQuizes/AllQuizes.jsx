@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
+
 import { QuizContext } from '../../context/QuizContext';
+
 import FirstSlide from './FirstSlide';
 
 function AllQuizes() {

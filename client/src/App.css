@@ -64,11 +64,13 @@ body {
         justify-content: space-between;
     }
 }
+
 .logo {
     color: var(--additional-color);
     font-style: italic;
     font-weight: bold;
     font-size: 16px;
+    cursor: pointer;
 
     @media screen and (max-width: 634px) {
         position: absolute;
@@ -112,7 +114,7 @@ body {
     scale: 1.1;
 }
 
-.hamburger i {
+.hamburger .icon {
     font-size: 30px;
     position: absolute;
     top: -7px;
@@ -186,9 +188,6 @@ a {
     background-color: var(--primary-color);
 }
 
-/* quizzes */
-
-/* quiz page */
 .quizzes-page-container {
     width: 100%;
     display: flex;
@@ -307,6 +306,7 @@ a {
         align-self: center;
     }
 }
+
 .btn.btn-back:hover {
     background-color: var(--secondary-color);
 }
