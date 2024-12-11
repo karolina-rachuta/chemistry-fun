@@ -2,7 +2,10 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { QuizContext } from '../../context/QuizContext';
 
-function LastSlide({ quiz, id, maxQuestions }) {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+
+function LastSlide({ quiz, maxQuestions }) {
     const [showcorrectAnswers, setShowCorrectAnswers] = useState(false);
     const {
         setAnswers,
@@ -26,12 +29,30 @@ function LastSlide({ quiz, id, maxQuestions }) {
 
     return (
         <div className="last-slide-container">
-            {polishLanguage ? <h2>Koniec quizu</h2> : <h2>Quiz Completed</h2>}
+            {polishLanguage ? <h2>Quiz ukończony</h2> : <h2>Quiz Completed</h2>}
             {polishLanguage ? (
-                <h3>Wynik: {(pointsCounter * 100) / maxQuestions} %</h3>
+                <h3>Wynik: {(pointsCounter * 100) / maxQuestions}%</h3>
             ) : (
-                <h3>Score: {(pointsCounter * 100) / maxQuestions} %</h3>
+                <h3>Score: {(pointsCounter * 100) / maxQuestions}%</h3>
             )}
+
+            <div className="last-slide-btn-box">
+                <button onClick={handleStart} className="btn">
+                    {polishLanguage ? 'Jeszcze raz!' : 'Start again!'}
+                </button>
+                <button
+                    onClick={handleShowCorrectAnswers}
+                    className={showcorrectAnswers ? 'btn active' : 'btn'}
+                >
+                    {showcorrectAnswers
+                        ? polishLanguage
+                            ? 'Schowaj odpowiedzi'
+                            : 'Hide answers'
+                        : polishLanguage
+                        ? 'Pokaż odpowiedzi'
+                        : 'Show answers'}
+                </button>
+            </div>
             {showcorrectAnswers &&
                 quiz.questions.map((questionObj, id) => (
                     <div key={id} className="correct-answers-container">
@@ -53,24 +74,17 @@ function LastSlide({ quiz, id, maxQuestions }) {
                         </p>
                     </div>
                 ))}
-            <div>
-                <button onClick={handleStart} className="btn">
-                    {polishLanguage
-                        ? 'Rozpocznij jeszcze raz!'
-                        : 'Start again!'}
-                </button>
-                <button onClick={handleShowCorrectAnswers} className="btn">
-                    {showcorrectAnswers
-                        ? polishLanguage
-                            ? 'Schowaj poprawne odpowiedzi'
-                            : 'Hide correct answers'
-                        : polishLanguage
-                        ? 'Pokaż poprawne odpowiedzi'
-                        : 'Show correct answers'}
-                </button>
-            </div>
-            <Link class="btn" onClick={handleStart} to="/quizzes">
-                Back to All Quizzes
+            <Link className="btn btn-back" onClick={handleStart} to="/quizzes">
+                {polishLanguage ? (
+                    <>
+                        <FontAwesomeIcon icon={faArrowLeft} /> Wszystkie quizy
+                    </>
+                ) : (
+                    <>
+                        <FontAwesomeIcon icon={faArrowLeft} /> Back to All
+                        Quizzes
+                    </>
+                )}
             </Link>
         </div>
     );
