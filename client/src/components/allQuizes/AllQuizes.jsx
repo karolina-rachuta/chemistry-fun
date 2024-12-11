@@ -1,10 +1,14 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { QuizContext } from '../../context/QuizContext';
 
 function AllQuizes() {
-    const { allQuizzes, setPage, polishLanguage, setQuestionIndex } =
-        useContext(QuizContext);
+    const navigate = useNavigate();
+    const { allQuizzes, polishLanguage } = useContext(QuizContext);
+
+    function handleStart(id) {
+        navigate(`/quizzes/${id}`);
+    }
 
     return (
         <div className="quizzes-container">
@@ -24,18 +28,16 @@ function AllQuizes() {
                                         : 'Number of questions: '}
                                     {quiz?.questions.length}
                                 </h3>
-                                <Link
-                                    to={`/quizzes/${id}`}
-                                    // onClick={() => {
-                                    //     setPage(1);
-                                    //     setQuestionIndex(1);
-                                    // }}
+                                <button
+                                    onClick={() => {
+                                        handleStart(id);
+                                    }}
                                     className="btn"
                                 >
                                     {polishLanguage
                                         ? 'Rozpocznij quiz'
                                         : 'Start quiz'}
-                                </Link>
+                                </button>
                             </div>
                         </div>
                     );

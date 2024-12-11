@@ -8,7 +8,7 @@ import LastSlide from '../components/allQuizes/LastSlide';
 
 function QuizPage() {
     const { id } = useParams();
-    const { page, allQuizzes } = useContext(QuizContext);
+    const { allQuizzes, page } = useContext(QuizContext);
     const quiz = allQuizzes[id];
     let maxQuestions = quiz.questions.length;
 

@@ -13,7 +13,6 @@ export function QuizProvider({ children }) {
 
     let allQuizzes = quizzes.quizzes;
     const getNumberOfQuestions = (id) => allQuizzes[id].questions.length;
-    // const maxQuestions = getNumberOfQuestions(id);
 
     let storedAnswer = answers[questionIndex + 1];
 

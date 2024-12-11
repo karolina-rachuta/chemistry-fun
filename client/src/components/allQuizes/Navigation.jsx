@@ -6,33 +6,26 @@ function Navigation({ maxQuestions }) {
         useContext(QuizContext);
 
     function handlePrev() {
-        if (page > 1 && page <= maxQuestions) {
-            setPage((prev) => prev - 1);
-            setQuestionIndex((prev) => prev - 1);
-        } else if (page === 1) {
-            setPage((prev) => prev - 1);
-        } else if (page === maxQuestions + 1) {
-            setPage((prev) => prev - 1);
-        }
+        setPage((prev) => prev - 1);
+        setQuestionIndex((prev) => prev - 1);
     }
     function handleNext() {
-        if (page < maxQuestions) {
-            setPage((prev) => prev + 1);
-            setQuestionIndex((prev) => prev + 1);
-        } else if (page === maxQuestions) {
-            setPage((prev) => prev + 1);
-        }
+        setPage((prev) => prev + 1);
+        setQuestionIndex((prev) => prev + 1);
     }
 
     return (
         <div className="navigation-container">
-            {/* {page > 0 && ( */}
-            <button onClick={handlePrev} className="btn btn-nav">
-                {polishLanguage ? 'Poprzedni' : 'Prev'}
-            </button>
-            {/* )} */}
-            {/* { */}
-            {/* page > 0 && page < maxQuestions + 1 && ( */}
+            {page > 0 ? (
+                <button onClick={handlePrev} className="btn btn-nav">
+                    {polishLanguage ? 'Poprzedni' : 'Prev'}
+                </button>
+            ) : (
+                <button onClick={handlePrev} className="btn btn-nav" disabled>
+                    {polishLanguage ? 'Poprzedni' : 'Prev'}
+                </button>
+            )}
+
             <button
                 onClick={handleNext}
                 className="btn btn-nav"
@@ -40,7 +33,6 @@ function Navigation({ maxQuestions }) {
             >
                 {polishLanguage ? 'Następny' : 'Next'}
             </button>
-            {/* )} */}
         </div>
     );
 }
