@@ -6,7 +6,10 @@ function HomePage() {
     return (
         <div>
             <Header />
-            <div className="container">Home</div>
+            <div className="container container-hero">
+                <h1>chemistry&fun</h1>
+                <h2>learing in enjoyable way!</h2>
+            </div>
         </div>
     );
 }
