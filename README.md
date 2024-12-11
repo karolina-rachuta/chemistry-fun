@@ -23,3 +23,7 @@ Regular updates with new content and features.
 ![screenshot](client/src/assets/desktop3.png)
 ![screenshot](client/src/assets/desktop4.png)
 ![screenshot](client/src/assets/desktop5.png)
+
+## MIT License:
+
+Copyright © 2024 Karolina Rachuta. All rights reserved.
