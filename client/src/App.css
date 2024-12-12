@@ -58,10 +58,11 @@ body {
 .header-top {
     display: flex;
     align-items: center;
-    width: 100%;
+    width: 20%;
 
     @media screen and (max-width: 634px) {
         justify-content: space-between;
+        width: 100%;
     }
 }
 
