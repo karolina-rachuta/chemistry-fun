@@ -9,6 +9,10 @@ Support for English and Polish languages.
 Responsive design for optimal viewing on various devices.
 Regular updates with new content and features.
 
+## Live DEMO:
+
+https://chemistryandfun-8099e.web.app/
+
 ## Tech Stack
 
 -   React (including React Router, Context API, and Hooks: useState, useEffect, useNavigate, useLocation, useParams, etc.)
