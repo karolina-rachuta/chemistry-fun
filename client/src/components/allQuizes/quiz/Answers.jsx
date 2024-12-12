@@ -1,4 +1,4 @@
-import React, { useContext, useState, useRef, useEffect } from 'react';
+import React, { useContext, useRef, useEffect } from 'react';
 import { QuizContext } from '../../../context/QuizContext';
 
 function Answers({ quiz }) {

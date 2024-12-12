@@ -206,10 +206,10 @@ a {
     gap: 50px;
 }
 .container-hero h1 {
-    font-size: 50px;
+    font-size: clamp(35px, 40px, 50px);
 }
 .container-hero h2 {
-    font-size: 35px;
+    font-size: clamp(25px, 30px, 35px);
 }
 
 /* Quizzes Page */
