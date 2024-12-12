@@ -331,7 +331,7 @@
                         "pl": ["Kowalencyjne", "Jonowe", "Wodorowe", "Van der Waalsa"],
                         "en": ["Covalent", "Ionic", "Hydrogen", "Van der Waals"]
                     },
-                    "correctAnswer": 0
+                    "correctAnswer": 1
                 },
                 {
                     "question": {

@@ -5,6 +5,7 @@ import { QuizProvider } from './context/QuizContext';
 import HomePage from './page/HomePage';
 import QuizzesPage from './page/QuizzesPage';
 import QuizPage from './page/QuizPage';
+import CalculatorsPage from './page/CalculatorsPage';
 
 import './App.css';
 
@@ -13,11 +14,12 @@ function App() {
         <QuizProvider>
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<HomePage />} />{' '}
-                    <Route path="/quizzes" element={<QuizzesPage />} />{' '}
-                    <Route path="/quizzes/:id" element={<QuizPage />} />{' '}
-                </Routes>{' '}
-            </BrowserRouter>{' '}
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/quizzes" element={<QuizzesPage />} />
+                    <Route path="/quizzes/:id" element={<QuizPage />} />
+                    <Route path="/calculators" element={<CalculatorsPage />} />
+                </Routes>
+            </BrowserRouter>
         </QuizProvider>
     );
 }
