@@ -11,6 +11,8 @@ function WeightConversion() {
             setWeightResult(`${(weightInput * 28.3495).toFixed(2)} g`);
         } else if (e.target.value === 'pound') {
             setWeightResult(`${(weightInput * 0.4536).toFixed(2)} kg`);
+        } else if (e.target.value === 'stone') {
+            setWeightResult(`${(weightInput * 6.35029).toFixed(2)} kg`);
         } else if (e.target.value === 'ton') {
             setWeightResult(`${(weightInput * 907.184).toFixed(2)} kg`);
         } else return;
@@ -38,6 +40,13 @@ function WeightConversion() {
                     className="btn"
                 >
                     pound <FontAwesomeIcon icon={faArrowRight} /> kg
+                </button>
+                <button
+                    onClick={(e) => handleWeightUnits(e)}
+                    value={'stone'}
+                    className="btn"
+                >
+                    stone <FontAwesomeIcon icon={faArrowRight} /> kg
                 </button>
                 <button
                     onClick={(e) => handleWeightUnits(e)}

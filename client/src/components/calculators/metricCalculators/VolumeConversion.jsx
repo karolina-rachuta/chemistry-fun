@@ -39,22 +39,21 @@ function VolumeConversion() {
                     value={'teaspoon'}
                     className="btn"
                 >
-                    teaspoon (tsp) <FontAwesomeIcon icon={faArrowRight} /> ml
+                    teaspoon <FontAwesomeIcon icon={faArrowRight} /> ml
                 </button>
                 <button
                     onClick={(e) => handleVolumeUnits(e)}
                     value={'tablespoon'}
                     className="btn"
                 >
-                    tablespoon (tbsp) <FontAwesomeIcon icon={faArrowRight} /> ml
+                    tablespoon <FontAwesomeIcon icon={faArrowRight} /> ml
                 </button>
                 <button
                     onClick={(e) => handleVolumeUnits(e)}
                     value={'ounce'}
                     className="btn"
                 >
-                    fluid ounce (fl oz) <FontAwesomeIcon icon={faArrowRight} />{' '}
-                    ml
+                    fluid ounce <FontAwesomeIcon icon={faArrowRight} /> ml
                 </button>
                 <button
                     onClick={(e) => handleVolumeUnits(e)}
@@ -68,22 +67,22 @@ function VolumeConversion() {
                     value={'pint'}
                     className="btn"
                 >
-                    pint (pt) <FontAwesomeIcon icon={faArrowRight} /> ml
+                    pint <FontAwesomeIcon icon={faArrowRight} /> ml
                 </button>
                 <button
                     onClick={(e) => handleVolumeUnits(e)}
                     value={'quart'}
                     className="btn"
                 >
-                    quart (qt) <FontAwesomeIcon icon={faArrowRight} /> litre (l)
+                    quart <FontAwesomeIcon icon={faArrowRight} /> litre
                 </button>
                 <button
                     onClick={(e) => handleVolumeUnits(e)}
                     value={'gallon'}
                     className="btn"
                 >
-                    gallon (gal) <FontAwesomeIcon icon={faArrowRight} /> litre
-                    (l)
+                    gallon
+                    <FontAwesomeIcon icon={faArrowRight} /> litre
                 </button>
             </div>
             <h3 className="calculator-result">Result: {volumeResult}</h3>
