@@ -4,7 +4,7 @@ import { QuizContext } from '../../context/QuizContext';
 
 import FirstSlide from './FirstSlide';
 
-function AllQuizes() {
+function AllQuizzes() {
     const { allQuizzes } = useContext(QuizContext);
 
     return (
@@ -20,4 +20,4 @@ function AllQuizes() {
     );
 }
 
-export default AllQuizes;
+export default AllQuizzes;

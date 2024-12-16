@@ -4,9 +4,9 @@ import { useParams } from 'react-router';
 import { QuizContext } from '../context/QuizContext';
 
 import Header from '../components/Header';
-import LanguageNavigation from '../components/allQuizes/LanguageNavigation';
-import Quiz from '../components/allQuizes/Quiz';
-import LastSlide from '../components/allQuizes/LastSlide';
+import LanguageNavigation from '../components/allQuizzes/LanguageNavigation';
+import Quiz from '../components/allQuizzes/Quiz';
+import LastSlide from '../components/allQuizzes/LastSlide';
 
 function QuizPage() {
     const { id } = useParams();
