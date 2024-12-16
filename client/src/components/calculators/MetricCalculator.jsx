@@ -4,6 +4,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 import LengthConversion from './metricCalculators/LengthConversion';
 import WeightConversion from './metricCalculators/WeightConversion';
+import VolumeConversion from './metricCalculators/VolumeConversion';
 
 function MetricCalculator() {
     return (
@@ -14,6 +15,7 @@ function MetricCalculator() {
             </h1>
             <LengthConversion />
             <WeightConversion />
+            <VolumeConversion />
         </div>
     );
 }
