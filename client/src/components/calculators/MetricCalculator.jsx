@@ -7,7 +7,7 @@ import WeightConversion from './metricCalculators/WeightConversion';
 
 function MetricCalculator() {
     return (
-        <div>
+        <div className="metric-calculator-container">
             <h1>
                 Imperial <FontAwesomeIcon icon={faArrowRight} /> Metric Units
                 Calculator{' '}
