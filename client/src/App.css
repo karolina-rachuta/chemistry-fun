@@ -184,7 +184,7 @@ a {
 }
 
 .btn:focus {
-    background-color: var(--additional-color);
+    background-color: var(--secondary-color);
 }
 .btn-nav:disabled {
     background-color: var(--secondary-color);
@@ -235,10 +235,14 @@ a {
 
 .quizzes-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     flex-wrap: wrap;
     gap: 20px;
     width: 100%;
+
+    @media screen and (max-width: 900px) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 
     @media screen and (max-width: 660px) {
         grid-template-columns: 1fr 1fr;
@@ -257,7 +261,7 @@ a {
     border-radius: 10px;
     background-color: #fff;
     padding: 20px;
-    min-height: 200px;
+    min-height: 250px;
 }
 
 .quiz-container-bottom {
@@ -377,7 +381,7 @@ a {
     background-color: #ebebe5;
     padding: 20px;
     width: 100%;
-    max-width: 800px;
+    max-width: 700px;
     gap: 20px;
 }
 
@@ -407,6 +411,8 @@ a {
         width: 100%;
     }
 }
+
+/* not visible arrows in input type number */
 .calculator-input::-webkit-inner-spin-button,
 .calculator-input::-webkit-outer-spin-button {
     -webkit-appearance: none;

@@ -5,17 +5,26 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 function LengthConversion() {
     const [lengthInput, setLengthInput] = useState(0);
     const [lengthResult, setLengthResult] = useState('');
+    const [active, setActive] = useState(false);
 
     function handleLengthUnits(e) {
         if (e.target.value === 'inch') {
             setLengthResult(`${(lengthInput * 2.54).toFixed(2)} cm`);
         } else if (e.target.value === 'foot') {
             setLengthResult(`${(lengthInput * 30.48).toFixed(2)} cm`);
+            setActive(false);
         } else if (e.target.value === 'yard') {
             setLengthResult(`${(lengthInput * 91.44).toFixed(2)} m`);
+            setActive(false);
         } else if (e.target.value === 'mile') {
             setLengthResult(`${(lengthInput * 1.609).toFixed(2)} km`);
+            setActive(false);
         } else return;
+    }
+
+    function handleLengthUnitsEnter(e) {
+        setLengthResult(`${(lengthInput * 2.54).toFixed(2)} cm`);
+        setActive(true);
     }
 
     return (
@@ -27,11 +36,14 @@ function LengthConversion() {
                     value={lengthInput}
                     className="calculator-input"
                     onChange={(e) => setLengthInput(e.target.value)}
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter') handleLengthUnitsEnter(e);
+                    }}
                 />
                 <button
                     onClick={(e) => handleLengthUnits(e)}
                     value={'inch'}
-                    className="btn"
+                    className={active ? 'btn active' : 'btn'}
                 >
                     inch <FontAwesomeIcon icon={faArrowRight} /> cm
                 </button>
