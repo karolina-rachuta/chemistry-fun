@@ -425,6 +425,10 @@ a {
     background-color: var(--additional-color);
 }
 
+.calculator-box-result {
+    display: flex;
+    width: 100%;
+}
 .calculator-result {
     padding: 10px 8px;
     background-color: var(--additional-color);
@@ -433,5 +437,26 @@ a {
     border: 1px solid #fff;
     cursor: pointer;
     font-size: 16px;
+    width: 200%;
+}
+
+.calculator-notes-box {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
     width: 100%;
+}
+
+.calculator-notes-box li {
+    list-style: none;
+}
+
+.btn-delete {
+    background-color: rgb(175, 77, 77);
+    align-self: end;
+}
+
+.no-visible {
+    display: none;
 }

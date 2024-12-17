@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { use } from 'react';
 
 function WeightConversion() {
     const [weightInput, setWeightInput] = useState(0);
@@ -27,6 +26,7 @@ function WeightConversion() {
         setWeightResult(`${(weightInput * 28.3495).toFixed(2)} g`);
         setActive(true);
     }
+
     return (
         <div className="calculator-container">
             <h2>Weight Conversion:</h2>
