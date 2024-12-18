@@ -1,96 +1,74 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-
-import {
-    getNotes,
-    saveNotes,
-    deleteNotes,
-} from '../../../helpers/storageHelper';
+import { TEMPERATURE_CONVERSION } from './constants';
+import useContextTemperature from './hooks/useContextTemperature';
 
 function TemperatureConversion() {
-    const inputRef = useRef(null);
-    const resultRef = useRef(null);
-    const unitRef = useRef(null);
-    const [temperatureInput, setTemperatureInput] = useState(0);
-    const [temperatureResult, setTemperatureResult] = useState('');
-    const [active, setActive] = useState(false);
-    const [notes, setNotes] = useState([]);
-    const [open, setOpen] = useState(false);
+    const {
+        handleNotes,
+        handleUnits,
+        handleUnitsEnter,
+        handleSavingNotes,
+        handleDeletingNotes,
+        state,
+        dispatch,
+    } = useContextTemperature();
 
-    useEffect(() => {
-        const storedNotes = getNotes('tempNotes') || [];
-        setNotes(storedNotes);
-    }, []);
-    function handleTemperatureUnits(e) {
-        if (e.target.value === '°F') {
-            setTemperatureResult(
-                `${(((temperatureInput - 32) * 5) / 9).toFixed(1)}°C`
-            );
-        } else return;
-    }
-
-    function handleTemperatureUnitsEnter() {
-        setTemperatureResult(
-            `${(((temperatureInput - 32) * 5) / 9).toFixed(1)}°C`
-        );
-        setActive(true);
-    }
-
-    function handleSavingNotes() {
-        const newNote = `${inputRef.current.value} ${unitRef.current.value} => ${resultRef.current.textContent}`;
-        const updatedNotes = [...notes, newNote];
-        setNotes(updatedNotes);
-        saveNotes('tempNotes', updatedNotes);
-        setOpen(true);
-    }
-
-    function handleDeletingNotes() {
-        setNotes([]);
-        deleteNotes('tempNotes');
-        setOpen(false);
-    }
+    useEffect(() => handleNotes('tempNotes'), []);
 
     return (
         <div className="calculator-container">
-            <h2>Temperature Conversion:</h2>
+            <h2>Length Conversion:</h2>
             <div className="calculator-box">
                 <input
                     type="number"
-                    ref={inputRef}
-                    value={temperatureInput}
+                    value={state.input}
                     className="calculator-input"
-                    onChange={(e) => setTemperatureInput(e.target.value)}
+                    onChange={(e) =>
+                        dispatch({
+                            type: 'SET_INPUT',
+                            payload: e.target.value,
+                        })
+                    }
                     onKeyDown={(e) => {
-                        if (e.key === 'Enter') handleTemperatureUnitsEnter();
+                        if (e.key === 'Enter')
+                            handleUnitsEnter(0.55555, 32, '°C', '°F');
                     }}
                 />
-                <button
-                    onClick={(e) => handleTemperatureUnits(e)}
-                    value={'°F'}
-                    ref={unitRef}
-                    className={active ? 'btn active' : 'btn'}
-                >
-                    &deg; F <FontAwesomeIcon icon={faArrowRight} /> &deg; C
-                </button>
+                {TEMPERATURE_CONVERSION.map(
+                    ({ value, multiplier, substract, unit, id }) => (
+                        <button
+                            key={id}
+                            onClick={() =>
+                                handleUnits(multiplier, substract, unit, value)
+                            }
+                            className={
+                                id === 1 && state.active ? 'btn active' : 'btn'
+                            }
+                        >
+                            {value} <FontAwesomeIcon icon={faArrowRight} />{' '}
+                            {unit}
+                        </button>
+                    )
+                )}
             </div>
+
             <div className="calculator-box-result">
-                <h3
-                    className="calculator-result"
-                    ref={resultRef}
-                    value={temperatureResult}
+                <h3 className="calculator-result">Result: {state.result}</h3>
+                <button
+                    className="btn"
+                    onClick={() => handleSavingNotes('tempNotes')}
+                    disabled={!state.input && !state.unit && !state.result}
                 >
-                    Result: {temperatureResult}
-                </h3>
-                <button className="btn" onClick={handleSavingNotes}>
                     Save notes
                 </button>
             </div>
-            <div className={open ? 'calculator-notes-box' : 'no-visible'}>
+            <div className={state.open ? 'calculator-notes-box' : 'no-visible'}>
                 <h2>Notes:</h2>
-                {notes.length > 0 ? (
+                {state.notes.length > 0 ? (
                     <ul>
-                        {notes.map((note, index) => (
+                        {state.notes.map((note, index) => (
                             <li key={index}>{note}</li>
                         ))}
                     </ul>
@@ -99,7 +77,7 @@ function TemperatureConversion() {
                 )}
                 <button
                     className="btn btn-delete"
-                    onClick={handleDeletingNotes}
+                    onClick={() => handleDeletingNotes('tempNotes')}
                 >
                     Delete all notes
                 </button>

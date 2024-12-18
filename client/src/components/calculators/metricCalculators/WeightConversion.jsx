@@ -1,31 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { WEIGHT_CONVERSION } from './constants';
+import useContextWeight from './hooks/useContextWeight';
 
 function WeightConversion() {
-    const [weightInput, setWeightInput] = useState(0);
-    const [weightResult, setWeightResult] = useState('');
-    const [active, setActive] = useState(false);
+    const {
+        handleNotes,
+        handleUnits,
+        handleUnitsEnter,
+        handleSavingNotes,
+        handleDeletingNotes,
+        state,
+        dispatch,
+    } = useContextWeight();
 
-    function handleWeightUnits(e) {
-        if (e.target.value === 'ounce') {
-            setWeightResult(`${(weightInput * 28.3495).toFixed(2)} g`);
-        } else if (e.target.value === 'pound') {
-            setWeightResult(`${(weightInput * 0.4536).toFixed(2)} kg`);
-            setActive(false);
-        } else if (e.target.value === 'stone') {
-            setWeightResult(`${(weightInput * 6.35029).toFixed(2)} kg`);
-            setActive(false);
-        } else if (e.target.value === 'ton') {
-            setWeightResult(`${(weightInput * 907.184).toFixed(2)} kg`);
-            setActive(false);
-        } else return;
-    }
-
-    function handleWeightUnitsEnter() {
-        setWeightResult(`${(weightInput * 28.3495).toFixed(2)} g`);
-        setActive(true);
-    }
+    useEffect(() => handleNotes('weightNotes'), []);
 
     return (
         <div className="calculator-container">
@@ -33,43 +23,60 @@ function WeightConversion() {
             <div className="calculator-box">
                 <input
                     type="number"
-                    value={weightInput}
+                    value={state.input}
                     className="calculator-input"
-                    onChange={(e) => setWeightInput(e.target.value)}
+                    onChange={(e) =>
+                        dispatch({
+                            type: 'SET_INPUT',
+                            payload: e.target.value,
+                        })
+                    }
                     onKeyDown={(e) => {
-                        if (e.key === 'Enter') handleWeightUnitsEnter();
+                        if (e.key === 'Enter')
+                            handleUnitsEnter(28.3495, 'g', 'ounce');
                     }}
                 />
+                {WEIGHT_CONVERSION.map(({ value, multiplier, unit, id }) => (
+                    <button
+                        key={id}
+                        onClick={() => handleUnits(multiplier, unit, value)}
+                        className={
+                            id === 1 && state.active ? 'btn active' : 'btn'
+                        }
+                    >
+                        {value} <FontAwesomeIcon icon={faArrowRight} /> {unit}
+                    </button>
+                ))}
+            </div>
+
+            <div className="calculator-box-result">
+                <h3 className="calculator-result">Result: {state.result}</h3>
                 <button
-                    onClick={(e) => handleWeightUnits(e)}
-                    value={'ounce'}
-                    className={active ? 'btn active' : 'btn'}
-                >
-                    ounce <FontAwesomeIcon icon={faArrowRight} /> g
-                </button>
-                <button
-                    onClick={(e) => handleWeightUnits(e)}
-                    value={'pound'}
                     className="btn"
+                    onClick={() => handleSavingNotes('weightNotes')}
+                    disabled={!state.input && !state.unit && !state.result}
                 >
-                    pound <FontAwesomeIcon icon={faArrowRight} /> kg
-                </button>
-                <button
-                    onClick={(e) => handleWeightUnits(e)}
-                    value={'stone'}
-                    className="btn"
-                >
-                    stone <FontAwesomeIcon icon={faArrowRight} /> kg
-                </button>
-                <button
-                    onClick={(e) => handleWeightUnits(e)}
-                    value={'ton'}
-                    className="btn"
-                >
-                    ton <FontAwesomeIcon icon={faArrowRight} /> kg
+                    Save notes
                 </button>
             </div>
-            <h3 className="calculator-result">Result: {weightResult}</h3>
+            <div className={state.open ? 'calculator-notes-box' : 'no-visible'}>
+                <h2>Notes:</h2>
+                {state.notes.length > 0 ? (
+                    <ul>
+                        {state.notes.map((note, index) => (
+                            <li key={index}>{note}</li>
+                        ))}
+                    </ul>
+                ) : (
+                    <p>No notes saved.</p>
+                )}
+                <button
+                    className="btn btn-delete"
+                    onClick={() => handleDeletingNotes('weightNotes')}
+                >
+                    Delete all notes
+                </button>
+            </div>
         </div>
     );
 }

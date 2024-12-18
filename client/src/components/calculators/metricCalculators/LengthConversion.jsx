@@ -1,61 +1,21 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-
-import {
-    getNotes,
-    saveNotes,
-    deleteNotes,
-} from '../../../helpers/storageHelper';
+import { LENGTH_CONVERSION } from './constants';
+import useContextLength from './hooks/useContextLength';
 
 function LengthConversion() {
-    const inputRef = useRef(null);
-    const resultRef = useRef(null);
-    const unitRef = useRef(null);
-    const [lengthInput, setLengthInput] = useState(0);
-    const [lengthResult, setLengthResult] = useState('');
-    const [active, setActive] = useState(false);
-    const [notes, setNotes] = useState([]);
-    const [open, setOpen] = useState(false);
+    const {
+        handleNotes,
+        handleUnits,
+        handleUnitsEnter,
+        handleSavingNotes,
+        handleDeletingNotes,
+        state,
+        dispatch,
+    } = useContextLength();
 
-    useEffect(() => {
-        const storedNotes = getNotes('lengthNotes');
-        setNotes(storedNotes);
-    }, []);
-
-    function handleLengthUnits(e) {
-        if (e.target.value === 'inch') {
-            setLengthResult(`${(lengthInput * 2.54).toFixed(2)} cm`);
-        } else if (e.target.value === 'foot') {
-            setLengthResult(`${(lengthInput * 30.48).toFixed(2)} cm`);
-            setActive(false);
-        } else if (e.target.value === 'yard') {
-            setLengthResult(`${(lengthInput * 91.44).toFixed(2)} m`);
-            setActive(false);
-        } else if (e.target.value === 'mile') {
-            setLengthResult(`${(lengthInput * 1.609).toFixed(2)} km`);
-            setActive(false);
-        } else return;
-    }
-
-    function handleLengthUnitsEnter(e) {
-        setLengthResult(`${(lengthInput * 2.54).toFixed(2)} cm`);
-        setActive(true);
-    }
-
-    function handleSavingNotes() {
-        const newNote = `${inputRef.current.value} ${resultRef.current.textContent}`;
-        const updatedNotes = [...notes, newNote];
-        setNotes(updatedNotes);
-        saveNotes('lengthNotes', updatedNotes);
-        setOpen(true);
-    }
-
-    function handleDeletingNotes() {
-        setNotes([]);
-        deleteNotes('lengthNotes');
-        setOpen(false);
-    }
+    useEffect(() => handleNotes('lengthNotes'), []);
 
     return (
         <div className="calculator-container">
@@ -63,56 +23,47 @@ function LengthConversion() {
             <div className="calculator-box">
                 <input
                     type="number"
-                    ref={inputRef}
-                    value={lengthInput}
+                    value={state.input}
                     className="calculator-input"
-                    onChange={(e) => setLengthInput(e.target.value)}
+                    onChange={(e) =>
+                        dispatch({
+                            type: 'SET_INPUT',
+                            payload: e.target.value,
+                        })
+                    }
                     onKeyDown={(e) => {
-                        if (e.key === 'Enter') handleLengthUnitsEnter(e);
+                        if (e.key === 'Enter')
+                            handleUnitsEnter(2.54, 'cm', 'inch');
                     }}
                 />
-                <button
-                    onClick={(e) => handleLengthUnits(e)}
-                    value={'inch'}
-                    className={active ? 'btn active' : 'btn'}
-                >
-                    inch <FontAwesomeIcon icon={faArrowRight} /> cm
-                </button>
-                <button
-                    onClick={(e) => handleLengthUnits(e)}
-                    value={'foot'}
-                    className="btn"
-                >
-                    foot <FontAwesomeIcon icon={faArrowRight} /> cm
-                </button>
-                <button
-                    onClick={(e) => handleLengthUnits(e)}
-                    value={'yard'}
-                    className="btn"
-                >
-                    yard <FontAwesomeIcon icon={faArrowRight} /> m
-                </button>
-                <button
-                    onClick={(e) => handleLengthUnits(e)}
-                    value={'mile'}
-                    className="btn"
-                >
-                    mile <FontAwesomeIcon icon={faArrowRight} /> km
-                </button>
+                {LENGTH_CONVERSION.map(({ value, multiplier, unit, id }) => (
+                    <button
+                        key={id}
+                        onClick={() => handleUnits(multiplier, unit, value)}
+                        className={
+                            id === 1 && state.active ? 'btn active' : 'btn'
+                        }
+                    >
+                        {value} <FontAwesomeIcon icon={faArrowRight} /> {unit}
+                    </button>
+                ))}
             </div>
+
             <div className="calculator-box-result">
-                <h3 className="calculator-result" ref={resultRef}>
-                    Result: {lengthResult}
-                </h3>
-                <button className="btn" onClick={handleSavingNotes}>
+                <h3 className="calculator-result">Result: {state.result}</h3>
+                <button
+                    className="btn"
+                    onClick={() => handleSavingNotes('lengthNotes')}
+                    disabled={!state.input && !state.unit && !state.result}
+                >
                     Save notes
                 </button>
             </div>
-            <div className={open ? 'calculator-notes-box' : 'no-visible'}>
+            <div className={state.open ? 'calculator-notes-box' : 'no-visible'}>
                 <h2>Notes:</h2>
-                {notes.length > 0 ? (
+                {state.notes.length > 0 ? (
                     <ul>
-                        {notes.map((note, index) => (
+                        {state.notes.map((note, index) => (
                             <li key={index}>{note}</li>
                         ))}
                     </ul>
@@ -121,7 +72,7 @@ function LengthConversion() {
                 )}
                 <button
                     className="btn btn-delete"
-                    onClick={handleDeletingNotes}
+                    onClick={() => handleDeletingNotes('lengthNotes')}
                 >
                     Delete all notes
                 </button>

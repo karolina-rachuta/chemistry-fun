@@ -1,105 +1,84 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { VOLUME_CONVERSION } from './constants';
+import useContextVolume from './hooks/useContextVolume';
 
-function VolumeConversion() {
-    const [volumeInput, setVolumeInput] = useState(0);
-    const [volumeResult, setVolumeResult] = useState('');
-    const [active, setActive] = useState(false);
+function WeightConversion() {
+    const {
+        handleNotes,
+        handleUnits,
+        handleUnitsEnter,
+        handleSavingNotes,
+        handleDeletingNotes,
+        state,
+        dispatch,
+    } = useContextVolume();
 
-    function handleVolumeUnits(e) {
-        if (e.target.value === 'teaspoon') {
-            setVolumeResult(`${(volumeInput * 4.92892).toFixed(2)} ml`);
-        } else if (e.target.value === 'tablespoon') {
-            setVolumeResult(`${(volumeInput * 14.7868).toFixed(2)} ml`);
-            setActive(false);
-        } else if (e.target.value === 'ounce') {
-            setVolumeResult(`${(volumeInput * 29.5735).toFixed(2)} ml`);
-            setActive(false);
-        } else if (e.target.value === 'cup') {
-            setVolumeResult(`${(volumeInput * 236.588).toFixed(2)} ml`);
-            setActive(false);
-        } else if (e.target.value === 'pint') {
-            setVolumeResult(`${(volumeInput * 473.176).toFixed(2)} ml`);
-            setActive(false);
-        } else if (e.target.value === 'quart') {
-            setVolumeResult(`${(volumeInput * 0.946353).toFixed(2)} l`);
-            setActive(false);
-        } else if (e.target.value === 'gallon') {
-            setVolumeResult(`${(volumeInput * 3.78541).toFixed(2)} l`);
-            setActive(false);
-        } else return;
-    }
-    function handleVolumeUnitsEnter() {
-        setVolumeResult(`${(volumeInput * 4.92892).toFixed(2)} ml`);
-        setActive(true);
-    }
+    useEffect(() => handleNotes('volumeNotes'), []);
+
     return (
         <div className="calculator-container">
             <h2>Volume Conversion:</h2>
             <div className="calculator-box">
                 <input
                     type="number"
-                    value={volumeInput}
+                    value={state.input}
                     className="calculator-input"
-                    onChange={(e) => setVolumeInput(e.target.value)}
+                    onChange={(e) =>
+                        dispatch({
+                            type: 'SET_INPUT',
+                            payload: e.target.value,
+                        })
+                    }
                     onKeyDown={(e) => {
-                        if (e.key === 'Enter') handleVolumeUnitsEnter();
+                        if (e.key === 'Enter')
+                            handleUnitsEnter(4.93, 'ml', 'teaspoon');
                     }}
                 />
+                {VOLUME_CONVERSION.map(({ value, multiplier, unit, id }) => (
+                    <button
+                        key={id}
+                        onClick={() => handleUnits(multiplier, unit, value)}
+                        className={
+                            id === 1 && state.active ? 'btn active' : 'btn'
+                        }
+                    >
+                        {value} <FontAwesomeIcon icon={faArrowRight} /> {unit}
+                    </button>
+                ))}
+            </div>
+
+            <div className="calculator-box-result">
+                <h3 className="calculator-result">Result: {state.result}</h3>
                 <button
-                    onClick={(e) => handleVolumeUnits(e)}
-                    value={'teaspoon'}
-                    className={active ? 'btn active' : 'btn'}
-                >
-                    teaspoon <FontAwesomeIcon icon={faArrowRight} /> ml
-                </button>
-                <button
-                    onClick={(e) => handleVolumeUnits(e)}
-                    value={'tablespoon'}
                     className="btn"
+                    onClick={() => handleSavingNotes('volumeNotes')}
+                    disabled={!state.input && !state.unit && !state.result}
                 >
-                    tablespoon <FontAwesomeIcon icon={faArrowRight} /> ml
-                </button>
-                <button
-                    onClick={(e) => handleVolumeUnits(e)}
-                    value={'ounce'}
-                    className="btn"
-                >
-                    fluid ounce <FontAwesomeIcon icon={faArrowRight} /> ml
-                </button>
-                <button
-                    onClick={(e) => handleVolumeUnits(e)}
-                    value={'cup'}
-                    className="btn"
-                >
-                    cup <FontAwesomeIcon icon={faArrowRight} /> ml
-                </button>
-                <button
-                    onClick={(e) => handleVolumeUnits(e)}
-                    value={'pint'}
-                    className="btn"
-                >
-                    pint <FontAwesomeIcon icon={faArrowRight} /> ml
-                </button>
-                <button
-                    onClick={(e) => handleVolumeUnits(e)}
-                    value={'quart'}
-                    className="btn"
-                >
-                    quart <FontAwesomeIcon icon={faArrowRight} /> litre
-                </button>
-                <button
-                    onClick={(e) => handleVolumeUnits(e)}
-                    value={'gallon'}
-                    className="btn"
-                >
-                    gallon <FontAwesomeIcon icon={faArrowRight} /> litre
+                    Save notes
                 </button>
             </div>
-            <h3 className="calculator-result">Result: {volumeResult}</h3>
+            <div className={state.open ? 'calculator-notes-box' : 'no-visible'}>
+                <h2>Notes:</h2>
+                {state.notes.length > 0 ? (
+                    <ul>
+                        {state.notes.map((note, index) => (
+                            <li key={index}>{note}</li>
+                        ))}
+                    </ul>
+                ) : (
+                    <p>No notes saved.</p>
+                )}
+                <button
+                    className="btn btn-delete"
+                    onClick={() => handleDeletingNotes('volumeNotes')}
+                >
+                    Delete all notes
+                </button>
+            </div>
         </div>
     );
 }
 
-export default VolumeConversion;
+export default WeightConversion;
