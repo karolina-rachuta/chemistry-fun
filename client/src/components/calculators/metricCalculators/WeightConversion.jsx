@@ -15,7 +15,9 @@ function WeightConversion() {
         dispatch,
     } = useContextWeight();
 
-    useEffect(() => handleNotes('weightNotes'), []);
+    useEffect(() => {
+        handleNotes('weightNotes');
+    }, []);
 
     return (
         <div className="calculator-container">
