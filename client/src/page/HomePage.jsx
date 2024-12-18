@@ -7,7 +7,7 @@ function HomePage() {
         <div>
             <Header />
             <div className="container container-hero">
-                <h1>chemistry&fun</h1>
+                <h1>learning&fun</h1>
                 <h2>learing in enjoyable way!</h2>
             </div>
         </div>

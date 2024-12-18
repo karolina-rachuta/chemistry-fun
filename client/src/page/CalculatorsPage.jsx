@@ -7,7 +7,6 @@ function CalculatorsPage() {
         <>
             <Header />
             <div className="container quizzes-page-container">
-                <LanguageNavigation />
                 <MetricCalculator />
             </div>
         </>
