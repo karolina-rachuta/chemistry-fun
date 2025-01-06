@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from '../components/Header';
-import LanguageNavigation from '../components/allQuizzes/LanguageNavigation';
 import MetricCalculator from '../components/calculators/MetricCalculator';
 function CalculatorsPage() {
     return (
