@@ -29,3 +29,4 @@ yarn-error.log*
 notatki.md
 
 .firebase/
+.firebase/hosting.*.cache

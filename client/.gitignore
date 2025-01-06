@@ -26,3 +26,5 @@ yarn-error.log*
 .vs_code
 .idea
 
+.firebase/hosting.*.cache
+.firebase/
