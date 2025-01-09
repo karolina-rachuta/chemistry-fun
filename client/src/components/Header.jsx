@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -7,11 +7,15 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 function Header() {
     const [isOpen, setIsOpen] = useState(false);
     const navigate = useNavigate();
+    const location = useLocation();
+
+    const isHomePage = location.pathname === '/';
+
     function handleMenu() {
         setIsOpen((prev) => !prev);
     }
     return (
-        <header className="header">
+        <header className={isHomePage ? 'header header_homepage' : 'header'}>
             <div className="container container-header">
                 <div className="header-navigation">
                     <div className="header-top">
