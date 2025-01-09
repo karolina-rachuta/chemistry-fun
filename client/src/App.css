@@ -16,7 +16,7 @@
 html,
 body {
     width: 100%;
-    background-color: #e5e3d4;
+    background-color: #6a669d;
     font-size: 16px;
 }
 
@@ -38,6 +38,8 @@ body {
 }
 .header_homepage {
     position: absolute;
+    background-color: transparent;
+    box-shadow: none;
 }
 
 .container-header {
@@ -128,7 +130,7 @@ body {
 }
 
 .hamburger span {
-    background-color: grey;
+    background-color: #6a669d;
     width: 30px;
     height: 4px;
     border-radius: 3px;
@@ -209,6 +211,7 @@ a {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    max-height: 1000px;
     overflow: hidden;
     scroll-behavior: smooth;
 }
@@ -275,18 +278,22 @@ a {
 }
 
 .homepage__about {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
-    justify-content: center;
     background-color: #6a669d;
     gap: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px;
+
+    @media screen and (max-width: 950px) {
+        grid-template-columns: 1fr 1fr;
+    }
+    @media screen and (max-width: 634px) {
+        grid-template-columns: 1fr;
+    }
 }
 
 .about__box {
-    width: 30%;
     background-color: #fff;
     height: 300px;
     border-radius: 5px;
@@ -294,13 +301,29 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* background-color: #b8b5e2; */
+    background-color: #fff;
+    /* background-image: url(../src/assets/comingsoon.webp);
+    background-size: cover;
+    background-repeat: no-repeat; */
 }
 
+.about__box:first-child {
+    /* background-image: url(../src/assets/quiz.webp); */
+    /* background-size: cover;
+    background-repeat: no-repeat; */
+}
+/* .about__box:nth-child(2) {
+    background-image: url(../src/assets/calc.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+} */
 .about__hdl {
     width: 100%;
     color: #6a669d;
     text-shadow: 2px 2px 4px #fff, -1px -1px 2px #fff;
     font-size: clamp(25px, 30px, 35px);
+    font-weight: bold;
 }
 /* Quizzes Page */
 .quizzes-page-container {
