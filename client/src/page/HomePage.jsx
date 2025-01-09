@@ -8,6 +8,7 @@ function HomePage() {
     const [scrollPosition, setScrollPosition] = useState(0);
     const img1 = useRef(null);
     const img2 = useRef(null);
+    const text = useRef(null);
 
     const handleScroll = () => {
         setScrollPosition(window.scrollY); // Get the scroll position
@@ -25,10 +26,11 @@ function HomePage() {
         if (img1.current) {
             img1.current.style.left = `${scrollPosition * -1.5}px`;
         }
-    }, [scrollPosition]);
-    useEffect(() => {
         if (img2.current) {
             img2.current.style.right = `${scrollPosition * -1.5}px`;
+        }
+        if (text.current) {
+            text.current.style.top = `${scrollPosition * 1.5}px`;
         }
     }, [scrollPosition]);
 
@@ -39,10 +41,9 @@ function HomePage() {
                 <img src={Hero1} alt="" className="hero1" ref={img1} />
                 <img src={Hero2} alt="" className="hero2" ref={img2} />
                 <img src={Bgimage} alt="" className="bg_img" />
-                {/* <div className="bg_container">
-                    <h1>learning&fun</h1>
-                    <h2>learing in enjoyable way!</h2>
-                </div> */}
+                <h1 className="parallax_text" ref={text}>
+                    learning is fun
+                </h1>
             </section>
             <section>
                 <h2>Parallex scrolling website {scrollPosition}</h2>

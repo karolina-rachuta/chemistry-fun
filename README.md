@@ -17,6 +17,7 @@ https://chemistryandfun-8099e.web.app/
 
 -   React (including React Router, Context API, and Hooks: useState, useEffect, useNavigate, useLocation, useParams, etc.)
 -   CSS for styling.
+-   Parallax scrolling animation.
 -   Responsive Web Design (RWD) to ensure usability across different screen sizes.
 -   Bilingual support: Polish and English.
 
