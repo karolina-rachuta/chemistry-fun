@@ -7,7 +7,7 @@ function Footer() {
     return (
         <div className="footer container">
             <span className="logo" onClick={() => navigate('/')}>
-                learning&fun
+                chemistry&fun
             </span>
             <span>Copyright © 2024 Karolina Rachuta. All rights reserved.</span>
         </div>

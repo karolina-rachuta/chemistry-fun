@@ -2,6 +2,8 @@
 
 Chemistry&Fun is a website where you can learn chemistry in an engaging and enjoyable way. Here, you'll find chemistry quizzes and more! The content and functionalities are constantly being expanded — the next planned feature is a calculator. The website is available in both English and Polish.
 
+\*website is still in progress
+
 ## Features
 
 Interactive chemistry quizzes.
@@ -17,7 +19,7 @@ https://chemistryandfun-8099e.web.app/
 
 -   React (including React Router, Context API, and Hooks: useState, useEffect, useNavigate, useLocation, useParams, etc.)
 -   CSS for styling.
--   Parallax scrolling animation.
+-   Parallax scrolling effect.
 -   Responsive Web Design (RWD) to ensure usability across different screen sizes.
 -   Bilingual support: Polish and English.
 
