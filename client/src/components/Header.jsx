@@ -42,7 +42,7 @@ function Header() {
                             Home
                         </Link>
                         <Link to="/quizzes" className="header-link">
-                            Chemistry Quizzes
+                            Quizzes
                         </Link>
                         <Link to="/calculators" className="header-link">
                             Calculators
