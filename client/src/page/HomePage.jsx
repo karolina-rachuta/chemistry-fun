@@ -33,6 +33,7 @@ function HomePage() {
         }
         if (text.current) {
             text.current.style.top = `${scrollPosition * 1.5}px`;
+            text.current.style.display = 'block';
         }
         if (cta.current && scrollPosition) {
             cta.current.style.display = 'none';
