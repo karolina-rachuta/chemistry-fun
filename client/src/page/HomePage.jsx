@@ -11,6 +11,7 @@ function HomePage() {
     const img1 = useRef(null);
     const img2 = useRef(null);
     const text = useRef(null);
+    const cta = useRef(null);
 
     const handleScroll = () => {
         setScrollPosition(window.scrollY);
@@ -33,6 +34,11 @@ function HomePage() {
         if (text.current) {
             text.current.style.top = `${scrollPosition * 1.5}px`;
         }
+        if (cta.current && scrollPosition) {
+            cta.current.style.display = 'none';
+        } else {
+            cta.current.style.display = 'block';
+        }
     }, [scrollPosition]);
 
     return (
@@ -41,6 +47,10 @@ function HomePage() {
             <section className="parallax">
                 <img src={Hero1} alt="" className="hero1" ref={img1} />
                 <img src={Hero2} alt="" className="hero2" ref={img2} />
+                <button className="parallax_btn" ref={cta}>
+                    Welcome! <br />{' '}
+                    <span className="parralax-arrow">&#8964;</span>{' '}
+                </button>
                 <img src={Bgimage} alt="" className="bg_img" />
                 <h1 className="parallax_text" ref={text}>
                     learning is fun
@@ -59,16 +69,24 @@ function HomePage() {
                     </Link>
                 </div>
                 <div className="about__box">
-                    <Link className="about__hdl">coming soon! </Link>
+                    <Link className="about__hdl">
+                        new functionality coming soon!{' '}
+                    </Link>
                 </div>
                 <div className="about__box">
-                    <Link className="about__hdl">coming soon! </Link>
+                    <Link className="about__hdl">
+                        new functionality coming soon!{' '}
+                    </Link>
                 </div>
                 <div className="about__box">
-                    <Link className="about__hdl">coming soon! </Link>
+                    <Link className="about__hdl">
+                        new functionality coming soon!{' '}
+                    </Link>
                 </div>
                 <div className="about__box">
-                    <Link className="about__hdl">coming soon! </Link>
+                    <Link className="about__hdl">
+                        new functionality coming soon!{' '}
+                    </Link>
                 </div>
             </section>
         </div>
