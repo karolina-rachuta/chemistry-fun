@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import Hero1 from '../assets/hero1part.webp';
 import Hero2 from '../assets/hero2part.webp';
 import Bgimage from '../assets/pexels-ron-lach-10187127.webp';
+import Footer from '../components/Footer';
 
 function HomePage() {
     const [scrollPosition, setScrollPosition] = useState(0);
@@ -57,7 +58,7 @@ function HomePage() {
                     learning is fun
                 </h1>
             </section>
-            <section className="homepage__about">
+            <section className="homepage__about container">
                 <div className="about__box">
                     {' '}
                     <Link className="about__hdl" to="/quizzes">
@@ -71,25 +72,26 @@ function HomePage() {
                 </div>
                 <div className="about__box">
                     <Link className="about__hdl">
-                        new functionality coming soon!{' '}
+                        new functionality <br /> coming soon!{' '}
                     </Link>
                 </div>
                 <div className="about__box">
                     <Link className="about__hdl">
-                        new functionality coming soon!{' '}
+                        new functionality <br /> coming soon!{' '}
                     </Link>
                 </div>
                 <div className="about__box">
                     <Link className="about__hdl">
-                        new functionality coming soon!{' '}
+                        new functionality <br /> coming soon!{' '}
                     </Link>
                 </div>
                 <div className="about__box">
                     <Link className="about__hdl">
-                        new functionality coming soon!{' '}
+                        new functionality <br /> coming soon!{' '}
                     </Link>
                 </div>
             </section>
+            <Footer />
         </div>
     );
 }
