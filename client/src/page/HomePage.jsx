@@ -32,9 +32,11 @@ function HomePage() {
         if (img2.current) {
             img2.current.style.right = `${scrollPosition * -1.5}px`;
         }
-        if (text.current) {
+        if (text.current && scrollPosition) {
             text.current.style.top = `${scrollPosition * 1.5}px`;
             text.current.style.display = 'block';
+        } else {
+            text.current.style.display = 'none';
         }
         if (cta.current && scrollPosition) {
             cta.current.style.display = 'none';
