@@ -72,22 +72,22 @@ function HomePage() {
                         Try our metric calculator!
                     </Link>
                 </div>
-                <div className="about__box">
+                <div className="about__box notactive">
                     <Link className="about__hdl">
                         new functionality <br /> coming soon!{' '}
                     </Link>
                 </div>
-                <div className="about__box">
+                <div className="about__box notactive">
                     <Link className="about__hdl">
                         new functionality <br /> coming soon!{' '}
                     </Link>
                 </div>
-                <div className="about__box">
+                <div className="about__box notactive">
                     <Link className="about__hdl">
                         new functionality <br /> coming soon!{' '}
                     </Link>
                 </div>
-                <div className="about__box">
+                <div className="about__box notactive">
                     <Link className="about__hdl">
                         new functionality <br /> coming soon!{' '}
                     </Link>
