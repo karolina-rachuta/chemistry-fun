@@ -44,7 +44,7 @@ body {
     background-color: transparent;
     box-shadow: none;
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 550px) {
         background-color: #fff;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
         position: relative;
@@ -64,7 +64,7 @@ body {
     justify-content: space-between;
     align-items: center;
 
-    @media screen and (max-width: 634px) {
+    @media screen and (max-width: 770px) {
         flex-direction: column;
     }
 }
@@ -74,7 +74,7 @@ body {
     align-items: center;
     width: 20%;
 
-    @media screen and (max-width: 634px) {
+    @media screen and (max-width: 770px) {
         justify-content: space-between;
         width: 100%;
     }
@@ -89,7 +89,7 @@ body {
     cursor: pointer;
     z-index: 9999;
 
-    @media screen and (max-width: 634px) {
+    @media screen and (max-width: 770px) {
         position: absolute;
         left: 20px;
         top: 30px;
@@ -103,7 +103,7 @@ body {
     justify-content: end;
     align-items: center;
 
-    @media screen and (max-width: 634px) {
+    @media screen and (max-width: 770px) {
         display: none;
         flex-direction: column;
         align-items: center;
@@ -116,7 +116,7 @@ body {
 .hamburger {
     display: none;
     z-index: 9999;
-    @media screen and (max-width: 634px) {
+    @media screen and (max-width: 770px) {
         display: flex;
         flex-direction: column;
         gap: 7px;
@@ -163,6 +163,36 @@ body {
         text-align: center;
     }
 }
+.lang-container {
+    display: flex;
+    z-index: 9999;
+    gap: 5px;
+}
+
+.lang-link {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 10px;
+    background-color: #9abf80;
+    padding: 5px;
+    z-index: 9999;
+
+    @media screen and (max-width: 634px) {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.lang-link:hover {
+    background-color: #6a669d;
+}
+
+.header-link.active,
+.lang-link.active {
+    background-color: var(--additional-color);
+}
+
 .header-link:hover {
     background-color: #9abf80;
 }
@@ -182,7 +212,7 @@ body {
     cursor: pointer;
     font-size: 16px;
     min-width: 100px;
-    @media only screen and (max-width: 634px) {
+    @media only screen and (max-width: 770px) {
         width: 100%;
     }
 }
@@ -416,8 +446,11 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
+    margin-top: 50px;
+    margin-bottom: 50px;
     gap: 20px;
+    min-height: 100vh;
 }
 
 .language-nav {

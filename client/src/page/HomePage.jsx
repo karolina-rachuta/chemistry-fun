@@ -7,7 +7,10 @@ import Hero2 from '../assets/hero2part.webp';
 import Bgimage from '../assets/pexels-ron-lach-10187127.webp';
 import Footer from '../components/Footer';
 
+import { useTranslation, Trans } from 'react-i18next';
+
 function HomePage() {
+    const { t } = useTranslation();
     const [scrollPosition, setScrollPosition] = useState(0);
     const img1 = useRef(null);
     const img2 = useRef(null);
@@ -52,45 +55,32 @@ function HomePage() {
                 <img src={Hero1} alt="" className="hero1" ref={img1} />
                 <img src={Hero2} alt="" className="hero2" ref={img2} />
                 <button className="parallax_btn" ref={cta}>
-                    Welcome! <br />{' '}
-                    <span className="parralax-arrow">&#8964;</span>{' '}
+                    <Trans>
+                        {t('parallax.welcome')} <br />
+                        <span className="parralax-arrow">&#8964;</span>{' '}
+                    </Trans>
                 </button>
                 <img src={Bgimage} alt="" className="bg_img" />
                 <h1 className="parallax_text" ref={text}>
-                    learning is fun
+                    {t('parallax.hdl')}
                 </h1>
             </section>
             <section className="homepage__about container">
                 <div className="about__box">
                     {' '}
                     <Link className="about__hdl" to="/quizzes">
-                        Try our quizzes!
+                        {t('about.quizzes')}
                     </Link>
                 </div>
                 <div className="about__box">
                     <Link className="about__hdl" to="/calculators">
-                        Try our metric calculator!
+                        {t('about.calculators')}
                     </Link>
                 </div>
                 <div className="about__box notactive">
-                    <Link className="about__hdl">
-                        new functionality <br /> coming soon!{' '}
-                    </Link>
-                </div>
-                <div className="about__box notactive">
-                    <Link className="about__hdl">
-                        new functionality <br /> coming soon!{' '}
-                    </Link>
-                </div>
-                <div className="about__box notactive">
-                    <Link className="about__hdl">
-                        new functionality <br /> coming soon!{' '}
-                    </Link>
-                </div>
-                <div className="about__box notactive">
-                    <Link className="about__hdl">
-                        new functionality <br /> coming soon!{' '}
-                    </Link>
+                    <Trans>
+                        <Link className="about__hdl">{t('about.general')}</Link>
+                    </Trans>
                 </div>
             </section>
             <Footer />

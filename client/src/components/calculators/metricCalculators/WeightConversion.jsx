@@ -3,8 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { WEIGHT_CONVERSION } from './constants';
 import useContextWeight from './hooks/useContextWeight';
+import { useTranslation } from 'react-i18next';
 
 function WeightConversion() {
+    const { t } = useTranslation();
     const {
         handleNotes,
         handleUnits,
@@ -21,7 +23,7 @@ function WeightConversion() {
 
     return (
         <div className="calculator-container">
-            <h2>Weight Conversion:</h2>
+            <h2>{t('calculator.weight_conversion.hdl')}</h2>
             <div className="calculator-box">
                 <input
                     type="number"
@@ -46,19 +48,23 @@ function WeightConversion() {
                             id === 1 && state.active ? 'btn active' : 'btn'
                         }
                     >
-                        {value} <FontAwesomeIcon icon={faArrowRight} /> {unit}
+                        {t(`calculator.weight_conversion.${value}`)}{' '}
+                        <FontAwesomeIcon icon={faArrowRight} /> {unit}
                     </button>
                 ))}
             </div>
 
             <div className="calculator-box-result">
-                <h3 className="calculator-result">Result: {state.result}</h3>
+                <h3 className="calculator-result">
+                    {' '}
+                    {t('calculator.result')} {state.result}
+                </h3>
                 <button
                     className="btn"
                     onClick={() => handleSavingNotes('weightNotes')}
                     disabled={!state.input && !state.unit && !state.result}
                 >
-                    Save notes
+                    {t('calculator.save')}
                 </button>
             </div>
             <div className={state.open ? 'calculator-notes-box' : 'no-visible'}>
@@ -70,13 +76,13 @@ function WeightConversion() {
                         ))}
                     </ul>
                 ) : (
-                    <p>No notes saved.</p>
+                    <p> {t('calculator.no_notes')}</p>
                 )}
                 <button
                     className="btn btn-delete"
                     onClick={() => handleDeletingNotes('weightNotes')}
                 >
-                    Delete all notes
+                    {t('calculator.delete')}
                 </button>
             </div>
         </div>

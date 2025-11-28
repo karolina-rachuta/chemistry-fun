@@ -2,7 +2,7 @@
     "quizzes": [{
             "id": 1,
             "name_pl": "Atom",
-            "name_eng": "Atom",
+            "name_en": "Atom",
             "questions": [{
                     "question": {
                         "id": 1,
@@ -128,7 +128,7 @@
         {
             "id": 2,
             "name_pl": "Odkrycia związane z atomem",
-            "name_eng": "Discoveries About the Atom",
+            "name_en": "Discoveries About the Atom",
             "questions": [{
                     "question": {
                         "id": 1,
@@ -254,7 +254,7 @@
         {
             "id": 3,
             "name_pl": "Molekuły",
-            "name_eng": "Molecules",
+            "name_en": "Molecules",
             "questions": [{
                     "question": {
                         "id": 1,
@@ -320,7 +320,7 @@
         {
             "id": 4,
             "name_pl": "Wiązania chemiczne",
-            "name_eng": "Chemical Bonds",
+            "name_en": "Chemical Bonds",
             "questions": [{
                     "question": {
                         "id": 1,

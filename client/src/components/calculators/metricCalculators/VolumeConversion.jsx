@@ -3,8 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { VOLUME_CONVERSION } from './constants';
 import useContextVolume from './hooks/useContextVolume';
+import { useTranslation } from 'react-i18next';
 
 function WeightConversion() {
+    const { t } = useTranslation();
     const {
         handleNotes,
         handleUnits,
@@ -19,7 +21,7 @@ function WeightConversion() {
 
     return (
         <div className="calculator-container">
-            <h2>Volume Conversion:</h2>
+            <h2>{t('calculator.volume_conversion.hdl')}</h2>
             <div className="calculator-box">
                 <input
                     type="number"
@@ -44,23 +46,28 @@ function WeightConversion() {
                             id === 1 && state.active ? 'btn active' : 'btn'
                         }
                     >
-                        {value} <FontAwesomeIcon icon={faArrowRight} /> {unit}
+                        {t(`calculator.volume_conversion.${value}`)}{' '}
+                        <FontAwesomeIcon icon={faArrowRight} />{' '}
+                        {t(`calculator.volume_conversion.${unit}`)}
                     </button>
                 ))}
             </div>
 
             <div className="calculator-box-result">
-                <h3 className="calculator-result">Result: {state.result}</h3>
+                <h3 className="calculator-result">
+                    {' '}
+                    {t('calculator.result')} {state.result}
+                </h3>
                 <button
                     className="btn"
                     onClick={() => handleSavingNotes('volumeNotes')}
                     disabled={!state.input && !state.unit && !state.result}
                 >
-                    Save notes
+                    {t('calculator.save')}
                 </button>
             </div>
             <div className={state.open ? 'calculator-notes-box' : 'no-visible'}>
-                <h2>Notes:</h2>
+                <h2> {t('calculator.notes')}</h2>
                 {state.notes.length > 0 ? (
                     <ul>
                         {state.notes.map((note, index) => (
@@ -68,13 +75,13 @@ function WeightConversion() {
                         ))}
                     </ul>
                 ) : (
-                    <p>No notes saved.</p>
+                    <p> {t('calculator.no_notes')}</p>
                 )}
                 <button
                     className="btn btn-delete"
                     onClick={() => handleDeletingNotes('volumeNotes')}
                 >
-                    Delete all notes
+                    {t('calculator.delete')}
                 </button>
             </div>
         </div>

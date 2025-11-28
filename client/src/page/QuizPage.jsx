@@ -4,7 +4,6 @@ import { useParams } from 'react-router';
 import { QuizContext } from '../context/QuizContext';
 
 import Header from '../components/Header';
-import LanguageNavigation from '../components/allQuizzes/LanguageNavigation';
 import Quiz from '../components/allQuizzes/Quiz';
 import LastSlide from '../components/allQuizzes/LastSlide';
 
@@ -18,7 +17,6 @@ function QuizPage() {
         <>
             <Header />
             <div className="container quizzes-page-container">
-                <LanguageNavigation />
                 {page === maxQuestions ? (
                     <LastSlide
                         quiz={quiz}
