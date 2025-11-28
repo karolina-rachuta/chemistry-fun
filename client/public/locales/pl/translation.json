@@ -1,0 +1,59 @@
+{
+    "header": {
+        "home": "Strona Główna",
+        "calculators": "Kalkulatory",
+        "quizzes": "Quizy"
+
+    },
+    "parallax": {
+        "welcome": "Witaj!",
+        "hdl": "nauka jest super"
+    },
+    "about": {
+        "quizzes": "Zobacz nasze quizy!",
+        "calculators": "Wypróbuj nasze metryczne kaloratory!",
+        "general": "Nowe funkcjonalności <br /> wkrótce"
+    },
+    "quizzes": {
+        "questions": "Liczba pytań: ",
+        "start": "Rozpocznij quiz"
+    },
+    "calculator": {
+        "hdl_1": "Kalkulator przeliczania jednostek imperialnych",
+        "hdl_2": "metryczne",
+        "save": "Zapisz notatki",
+        "result": "Wynik:",
+        "delete": "Usuń wszystkie notatki",
+        "notes": "Notatki:",
+        "no_notes": "Nie ma zapisanych notatek.",
+        "length_conversion": {
+            "hdl": "Przeliczanie długości",
+            "inch": "cal",
+            "foot": "stopa",
+            "yard": "jard",
+            "mile": "mila"
+        },
+        "weight_conversion": {
+            "hdl": "Przeliczanie wagi",
+            "ounce": "uncja",
+            "pound": "funt",
+            "stone": "kamień",
+            "ton": "tona"
+        },
+        "temperature_conversion": {
+            "hdl": "Przeliczanie temperatury"
+        },
+        "volume_conversion": {
+            "hdl": "Przeliczanie objętości",
+            "teaspoon": "łyżeczka",
+            "tablespoon": "łyżka stołowa",
+            "ounce": "uncja",
+            "cup": "szklanka",
+            "pint": "pinta",
+            "quart": "kwarta",
+            "gallon": "galon",
+            "litre": "litr",
+            "ml": "ml"
+        }
+    }
+}

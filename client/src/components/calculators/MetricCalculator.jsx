@@ -7,13 +7,18 @@ import WeightConversion from './metricCalculators/WeightConversion';
 import VolumeConversion from './metricCalculators/VolumeConversion';
 import TemperatureConversion from './metricCalculators/TemperatureConversion';
 
+import { useTranslation, Trans } from 'react-i18next';
 function MetricCalculator() {
+    const { t } = useTranslation();
     return (
         <div className="metric-calculator-container">
-            <h1>
-                Imperial <FontAwesomeIcon icon={faArrowRight} /> Metric Units
-                Calculator{' '}
-            </h1>
+            <Trans>
+                <h1 style={{ textAlign: 'center' }}>
+                    {t('calculator.hdl_1')}{' '}
+                    <FontAwesomeIcon icon={faArrowRight} />{' '}
+                    {t('calculator.hdl_2')}
+                </h1>
+            </Trans>
             <LengthConversion />
             <WeightConversion />
             <TemperatureConversion />

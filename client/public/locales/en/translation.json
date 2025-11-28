@@ -1,0 +1,58 @@
+{
+    "header": {
+        "home": "Home",
+        "calculators": "Calculators",
+        "quizzes": "Quizzes"
+    },
+    "parallax": {
+        "welcome": "Welcome! ",
+        "hdl": "learning is fun"
+    },
+    "about": {
+        "quizzes": "Try our quizzes!",
+        "calculators": "Try our metric calculator!",
+        "general": "new functionality <br /> coming soon!"
+    },
+    "quizzes": {
+        "questions": "Number of questions: ",
+        "start": "Start quiz"
+    },
+    "calculator": {
+        "hdl_1": "Imperial",
+        "hdl_2": "Metric Units Calculator",
+        "save": "Save notes",
+        "result": "Result:",
+        "delete": "Delete all notes",
+        "notes": "Notes:",
+        "no_notes": "No notes saved.",
+        "length_conversion": {
+            "hdl": "Length Conversion",
+            "inch": "inch",
+            "foot": "foot",
+            "yard": "yard",
+            "mile": "mile"
+        },
+        "weight_conversion": {
+            "hdl": "Weight Conversion:",
+            "ounce": "ounce",
+            "pound": "pound",
+            "stone": "stone",
+            "ton": "ton"
+        },
+        "temperature_conversion": {
+            "hdl": "Temperature Conversion:"
+        },
+        "volume_conversion": {
+            "hdl": "Volume Conversion:",
+            "teaspoon": "teaspoon",
+            "tablespoon": "tablespoon",
+            "ounce": "ounce",
+            "cup": "cup",
+            "pint": "pint",
+            "quart": "quart",
+            "gallon": "gallon",
+            "litre": "litre",
+            "ml": "ml"
+        }
+    }
+}

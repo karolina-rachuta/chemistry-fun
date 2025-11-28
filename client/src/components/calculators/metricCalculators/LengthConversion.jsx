@@ -3,8 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { LENGTH_CONVERSION } from './constants';
 import useContextLength from './hooks/useContextLength';
+import { useTranslation } from 'react-i18next';
 
 function LengthConversion() {
+    const { t } = useTranslation();
     const {
         handleNotes,
         handleUnits,
@@ -19,7 +21,7 @@ function LengthConversion() {
 
     return (
         <div className="calculator-container">
-            <h2>Length Conversion:</h2>
+            <h2>{t('calculator.length_conversion.hdl')}</h2>
             <div className="calculator-box">
                 <input
                     type="number"
@@ -44,23 +46,26 @@ function LengthConversion() {
                             id === 1 && state.active ? 'btn active' : 'btn'
                         }
                     >
-                        {value} <FontAwesomeIcon icon={faArrowRight} /> {unit}
+                        {t(`calculator.length_conversion.${value}`)}{' '}
+                        <FontAwesomeIcon icon={faArrowRight} /> {unit}
                     </button>
                 ))}
             </div>
 
             <div className="calculator-box-result">
-                <h3 className="calculator-result">Result: {state.result}</h3>
+                <h3 className="calculator-result">
+                    {t('calculator.result')} {state.result}
+                </h3>
                 <button
                     className="btn"
                     onClick={() => handleSavingNotes('lengthNotes')}
                     disabled={!state.input && !state.unit && !state.result}
                 >
-                    Save notes
+                    {t('calculator.save')}
                 </button>
             </div>
             <div className={state.open ? 'calculator-notes-box' : 'no-visible'}>
-                <h2>Notes:</h2>
+                <h2> {t('calculator.notes')}</h2>
                 {state.notes.length > 0 ? (
                     <ul>
                         {state.notes.map((note, index) => (
@@ -68,13 +73,13 @@ function LengthConversion() {
                         ))}
                     </ul>
                 ) : (
-                    <p>No notes saved.</p>
+                    <p>{t('calculator.no_notes')}</p>
                 )}
                 <button
                     className="btn btn-delete"
                     onClick={() => handleDeletingNotes('lengthNotes')}
                 >
-                    Delete all notes
+                    {t('calculator.delete')}
                 </button>
             </div>
         </div>

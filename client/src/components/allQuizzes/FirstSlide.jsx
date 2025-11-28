@@ -3,7 +3,10 @@ import { useNavigate } from 'react-router-dom';
 
 import { QuizContext } from '../../context/QuizContext';
 
+import { useTranslation } from 'react-i18next';
+
 function FirstSlide({ quiz, id }) {
+    const { t } = useTranslation();
     const navigate = useNavigate();
     const { polishLanguage } = useContext(QuizContext);
 
@@ -12,12 +15,10 @@ function FirstSlide({ quiz, id }) {
     }
     return (
         <div key={id} className="quiz-container">
-            <h1>{polishLanguage ? quiz?.name_pl : quiz?.name_eng}</h1>
+            <h1>{polishLanguage ? quiz?.name_pl : quiz?.name_en}</h1>
             <div className="quiz-container-bottom">
                 <h3>
-                    {polishLanguage
-                        ? 'Liczba pytań: '
-                        : 'Number of questions: '}
+                    {t('quizzes.questions')}
                     {quiz?.questions.length}
                 </h3>
                 <button
@@ -26,7 +27,7 @@ function FirstSlide({ quiz, id }) {
                     }}
                     className="btn"
                 >
-                    {polishLanguage ? 'Rozpocznij quiz' : 'Start quiz'}
+                    {t('quizzes.start')}
                 </button>
             </div>
         </div>

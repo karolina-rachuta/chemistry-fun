@@ -1,5 +1,5 @@
 import { createContext, useState } from 'react';
-import quizzes from '../db.json';
+import quizzes from '../data/db.json';
 
 export const QuizContext = createContext();
 
