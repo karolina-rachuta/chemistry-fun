@@ -21,7 +21,7 @@ https://chemistryandfun-8099e.web.app/
 -   CSS for styling.
 -   Parallax scrolling effect.
 -   Responsive Web Design (RWD) to ensure usability across different screen sizes.
--   Bilingual support: Polish and English.
+-   i18n: Bilingual support: Polish and English.
 
 ## Demo:
 
