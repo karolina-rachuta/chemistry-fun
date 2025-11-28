@@ -82,6 +82,21 @@ function HomePage() {
                         <Link className="about__hdl">{t('about.general')}</Link>
                     </Trans>
                 </div>
+                <div className="about__box notactive">
+                    <Trans>
+                        <Link className="about__hdl">{t('about.general')}</Link>
+                    </Trans>
+                </div>
+                <div className="about__box notactive">
+                    <Trans>
+                        <Link className="about__hdl">{t('about.general')}</Link>
+                    </Trans>
+                </div>
+                <div className="about__box notactive">
+                    <Trans>
+                        <Link className="about__hdl">{t('about.general')}</Link>
+                    </Trans>
+                </div>
             </section>
             <Footer />
         </div>
