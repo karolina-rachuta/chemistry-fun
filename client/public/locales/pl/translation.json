@@ -2,8 +2,8 @@
     "header": {
         "home": "Strona Główna",
         "calculators": "Kalkulatory",
-        "quizzes": "Quizy"
-
+        "quizzes": "Quizy",
+        "games": "Gry"
     },
     "parallax": {
         "welcome": "Witaj!",
@@ -55,5 +55,8 @@
             "litre": "litr",
             "ml": "ml"
         }
+    },
+    "games": {
+        "hdl": "Gry"
     }
 }

@@ -6,6 +6,7 @@ import { QuizContext } from '../context/QuizContext';
 import Header from '../components/Header';
 import Quiz from '../components/allQuizzes/Quiz';
 import LastSlide from '../components/allQuizzes/LastSlide';
+import Footer from '../components/Footer';
 
 function QuizPage() {
     const { id } = useParams();
@@ -27,6 +28,7 @@ function QuizPage() {
                     <Quiz quiz={quiz} id={id} maxQuestions={maxQuestions} />
                 )}
             </div>
+            <Footer />
         </>
     );
 }

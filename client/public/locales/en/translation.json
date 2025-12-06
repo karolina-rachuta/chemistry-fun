@@ -2,7 +2,8 @@
     "header": {
         "home": "Home",
         "calculators": "Calculators",
-        "quizzes": "Quizzes"
+        "quizzes": "Quizzes",
+        "games": "Games"
     },
     "parallax": {
         "welcome": "Welcome! ",
@@ -54,5 +55,8 @@
             "litre": "litre",
             "ml": "ml"
         }
+    },
+    "games": {
+        "hdl": "Games"
     }
 }
