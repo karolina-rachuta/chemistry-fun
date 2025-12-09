@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import { QuizContext } from '../../context/QuizContext';
 
-import { useTranslation } from 'react-i18next';
+import './FirstSlide.css';
 
 function FirstSlide({ quiz, id }) {
     const { t } = useTranslation();

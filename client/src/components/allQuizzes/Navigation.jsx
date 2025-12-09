@@ -1,6 +1,9 @@
 import React, { useContext } from 'react';
-import { QuizContext } from '../../context/QuizContext';
 import { useTranslation } from 'react-i18next';
+
+import { QuizContext } from '../../context/QuizContext';
+
+import './Navigation.css';
 
 function Navigation() {
     const { isAnswered, page, setPage, setQuestionIndex } =

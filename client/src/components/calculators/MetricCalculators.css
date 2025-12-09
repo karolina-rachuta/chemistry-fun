@@ -1,0 +1,21 @@
+/* calculatros */
+
+.metric-calculator-container {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 20px;
+    padding-bottom: 100px;
+    width: 100%;
+    max-width: 900px;
+}
+
+.metric-calculator-container h1,
+.metric-calculator-container h2 {
+    color: #1c325b;
+}

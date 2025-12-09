@@ -1,16 +1,17 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
+import { useTranslation } from 'react-i18next';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+
+import { QuizContext } from '../../context/QuizContext';
+
 import Question from './quiz/Question';
 import Answers from './quiz/Answers';
 import Navigation from './Navigation';
 
-import { QuizContext } from '../../context/QuizContext';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-
-import { useTranslation } from 'react-i18next';
+import './Quiz.css';
 
 function Quiz({ quiz, maxQuestions }) {
     const { t } = useTranslation();

@@ -1,4 +1,6 @@
 import React from 'react';
+
+import { useTranslation, Trans } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -7,7 +9,8 @@ import WeightConversion from './metricCalculators/WeightConversion';
 import VolumeConversion from './metricCalculators/VolumeConversion';
 import TemperatureConversion from './metricCalculators/TemperatureConversion';
 
-import { useTranslation, Trans } from 'react-i18next';
+import './MetricCalculators.css';
+
 function MetricCalculator() {
     const { t } = useTranslation();
     return (

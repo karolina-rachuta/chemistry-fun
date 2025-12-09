@@ -1,6 +1,8 @@
 import React, { useContext, useRef, useEffect } from 'react';
 import { QuizContext } from '../../../context/QuizContext';
 
+import './Answers.css';
+
 function Answers({ quiz }) {
     const {
         storedAnswer,

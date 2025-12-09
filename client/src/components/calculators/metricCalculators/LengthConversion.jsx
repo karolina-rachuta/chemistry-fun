@@ -1,9 +1,14 @@
 import React, { useEffect } from 'react';
+
+import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+
 import { LENGTH_CONVERSION } from './constants';
+
 import useContextLength from './hooks/useContextLength';
-import { useTranslation } from 'react-i18next';
+
+import './ConversionCalculator.css';
 
 function LengthConversion() {
     const { t } = useTranslation();

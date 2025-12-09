@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
-
-import FirstSlide from './FirstSlide';
+import { useTranslation } from 'react-i18next';
 
 import { QuizContext } from '../../context/QuizContext';
 
-import { useTranslation } from 'react-i18next';
+import FirstSlide from './FirstSlide';
+
+import './AllQuizzes.css';
 
 function AllQuizzes() {
     const { t } = useTranslation();

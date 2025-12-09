@@ -1,12 +1,13 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { QuizContext } from '../../context/QuizContext';
-
+import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
-import { useTranslation } from 'react-i18next';
+import { QuizContext } from '../../context/QuizContext';
+
+import './LastSlide.css';
 
 function LastSlide({ quiz, maxQuestions }) {
     const { t } = useTranslation();

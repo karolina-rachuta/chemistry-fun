@@ -1,9 +1,14 @@
 import React, { useEffect } from 'react';
+
+import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+
 import { WEIGHT_CONVERSION } from './constants';
+
 import useContextWeight from './hooks/useContextWeight';
-import { useTranslation } from 'react-i18next';
+
+import './ConversionCalculator.css';
 
 function WeightConversion() {
     const { t } = useTranslation();
