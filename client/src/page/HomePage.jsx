@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
-import Header from '../components/Header';
+import Header from '../components/layout/header/Header';
 import Hero1 from '../assets/hero1part.webp';
 import Hero2 from '../assets/hero2part.webp';
 import Bgimage from '../assets/pexels-ron-lach-10187127.webp';
-import Footer from '../components/Footer';
+import Footer from '../components/layout/Footer';
 
 import { useTranslation, Trans } from 'react-i18next';
 

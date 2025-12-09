@@ -5,7 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import i18next from 'i18next';
 import { useTranslation } from 'react-i18next';
-import { QuizContext } from '../context/QuizContext';
+import { QuizContext } from '../../../context/QuizContext';
+
+import './Header.css';
 
 const lngs = {
     en: { nativeName: 'EN' },

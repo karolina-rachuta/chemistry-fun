@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import { QuizContext } from '../../context/QuizContext';
+import { useTranslation } from 'react-i18next';
 
-function Navigation({ maxQuestions }) {
-    const { isAnswered, page, setPage, setQuestionIndex, polishLanguage } =
+function Navigation() {
+    const { isAnswered, page, setPage, setQuestionIndex } =
         useContext(QuizContext);
+    const { t } = useTranslation();
 
     function handlePrev() {
         setPage((prev) => prev - 1);
@@ -16,22 +18,20 @@ function Navigation({ maxQuestions }) {
 
     return (
         <div className="navigation-container">
-            {page > 0 ? (
-                <button onClick={handlePrev} className="btn btn-nav">
-                    {polishLanguage ? 'Poprzedni' : 'Prev'}
-                </button>
-            ) : (
-                <button onClick={handlePrev} className="btn btn-nav" disabled>
-                    {polishLanguage ? 'Poprzedni' : 'Prev'}
-                </button>
-            )}
+            <button
+                onClick={handlePrev}
+                className="btn btn-nav"
+                disabled={page <= 0}
+            >
+                {t('general.prev')}
+            </button>
 
             <button
                 onClick={handleNext}
                 className="btn btn-nav"
                 disabled={!isAnswered}
             >
-                {polishLanguage ? 'Następny' : 'Next'}
+                {t('general.next')}
             </button>
         </div>
     );

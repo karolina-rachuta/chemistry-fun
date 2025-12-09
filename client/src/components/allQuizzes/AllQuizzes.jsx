@@ -1,10 +1,13 @@
 import React, { useContext } from 'react';
 
-import { QuizContext } from '../../context/QuizContext';
-
 import FirstSlide from './FirstSlide';
 
+import { QuizContext } from '../../context/QuizContext';
+
+import { useTranslation } from 'react-i18next';
+
 function AllQuizzes() {
+    const { t } = useTranslation();
     const { allQuizzes } = useContext(QuizContext);
 
     return (
@@ -14,7 +17,7 @@ function AllQuizzes() {
                     return <FirstSlide quiz={quiz} id={id} />;
                 })
             ) : (
-                <p>Loading quizzes...</p>
+                <p>{t('general.loading')}</p>
             )}
         </div>
     );

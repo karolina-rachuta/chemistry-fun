@@ -3,7 +3,7 @@ import { useParams } from 'react-router';
 
 import { QuizContext } from '../context/QuizContext';
 
-import Header from '../components/Header';
+import Header from '../components/layout/header/Header';
 import Quiz from '../components/allQuizzes/Quiz';
 import LastSlide from '../components/allQuizzes/LastSlide';
 

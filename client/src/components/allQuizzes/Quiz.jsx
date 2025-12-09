@@ -1,18 +1,21 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
+import Question from './quiz/Question';
+import Answers from './quiz/Answers';
+import Navigation from './Navigation';
+
 import { QuizContext } from '../../context/QuizContext';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
-import Question from './quiz/Question';
-import Answers from './quiz/Answers';
-import Navigation from './Navigation';
+import { useTranslation } from 'react-i18next';
 
-function Quiz({ quiz, id, maxQuestions }) {
+function Quiz({ quiz, maxQuestions }) {
+    const { t } = useTranslation();
+
     const {
-        polishLanguage,
         questionIndex,
         setQuestionIndex,
         setAnswers,
@@ -30,21 +33,16 @@ function Quiz({ quiz, id, maxQuestions }) {
         <div className="quiz-slide">
             <div className="quiz-slide-top">
                 <Link to="/quizzes" className="link-back" onClick={handleStart}>
-                    {polishLanguage ? (
-                        <>
-                            <FontAwesomeIcon icon={faArrowLeft} /> Powrót
-                        </>
-                    ) : (
-                        <>
-                            <FontAwesomeIcon icon={faArrowLeft} /> Back
-                        </>
-                    )}
+                    <>
+                        <FontAwesomeIcon icon={faArrowLeft} />{' '}
+                        {t('general.back')}
+                    </>
                 </Link>
                 <h4>{`${questionIndex + 1} / ${maxQuestions}`}</h4>
             </div>
-            <Question quiz={quiz} id={id} />
-            <Answers quiz={quiz} id={id} />
-            <Navigation id={id} maxQuestions={maxQuestions} />
+            <Question quiz={quiz} />
+            <Answers quiz={quiz} />
+            <Navigation />
         </div>
     );
 }
