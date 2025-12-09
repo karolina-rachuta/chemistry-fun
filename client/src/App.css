@@ -217,6 +217,10 @@ body {
     }
 }
 
+.btn-green {
+    background-color: var(--secondary-color);
+}
+
 a {
     text-decoration: none;
     text-align: center;
@@ -700,4 +704,38 @@ a {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
     background-color: rgb(239, 239, 239);
+}
+.games_container {
+    width: 100%;
+}
+.memory_container {
+    width: 100%;
+}
+
+.board {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, auto);
+    gap: 1rem;
+}
+
+.card {
+    max-width: 200px;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid var(--additional-color);
+    background-color: #fff;
+    padding: 20px 10px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.card_img {
+    max-width: 100px;
+    width: 100%;
 }

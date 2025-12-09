@@ -87,6 +87,17 @@ function Header() {
                         >
                             {t('header.calculators')}
                         </Link>
+                        <Link
+                            to="/games"
+                            className={
+                                'header-link' +
+                                (location.pathname === '/games'
+                                    ? ' active'
+                                    : '')
+                            }
+                        >
+                            {t('header.games')}
+                        </Link>
                         <div className="lang-container">
                             {Object.keys(lngs).map((lng) => (
                                 <button

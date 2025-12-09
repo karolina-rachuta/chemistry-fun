@@ -77,10 +77,10 @@ function HomePage() {
                         {t('about.calculators')}
                     </Link>
                 </div>
-                <div className="about__box notactive">
-                    <Trans>
-                        <Link className="about__hdl">{t('about.general')}</Link>
-                    </Trans>
+                <div className="about__box">
+                    <Link className="about__hdl" to="/games">
+                        {t('about.games')}
+                    </Link>
                 </div>
                 <div className="about__box notactive">
                     <Trans>

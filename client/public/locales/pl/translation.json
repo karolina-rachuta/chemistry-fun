@@ -2,8 +2,8 @@
     "header": {
         "home": "Strona Główna",
         "calculators": "Kalkulatory",
-        "quizzes": "Quizy"
-
+        "quizzes": "Quizy",
+        "games": "Gry"
     },
     "parallax": {
         "welcome": "Witaj!",
@@ -12,6 +12,7 @@
     "about": {
         "quizzes": "Zobacz nasze quizy!",
         "calculators": "Wypróbuj nasze metryczne kaloratory!",
+        "games": "Wypróbuj naszą gre memory!",
         "general": "Nowe funkcjonalności <br /> wkrótce"
     },
     "quizzes": {
@@ -55,5 +56,8 @@
             "litre": "litr",
             "ml": "ml"
         }
+    },
+    "games": {
+        "hdl": "Gry"
     }
 }
