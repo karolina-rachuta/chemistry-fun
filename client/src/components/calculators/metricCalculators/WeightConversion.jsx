@@ -47,6 +47,7 @@ function WeightConversion() {
                 />
                 {WEIGHT_CONVERSION.map(({ value, multiplier, unit, id }) => (
                     <Button
+                        variant="mobile"
                         key={id}
                         onClick={() => handleUnits(multiplier, unit, value)}
                         active={id === 1 && state.active}

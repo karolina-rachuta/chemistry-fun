@@ -46,6 +46,7 @@ function VolumeConversion() {
                 {VOLUME_CONVERSION.map(({ value, multiplier, unit, id }) => (
                     <Button
                         key={id}
+                        variant="mobile"
                         onClick={() => handleUnits(multiplier, unit, value)}
                         active={id === 1 && state.active}
                     >

@@ -46,6 +46,7 @@ function TemperatureConversion() {
                 {TEMPERATURE_CONVERSION.map(
                     ({ value, multiplier, substract, unit, id }) => (
                         <Button
+                            variant="mobile"
                             key={id}
                             onClick={() =>
                                 handleUnits(multiplier, substract, unit, value)
