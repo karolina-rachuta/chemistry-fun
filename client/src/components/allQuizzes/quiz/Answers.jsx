@@ -1,6 +1,7 @@
 import React, { useContext, useRef, useEffect } from 'react';
 import { QuizContext } from '../../../context/QuizContext';
 
+import Button from '../../ui/Button';
 import './Answers.css';
 
 function Answers({ quiz }) {
@@ -53,8 +54,8 @@ function Answers({ quiz }) {
                             answers[questionIndex + 1] === answer;
                         const isCorrect = id === correctAnswer;
                         return (
-                            <button
-                                className="btn-answers btn"
+                            <Button
+                                variant="answers"
                                 value={answer}
                                 key={id}
                                 disabled={isAnswered}
@@ -68,7 +69,7 @@ function Answers({ quiz }) {
                                 }}
                             >
                                 {answer}
-                            </button>
+                            </Button>
                         );
                     })}
                 </div>

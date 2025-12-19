@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 import { TEMPERATURE_CONVERSION } from './constants';
-
+import Button from '../../ui/Button';
 import useContextTemperature from './hooks/useContextTemperature';
 
 import './ConversionCalculator.css';
@@ -45,18 +45,16 @@ function TemperatureConversion() {
                 />
                 {TEMPERATURE_CONVERSION.map(
                     ({ value, multiplier, substract, unit, id }) => (
-                        <button
+                        <Button
                             key={id}
                             onClick={() =>
                                 handleUnits(multiplier, substract, unit, value)
                             }
-                            className={
-                                id === 1 && state.active ? 'btn active' : 'btn'
-                            }
+                            active={id === 1 && state.active}
                         >
                             {value} <FontAwesomeIcon icon={faArrowRight} />{' '}
                             {unit}
-                        </button>
+                        </Button>
                     )
                 )}
             </div>
@@ -65,13 +63,12 @@ function TemperatureConversion() {
                 <h3 className="calculator-result">
                     {t('calculator.result')} {state.result}
                 </h3>
-                <button
-                    className="btn"
+                <Button
                     onClick={() => handleSavingNotes('tempNotes')}
                     disabled={!state.input && !state.unit && !state.result}
                 >
                     {t('calculator.save')}
-                </button>
+                </Button>
             </div>
             <div className={state.open ? 'calculator-notes-box' : 'no-visible'}>
                 <h2> {t('calculator.notes')}</h2>
@@ -84,12 +81,12 @@ function TemperatureConversion() {
                 ) : (
                     <p> {t('calculator.no_notes')}</p>
                 )}
-                <button
-                    className="btn btn-delete"
+                <Button
+                    varaint="delete"
                     onClick={() => handleDeletingNotes('tempNotes')}
                 >
                     {t('calculator.delete')}
-                </button>
+                </Button>
             </div>
         </div>
     );

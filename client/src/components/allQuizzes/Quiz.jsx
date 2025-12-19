@@ -6,15 +6,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 import { QuizContext } from '../../context/QuizContext';
-
+import { useNavigate } from 'react-router-dom';
 import Question from './quiz/Question';
 import Answers from './quiz/Answers';
 import Navigation from './Navigation';
 
 import './Quiz.css';
+import Button from '../ui/Button';
 
 function Quiz({ quiz, maxQuestions }) {
     const { t } = useTranslation();
+    const navigate = useNavigate();
 
     const {
         questionIndex,
@@ -29,16 +31,17 @@ function Quiz({ quiz, maxQuestions }) {
         setPointsCounter(0);
         setPage(0);
         setAnswers({});
+        navigate('/quizzes');
     }
     return (
         <div className="quiz-slide">
             <div className="quiz-slide-top">
-                <Link to="/quizzes" className="link-back" onClick={handleStart}>
+                <Button onClick={handleStart}>
                     <>
                         <FontAwesomeIcon icon={faArrowLeft} />{' '}
                         {t('general.back')}
                     </>
-                </Link>
+                </Button>
                 <h4>{`${questionIndex + 1} / ${maxQuestions}`}</h4>
             </div>
             <Question quiz={quiz} />

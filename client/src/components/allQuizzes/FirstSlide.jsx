@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import { QuizContext } from '../../context/QuizContext';
+import Button from '../ui/Button';
 
 import './FirstSlide.css';
 
@@ -22,14 +23,13 @@ function FirstSlide({ quiz, id }) {
                     {t('quizzes.questions')}
                     {quiz?.questions.length}
                 </h3>
-                <button
+                <Button
                     onClick={() => {
                         handleStart(id);
                     }}
-                    className="btn"
                 >
                     {t('quizzes.start')}
-                </button>
+                </Button>
             </div>
         </div>
     );

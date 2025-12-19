@@ -4,6 +4,8 @@
     flex-wrap: wrap;
     gap: 20px;
     width: 100%;
+    margin-top: var(--margin-top-container);
+    margin-bottom: var(--margin-bottom-container);
 
     @media screen and (max-width: 900px) {
         grid-template-columns: 1fr 1fr 1fr;

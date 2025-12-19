@@ -2,11 +2,12 @@ import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { QuizContext } from '../../context/QuizContext';
+import Button from '../ui/Button';
 
 import './Navigation.css';
 
 function Navigation() {
-    const { isAnswered, page, setPage, setQuestionIndex } =
+    const { isAnswered, page, setPage, setQuestionIndex, questionIndex } =
         useContext(QuizContext);
     const { t } = useTranslation();
 
@@ -21,21 +22,17 @@ function Navigation() {
 
     return (
         <div className="navigation-container">
-            <button
+            <Button
                 onClick={handlePrev}
-                className="btn btn-nav"
-                disabled={page <= 0}
+                variant="nav"
+                disabled={questionIndex <= 0}
             >
                 {t('general.prev')}
-            </button>
+            </Button>
 
-            <button
-                onClick={handleNext}
-                className="btn btn-nav"
-                disabled={!isAnswered}
-            >
+            <Button onClick={handleNext} variant="nav" disabled={!isAnswered}>
                 {t('general.next')}
-            </button>
+            </Button>
         </div>
     );
 }

@@ -1,10 +1,18 @@
 :root {
     --primary-color: #6a669d;
     --secondary-color: #9abf80;
-    --bg-color: #e5e3d4;
+    --bg-color: rgb(239, 239, 239);
     --additional-color: #1c325b;
+    --bg-delete: rgb(175, 77, 77);
+    --bg-cards: #fff;
     --font-color: #fff;
     --breakpoint-mobile: 634px;
+    --breakpoint-lg-mobile: 768px;
+    --breakpoint-tablet: 1024x;
+    --breakpoint-sm-desktop: 1280px;
+    --breakpoint-lg-desktop: 1920px;
+    --margin-top-container: 100px;
+    --margin-bottom-container: 100px;
 }
 
 * {
@@ -16,7 +24,7 @@
 html,
 body {
     width: 100%;
-    background-color: #6a669d;
+    background-color: var(--primary-color);
     font-size: 16px;
 }
 
@@ -27,60 +35,9 @@ body {
     margin: 0 auto;
 }
 
-/* buttons style */
-.btn {
-    padding: 10px 8px;
-    background-color: #6a669d;
-    color: #fff;
-    border-radius: 5px;
-    border: 1px solid #fff;
-    cursor: pointer;
-    font-size: 16px;
-    min-width: 100px;
-    @media only screen and (max-width: 770px) {
-        width: 100%;
-    }
-}
-
 a {
     text-decoration: none;
     text-align: center;
-}
-
-.btn:hover {
-    background-color: var(--additional-color);
-}
-
-.btn.active {
-    background-color: var(--secondary-color);
-}
-
-.btn:focus {
-    background-color: var(--secondary-color);
-}
-.btn-nav:disabled {
-    background-color: var(--secondary-color);
-}
-.btn-answers:disabled {
-    background-color: var(--primary-color);
-}
-
-.btn.btn-back {
-    background-color: var(--additional-color);
-    align-self: flex-start;
-
-    @media screen and (max-width: 634px) {
-        align-self: center;
-    }
-}
-
-.btn.btn-back:hover {
-    background-color: var(--secondary-color);
-}
-
-.btn-delete {
-    background-color: rgb(175, 77, 77);
-    align-self: end;
 }
 
 .no-visible {

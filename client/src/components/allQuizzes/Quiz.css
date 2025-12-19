@@ -6,8 +6,10 @@
     max-width: 800px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    background-color: #fff;
+    background-color: var(--bg-cards);
     padding: 40px;
+    margin-top: var(--margin-top-container);
+    margin-bottom: var(--margin-bottom-container);
 }
 
 .quiz-slide-top {
@@ -16,9 +18,9 @@
     align-items: center;
     color: var(--additional-color);
 }
-
+/* 
 .link-back {
     font-weight: bold;
     font-size: 16px;
     color: var(--additional-color);
-}
+} */

@@ -4,7 +4,7 @@
     align-items: start;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    background-color: #ebebe5;
+    background-color: var(--bg-color);
     padding: 20px;
     width: 100%;
     max-width: 700px;
@@ -25,8 +25,8 @@
 
 .calculator-input {
     padding: 10px 8px;
-    background-color: #9abf80;
-    color: #fff;
+    background-color: var(--secondary-color);
+    color: var(--font-color);
     border-radius: 5px;
     border: 1px solid #fff;
     cursor: pointer;
@@ -58,7 +58,7 @@
 .calculator-result {
     padding: 10px 8px;
     background-color: var(--additional-color);
-    color: #fff;
+    color: var(--font-color);
     border-radius: 5px;
     border: 1px solid #fff;
     cursor: pointer;

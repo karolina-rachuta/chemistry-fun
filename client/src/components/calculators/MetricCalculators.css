@@ -1,14 +1,13 @@
-/* calculatros */
-
 .metric-calculator-container {
-    margin-top: 50px;
+    margin-top: var(--margin-top-container);
+    margin-bottom: var(--margin-bottom-container);
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    background-color: #fff;
+    background-color: var(--bg-cards);
     padding: 20px;
     padding-bottom: 100px;
     width: 100%;
@@ -17,5 +16,5 @@
 
 .metric-calculator-container h1,
 .metric-calculator-container h2 {
-    color: #1c325b;
+    color: var(--additional-color);
 }

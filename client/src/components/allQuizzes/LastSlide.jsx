@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
@@ -8,9 +7,11 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { QuizContext } from '../../context/QuizContext';
 
 import './LastSlide.css';
+import Button from '../ui/Button';
 
 function LastSlide({ quiz, maxQuestions }) {
     const { t } = useTranslation();
+    const navigate = useNavigate();
     const [showcorrectAnswers, setShowCorrectAnswers] = useState(false);
     const {
         setAnswers,
@@ -32,6 +33,10 @@ function LastSlide({ quiz, maxQuestions }) {
         setShowCorrectAnswers((prev) => !prev);
     }
 
+    function handleBackToQuizzes() {
+        handleStart();
+        navigate('/quizzes');
+    }
     return (
         <div className="last-slide-container">
             <h2>{t('quizzes.quiz_completed')}</h2>
@@ -40,17 +45,17 @@ function LastSlide({ quiz, maxQuestions }) {
             </h3>
 
             <div className="last-slide-btn-box">
-                <button onClick={handleStart} className="btn">
+                <Button onClick={handleStart}>
                     {t('quizzes.start_again')}
-                </button>
-                <button
+                </Button>
+                <Button
                     onClick={handleShowCorrectAnswers}
-                    className={showcorrectAnswers ? 'btn active' : 'btn'}
+                    active={showcorrectAnswers}
                 >
                     {showcorrectAnswers
                         ? t('quizzes.hide_answers')
                         : t('quizzes.show_answers')}
-                </button>
+                </Button>
             </div>
             {showcorrectAnswers &&
                 quiz.questions.map((questionObj, id) => (
@@ -73,12 +78,12 @@ function LastSlide({ quiz, maxQuestions }) {
                         </p>
                     </div>
                 ))}
-            <Link className="btn btn-back" onClick={handleStart} to="/quizzes">
+            <Button variant="back" onClick={handleBackToQuizzes}>
                 <>
                     <FontAwesomeIcon icon={faArrowLeft} />{' '}
                     {t('quizzes.back_to_all_quizzes')}
                 </>
-            </Link>
+            </Button>
         </div>
     );
 }

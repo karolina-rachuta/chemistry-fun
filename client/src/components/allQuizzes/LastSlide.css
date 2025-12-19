@@ -5,10 +5,12 @@
     gap: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    background-color: #fff;
+    background-color: var(--bg-cards);
     padding: 20px;
     width: 100%;
     max-width: 800px;
+    margin-top: var(--margin-top-container);
+    margin-bottom: var(--margin-bottom-container);
 }
 
 .correct-answers-container {
