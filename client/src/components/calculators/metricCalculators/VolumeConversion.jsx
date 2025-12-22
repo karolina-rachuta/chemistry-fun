@@ -1,11 +1,16 @@
 import React, { useEffect } from 'react';
+
+import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { VOLUME_CONVERSION } from './constants';
-import useContextVolume from './hooks/useContextVolume';
-import { useTranslation } from 'react-i18next';
 
-function WeightConversion() {
+import { VOLUME_CONVERSION } from './constants';
+import Button from '../../ui/Button';
+import useContextVolume from './hooks/useContextVolume';
+
+import './ConversionCalculator.css';
+
+function VolumeConversion() {
     const { t } = useTranslation();
     const {
         handleNotes,
@@ -39,17 +44,16 @@ function WeightConversion() {
                     }}
                 />
                 {VOLUME_CONVERSION.map(({ value, multiplier, unit, id }) => (
-                    <button
+                    <Button
                         key={id}
+                        variant="mobile"
                         onClick={() => handleUnits(multiplier, unit, value)}
-                        className={
-                            id === 1 && state.active ? 'btn active' : 'btn'
-                        }
+                        active={id === 1 && state.active}
                     >
                         {t(`calculator.volume_conversion.${value}`)}{' '}
                         <FontAwesomeIcon icon={faArrowRight} />{' '}
                         {t(`calculator.volume_conversion.${unit}`)}
-                    </button>
+                    </Button>
                 ))}
             </div>
 
@@ -58,13 +62,12 @@ function WeightConversion() {
                     {' '}
                     {t('calculator.result')} {state.result}
                 </h3>
-                <button
-                    className="btn"
+                <Button
                     onClick={() => handleSavingNotes('volumeNotes')}
                     disabled={!state.input && !state.unit && !state.result}
                 >
                     {t('calculator.save')}
-                </button>
+                </Button>
             </div>
             <div className={state.open ? 'calculator-notes-box' : 'no-visible'}>
                 <h2> {t('calculator.notes')}</h2>
@@ -77,15 +80,15 @@ function WeightConversion() {
                 ) : (
                     <p> {t('calculator.no_notes')}</p>
                 )}
-                <button
-                    className="btn btn-delete"
+                <Button
+                    variant="delete"
                     onClick={() => handleDeletingNotes('volumeNotes')}
                 >
                     {t('calculator.delete')}
-                </button>
+                </Button>
             </div>
         </div>
     );
 }
 
-export default WeightConversion;
+export default VolumeConversion;

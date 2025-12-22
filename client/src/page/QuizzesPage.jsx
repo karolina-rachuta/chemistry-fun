@@ -1,8 +1,10 @@
 import React from 'react';
 
 import AllQuizzes from '../components/allQuizzes/AllQuizzes';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from '../components/layout/header/Header';
+import Footer from '../components/layout/footer/Footer';
+
+import './QuizzesPage.css';
 
 function QuizzesPage() {
     return (

@@ -1,7 +1,8 @@
 import React from 'react';
-import Header from '../components/Header';
+import Header from '../components/layout/header/Header';
 import MetricCalculator from '../components/calculators/MetricCalculator';
-import Footer from '../components/Footer';
+import Footer from '../components/layout/footer/Footer';
+
 function CalculatorsPage() {
     return (
         <>

@@ -1,6 +1,9 @@
 import React, { useContext, useRef, useEffect } from 'react';
 import { QuizContext } from '../../../context/QuizContext';
 
+import Button from '../../ui/Button';
+import './Answers.css';
+
 function Answers({ quiz }) {
     const {
         storedAnswer,
@@ -15,6 +18,10 @@ function Answers({ quiz }) {
     const answerContainer = useRef(null);
 
     const correctAnswer = quiz.questions[questionIndex].correctAnswer;
+
+    const answersList = polishLanguage
+        ? quiz.questions[questionIndex].answers.pl
+        : quiz.questions[questionIndex].answers.en;
 
     useEffect(() => {
         setIsAnswered(!!storedAnswer);
@@ -40,63 +47,33 @@ function Answers({ quiz }) {
 
     return (
         <div>
-            {polishLanguage ? (
+            {
                 <div className="answers-container" ref={answerContainer}>
-                    {quiz.questions[questionIndex].answers.pl.map(
-                        (answer, id) => {
-                            const isSelected =
-                                answers[questionIndex + 1] === answer;
-                            const isCorrect = id === correctAnswer;
-                            return (
-                                <button
-                                    className="btn-answers btn"
-                                    value={answer}
-                                    key={id}
-                                    disabled={isAnswered}
-                                    onClick={() => handleAnswers(answer, id)}
-                                    style={{
-                                        background: isSelected
-                                            ? isCorrect
-                                                ? 'green'
-                                                : 'red'
-                                            : '',
-                                    }}
-                                >
-                                    {answer}
-                                </button>
-                            );
-                        }
-                    )}
+                    {answersList.map((answer, id) => {
+                        const isSelected =
+                            answers[questionIndex + 1] === answer;
+                        const isCorrect = id === correctAnswer;
+                        return (
+                            <Button
+                                variant="answers"
+                                value={answer}
+                                key={id}
+                                disabled={isAnswered}
+                                onClick={() => handleAnswers(answer, id)}
+                                style={{
+                                    background: isSelected
+                                        ? isCorrect
+                                            ? 'green'
+                                            : 'red'
+                                        : '',
+                                }}
+                            >
+                                {answer}
+                            </Button>
+                        );
+                    })}
                 </div>
-            ) : (
-                <div ref={answerContainer} className="answers-container">
-                    {quiz.questions[questionIndex].answers.en.map(
-                        (answer, id) => {
-                            const isSelected =
-                                answers[questionIndex + 1] === answer;
-                            const isCorrect = id === correctAnswer;
-                            return (
-                                <button
-                                    className="btn"
-                                    value={answer}
-                                    key={id}
-                                    disabled={isAnswered}
-                                    onClick={() => handleAnswers(answer, id)}
-                                    style={{
-                                        background: isSelected
-                                            ? isCorrect
-                                                ? 'green'
-                                                : 'red'
-                                            : '',
-                                    }}
-                                >
-                                    {answer}
-                                </button>
-                            );
-                        }
-                    )}
-                </div>
-            )}
+            }
         </div>
     );
 }

@@ -1,18 +1,24 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
-import { QuizContext } from '../../context/QuizContext';
-
+import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
+import { QuizContext } from '../../context/QuizContext';
+import { useNavigate } from 'react-router-dom';
 import Question from './quiz/Question';
 import Answers from './quiz/Answers';
 import Navigation from './Navigation';
 
-function Quiz({ quiz, id, maxQuestions }) {
+import './Quiz.css';
+import Button from '../ui/Button';
+
+function Quiz({ quiz, maxQuestions }) {
+    const { t } = useTranslation();
+    const navigate = useNavigate();
+
     const {
-        polishLanguage,
         questionIndex,
         setQuestionIndex,
         setAnswers,
@@ -25,26 +31,22 @@ function Quiz({ quiz, id, maxQuestions }) {
         setPointsCounter(0);
         setPage(0);
         setAnswers({});
+        navigate('/quizzes');
     }
     return (
         <div className="quiz-slide">
             <div className="quiz-slide-top">
-                <Link to="/quizzes" className="link-back" onClick={handleStart}>
-                    {polishLanguage ? (
-                        <>
-                            <FontAwesomeIcon icon={faArrowLeft} /> Powrót
-                        </>
-                    ) : (
-                        <>
-                            <FontAwesomeIcon icon={faArrowLeft} /> Back
-                        </>
-                    )}
-                </Link>
+                <Button onClick={handleStart}>
+                    <>
+                        <FontAwesomeIcon icon={faArrowLeft} />{' '}
+                        {t('general.back')}
+                    </>
+                </Button>
                 <h4>{`${questionIndex + 1} / ${maxQuestions}`}</h4>
             </div>
-            <Question quiz={quiz} id={id} />
-            <Answers quiz={quiz} id={id} />
-            <Navigation id={id} maxQuestions={maxQuestions} />
+            <Question quiz={quiz} />
+            <Answers quiz={quiz} />
+            <Navigation />
         </div>
     );
 }

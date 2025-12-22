@@ -1,9 +1,14 @@
 import React, { useEffect } from 'react';
+
+import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+
 import { LENGTH_CONVERSION } from './constants';
+import Button from '../../ui/Button';
 import useContextLength from './hooks/useContextLength';
-import { useTranslation } from 'react-i18next';
+
+import './ConversionCalculator.css';
 
 function LengthConversion() {
     const { t } = useTranslation();
@@ -39,16 +44,15 @@ function LengthConversion() {
                     }}
                 />
                 {LENGTH_CONVERSION.map(({ value, multiplier, unit, id }) => (
-                    <button
+                    <Button
+                        variant="mobile"
                         key={id}
                         onClick={() => handleUnits(multiplier, unit, value)}
-                        className={
-                            id === 1 && state.active ? 'btn active' : 'btn'
-                        }
+                        active={id === 1 && state.active}
                     >
                         {t(`calculator.length_conversion.${value}`)}{' '}
                         <FontAwesomeIcon icon={faArrowRight} /> {unit}
-                    </button>
+                    </Button>
                 ))}
             </div>
 
@@ -56,13 +60,12 @@ function LengthConversion() {
                 <h3 className="calculator-result">
                     {t('calculator.result')} {state.result}
                 </h3>
-                <button
-                    className="btn"
+                <Button
                     onClick={() => handleSavingNotes('lengthNotes')}
                     disabled={!state.input && !state.unit && !state.result}
                 >
                     {t('calculator.save')}
-                </button>
+                </Button>
             </div>
             <div className={state.open ? 'calculator-notes-box' : 'no-visible'}>
                 <h2> {t('calculator.notes')}</h2>
@@ -75,12 +78,12 @@ function LengthConversion() {
                 ) : (
                     <p>{t('calculator.no_notes')}</p>
                 )}
-                <button
-                    className="btn btn-delete"
+                <Button
+                    variant="delete"
                     onClick={() => handleDeletingNotes('lengthNotes')}
                 >
                     {t('calculator.delete')}
-                </button>
+                </Button>
             </div>
         </div>
     );
