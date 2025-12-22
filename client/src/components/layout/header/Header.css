@@ -89,7 +89,7 @@
     background-color: var(--primary-color);
     padding: 10px 20px;
     z-index: 9999;
-    width: 150px;
+    min-width: 150px;
 }
 
 .lang-container {
