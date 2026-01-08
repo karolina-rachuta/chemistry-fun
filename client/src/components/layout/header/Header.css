@@ -5,7 +5,7 @@
     border-radius: 5px;
     border-top-right-radius: 0;
     border-top-left-radius: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--box-shadow);
     min-height: 79px;
     display: flex;
     align-items: center;
@@ -131,7 +131,7 @@
 @media screen and (max-width: 1080px) {
     .header_homepage {
         background-color: var(--bg-cards);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+        box-shadow: var(--box-shadow);
         position: relative;
     }
 

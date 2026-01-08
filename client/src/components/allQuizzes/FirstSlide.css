@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--box-shadow);
     border-radius: 10px;
     background-color: var(--bg-cards);
     padding: 20px;
