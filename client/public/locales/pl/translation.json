@@ -1,4 +1,11 @@
 {
+    "general": {
+        "back": "Powrót",
+        "prev": "Poprzedni",
+        "next": "Następny",
+        "loading": "Ładowanie quizów..."
+
+    },
     "header": {
         "home": "Strona Główna",
         "calculators": "Kalkulatory",
@@ -16,7 +23,13 @@
     },
     "quizzes": {
         "questions": "Liczba pytań: ",
-        "start": "Rozpocznij quiz"
+        "start": "Rozpocznij quiz",
+        "quiz_completed": "Quiz ukończony",
+        "score": "Wynik:",
+        "hide_answers": "Schowaj odpowiedzi",
+        "show_answers": "Pokaż odpowiedzi",
+        "back_to_all_quizzes": "Wszystkie quizy",
+        "start_again": "Jeszcze raz!"
     },
     "calculator": {
         "hdl_1": "Kalkulator przeliczania jednostek imperialnych",

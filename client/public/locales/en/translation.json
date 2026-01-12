@@ -1,4 +1,10 @@
 {
+    "general": {
+        "back": "Back",
+        "prev": "Prev",
+        "next": "Next",
+        "loading": "Loading quizzes..."
+    },
     "header": {
         "home": "Home",
         "calculators": "Calculators",
@@ -15,7 +21,13 @@
     },
     "quizzes": {
         "questions": "Number of questions: ",
-        "start": "Start quiz"
+        "start": "Start quiz",
+        "quiz_completed": "Quiz Completed",
+        "score": "Score:",
+        "hide_answers": "Hide Answers",
+        "show_answers": "Show Answers",
+        "back_to_all_quizzes": "Back to All Quizzes",
+        "start_again": "Start again!"
     },
     "calculator": {
         "hdl_1": "Imperial",

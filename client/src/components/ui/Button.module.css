@@ -1,0 +1,63 @@
+.primary {
+    padding: 10px 8px;
+    background-color: var(--primary-color);
+    color: var(--font-color);
+    border-radius: 5px;
+    border: 1px solid #fff;
+    cursor: pointer;
+    font-size: 16px;
+    min-width: 100px;
+}
+@media screen and (max-width: 1080px) {
+    .mobile {
+        width: 100%;
+    }
+}
+.primary:hover {
+    background-color: var(--additional-color);
+}
+
+.primary.active {
+    background-color: var(--secondary-color);
+}
+
+.nav {
+    padding: 10px 8px;
+    background-color: var(--primary-color);
+    color: var(--font-color);
+    border-radius: 5px;
+    border: 1px solid #fff;
+    cursor: pointer;
+    font-size: 16px;
+    min-width: 100px;
+    @media only screen and (max-width: 770px) {
+        width: 100%;
+    }
+}
+
+.nav:disabled {
+    background-color: var(--secondary-color);
+    opacity: 0.5;
+}
+
+.answers:disabled {
+    background-color: var(--primary-color);
+}
+
+.back {
+    background-color: var(--additional-color);
+    align-self: flex-start;
+
+    @media screen and (max-width: 634px) {
+        align-self: center;
+    }
+}
+
+.back:hover {
+    background-color: var(--secondary-color);
+}
+
+.delete {
+    background-color: var(--bg-delete);
+    align-self: end;
+}
