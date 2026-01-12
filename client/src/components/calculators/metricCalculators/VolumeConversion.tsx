@@ -6,6 +6,8 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 import { VOLUME_CONVERSION } from './constants';
 import Button from '../../ui/Button';
+import ComponentContainer from '../../ui/ComponentContainer';
+
 import useContextVolume from './hooks/useContextVolume';
 
 import './ConversionCalculator.css';
@@ -25,7 +27,7 @@ function VolumeConversion() {
     useEffect(() => handleNotes('volumeNotes'), []);
 
     return (
-        <div className="calculator-container">
+        <ComponentContainer variant="calculatorContainer">
             <h2>{t('calculator.volume_conversion.hdl')}</h2>
             <div className="calculator-box">
                 <input
@@ -88,7 +90,7 @@ function VolumeConversion() {
                     {t('calculator.delete')}
                 </Button>
             </div>
-        </div>
+        </ComponentContainer>
     );
 }
 

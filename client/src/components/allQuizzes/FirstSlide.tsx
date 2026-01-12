@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { type Quiz } from './context/QuizContext';
 import { useQuizContext } from './context/useQuizContext';
+import ComponentContainer from '../ui/ComponentContainer';
 import Button from '../ui/Button';
 
 import './FirstSlide.css';
@@ -20,10 +21,10 @@ function FirstSlide({ quiz, id }: Props) {
         navigate(`/quizzes/${id}`);
     }
     return (
-        <div key={id} className="quiz-container">
-            <h1>{polishLanguage ? quiz?.name_pl : quiz?.name_en}</h1>
+        <ComponentContainer key={id} variant="quizContainer">
+            <h1 className='hdl'>{polishLanguage ? quiz?.name_pl : quiz?.name_en}</h1>
             <div className="quiz-container-bottom">
-                <h3>
+                <h3 className='hdl'>
                     {t('quizzes.questions')}
                     {quiz?.questions.length}
                 </h3>
@@ -36,7 +37,7 @@ function FirstSlide({ quiz, id }: Props) {
                     {t('quizzes.start')}
                 </Button>
             </div>
-        </div>
+        </ComponentContainer>
     );
 }
 

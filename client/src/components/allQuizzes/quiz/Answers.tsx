@@ -3,6 +3,7 @@ import { useQuizContext } from '../context/useQuizContext';
 import { type Quiz } from '../context/QuizContext';
 
 import Button from '../../ui/Button';
+import ComponentContainer from '../../ui/ComponentContainer';
 import './Answers.css';
 
 type Props = {
@@ -48,34 +49,30 @@ function Answers({ quiz }: Props) {
     }
 
     return (
-        <div>
-            {
-                <div className="answers-container" ref={answerContainer}>
-                    {answersList.map((answer, id) => {
-                        const isSelected =
-                            answers[questionIndex + 1] === id;
-                        const isCorrect = id === correctAnswer;
-                        return (
-                            <Button
-                                variant="answers"
-                                value={answer}
-                                key={id}
-                                disabled={isAnswered}
-                                onClick={() => handleAnswers(id)}
-                                style={{
-                                    background: isSelected
-                                        ? isCorrect
-                                            ? 'green'
-                                            : 'red'
-                                        : '',
-                                }}
-                            >
-                                {answer}
-                            </Button>
-                        );
-                    })}
-                </div>
-            }
+        <div className="answers-container" ref={answerContainer}>
+            {answersList.map((answer, id) => {
+                const isSelected =
+                    answers[questionIndex + 1] === id;
+                const isCorrect = id === correctAnswer;
+                return (
+                    <Button
+                        variant="answers"
+                        value={answer}
+                        key={id}
+                        disabled={isAnswered}
+                        onClick={() => handleAnswers(id)}
+                        style={{
+                            background: isSelected
+                                ? isCorrect
+                                    ? 'green'
+                                    : 'red'
+                                : '',
+                        }}
+                    >
+                        {answer}
+                    </Button>
+                );
+            })}
         </div>
     );
 }

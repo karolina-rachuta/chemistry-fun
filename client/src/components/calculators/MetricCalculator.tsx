@@ -7,14 +7,14 @@ import WeightConversion from './metricCalculators/WeightConversion';
 import VolumeConversion from './metricCalculators/VolumeConversion';
 import TemperatureConversion from './metricCalculators/TemperatureConversion';
 
-import './MetricCalculators.css';
+import ComponentContainer from '../ui/ComponentContainer';
 
 function MetricCalculator() {
     const { t } = useTranslation();
     return (
-        <div className="metric-calculator-container">
+        <ComponentContainer variant="calculatorsContainer" spacing>
             <Trans>
-                <h1 style={{ textAlign: 'center' }}>
+                <h1 className='hdl text-center'>
                     {t('calculator.hdl_1')}{' '}
                     <FontAwesomeIcon icon={faArrowRight} />{' '}
                     {t('calculator.hdl_2')}
@@ -24,7 +24,7 @@ function MetricCalculator() {
             <WeightConversion />
             <TemperatureConversion />
             <VolumeConversion />
-        </div>
+        </ComponentContainer>
     );
 }
 

@@ -10,7 +10,7 @@ function AllQuizzes() {
     const { allQuizzes } = useQuizContext();
 
     return (
-        <div className="quizzes-container">
+        <div className="quizzesContainer">
             {allQuizzes && allQuizzes.length > 0 ? (
                 allQuizzes.map((quiz, id) => {
                     return <FirstSlide quiz={quiz} id={id} />;

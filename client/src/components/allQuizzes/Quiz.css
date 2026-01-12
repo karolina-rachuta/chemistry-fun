@@ -1,20 +1,7 @@
-.quiz-slide {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    max-width: 800px;
-    box-shadow: var(--box-shadow);
-    border-radius: 10px;
-    background-color: var(--bg-cards);
-    padding: 40px;
-    margin-top: var(--margin-top-container);
-    margin-bottom: var(--margin-bottom-container);
-}
-
 .quiz-slide-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: var(--additional-color);
+    width: 100%;
 }

@@ -1,14 +1,15 @@
 import Header from '../components/layout/header/Header';
 import MetricCalculator from '../components/calculators/MetricCalculator';
 import Footer from '../components/layout/footer/Footer';
+import ComponentContainer from '../components/ui/ComponentContainer';
 
 function CalculatorsPage() {
     return (
         <>
             <Header />
-            <div className="container quizzes-page-container">
+            <ComponentContainer className="container" variant="pageContainer">
                 <MetricCalculator />
-            </div>
+            </ComponentContainer>
             <Footer />
         </>
     );

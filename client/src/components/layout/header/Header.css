@@ -10,6 +10,7 @@
     display: flex;
     align-items: center;
 }
+
 .header_homepage {
     position: absolute;
     background-color: transparent;
@@ -129,12 +130,6 @@
 }
 
 @media screen and (max-width: 1080px) {
-    .header_homepage {
-        background-color: var(--bg-cards);
-        box-shadow: var(--box-shadow);
-        position: relative;
-    }
-
     .header-navigation {
         flex-direction: column;
     }

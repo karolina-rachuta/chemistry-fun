@@ -1,16 +1,15 @@
 import AllQuizzes from '../components/allQuizzes/AllQuizzes';
 import Header from '../components/layout/header/Header';
 import Footer from '../components/layout/footer/Footer';
-
-import './QuizzesPage.css';
+import ComponentContainer from '../components/ui/ComponentContainer';
 
 function QuizzesPage() {
     return (
         <>
             <Header />
-            <div className="container quizzes-page-container">
+            <ComponentContainer className="container" variant="pageContainer" spacing>
                 <AllQuizzes />
-            </div>
+            </ComponentContainer>
             <Footer />
         </>
     );

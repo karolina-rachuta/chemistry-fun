@@ -2,8 +2,9 @@
     display: flex;
     justify-content: space-between;
     min-width: 100px;
+    width: 100%;
 }
 
 .navigation-container button {
-    min-width: 100px;
+    max-width: 200px;
 }

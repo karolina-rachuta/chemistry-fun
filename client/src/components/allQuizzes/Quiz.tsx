@@ -11,6 +11,7 @@ import Navigation from './Navigation';
 
 import './Quiz.css';
 import Button from '../ui/Button';
+import ComponentContainer from '../ui/ComponentContainer';
 
 type Props = {
     quiz: Quiz,
@@ -37,7 +38,7 @@ export function Quiz({ quiz, maxQuestions }: Props) {
         navigate('/quizzes');
     }
     return (
-        <div className="quiz-slide">
+        <ComponentContainer variant="quizSlide" spacing>
             <div className="quiz-slide-top">
                 <Button
                     variant="primary"
@@ -52,6 +53,6 @@ export function Quiz({ quiz, maxQuestions }: Props) {
             <Question quiz={quiz} />
             <Answers quiz={quiz} />
             <Navigation />
-        </div>
+        </ComponentContainer>
     );
 }

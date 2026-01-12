@@ -6,6 +6,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 import { TEMPERATURE_CONVERSION } from './constants';
 import Button from '../../ui/Button';
+import ComponentContainer from '../../ui/ComponentContainer';
 import useContextTemperature from './hooks/useContextTemperature';
 
 import './ConversionCalculator.css';
@@ -25,7 +26,7 @@ function TemperatureConversion() {
     useEffect(() => handleNotes('tempNotes'), []);
 
     return (
-        <div className="calculator-container">
+        <ComponentContainer variant="calculatorContainer">
             <h2>{t('calculator.temperature_conversion.hdl')}</h2>
             <div className="calculator-box">
                 <input
@@ -90,7 +91,7 @@ function TemperatureConversion() {
                     {t('calculator.delete')}
                 </Button>
             </div>
-        </div>
+        </ComponentContainer>
     );
 }
 

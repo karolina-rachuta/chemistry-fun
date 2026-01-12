@@ -8,6 +8,7 @@ import { WEIGHT_CONVERSION } from './constants';
 
 import useContextWeight from './hooks/useContextWeight';
 import Button from '../../ui/Button';
+import ComponentContainer from '../../ui/ComponentContainer';
 import './ConversionCalculator.css';
 
 function WeightConversion() {
@@ -27,7 +28,7 @@ function WeightConversion() {
     }, []);
 
     return (
-        <div className="calculator-container">
+        <ComponentContainer variant="calculatorContainer">
             <h2>{t('calculator.weight_conversion.hdl')}</h2>
             <div className="calculator-box">
                 <input
@@ -89,7 +90,7 @@ function WeightConversion() {
                     {t('calculator.delete')}
                 </Button>
             </div>
-        </div>
+        </ComponentContainer>
     );
 }
 

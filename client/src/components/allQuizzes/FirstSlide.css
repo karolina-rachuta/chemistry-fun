@@ -1,15 +1,3 @@
-.quiz-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 20px;
-    box-shadow: var(--box-shadow);
-    border-radius: 10px;
-    background-color: var(--bg-cards);
-    padding: 20px;
-    min-height: 250px;
-}
-
 .quiz-container-bottom {
     display: flex;
     flex-direction: column;

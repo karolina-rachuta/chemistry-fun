@@ -31,6 +31,7 @@
 .notactive {
     opacity: 0.6;
 }
+
 .about__hdl {
     width: 100%;
     color: var(--additional-color);

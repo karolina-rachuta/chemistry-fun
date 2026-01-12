@@ -7,6 +7,8 @@ import Header from '../components/layout/header/Header';
 import { Quiz } from '../components/allQuizzes/Quiz';
 import LastSlide from '../components/allQuizzes/LastSlide';
 
+import ComponentContainer from '../components/ui/ComponentContainer';
+
 function QuizPage() {
     const { id } = useParams<{ id: string }>();
     const index = Number(id)
@@ -19,7 +21,7 @@ function QuizPage() {
     return (
         <>
             <Header />
-            <div className="container quizzes-page-container">
+            <ComponentContainer className="container" variant='pageContainer'>
                 {page === maxQuestions ? (
                     <LastSlide
                         quiz={quiz}
@@ -28,7 +30,7 @@ function QuizPage() {
                 ) : (
                     <Quiz quiz={quiz} maxQuestions={maxQuestions} />
                 )}
-            </div>
+            </ComponentContainer>
         </>
     );
 }

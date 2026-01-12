@@ -9,6 +9,7 @@ import { useQuizContext } from './context/useQuizContext';
 
 import './LastSlide.css';
 import Button from '../ui/Button';
+import ComponentContainer from '../ui/ComponentContainer';
 
 type Props = {
     quiz: Quiz,
@@ -44,7 +45,7 @@ function LastSlide({ quiz, maxQuestions }: Props) {
         navigate('/quizzes');
     }
     return (
-        <div className="last-slide-container">
+        <ComponentContainer variant="quizSlide" spacing>
             <h2>{t('quizzes.quiz_completed')}</h2>
             <h3>
                 {t('quizzes.score')} {(pointsCounter * 100) / maxQuestions}%
@@ -66,15 +67,16 @@ function LastSlide({ quiz, maxQuestions }: Props) {
             </div>
             {showcorrectAnswers &&
                 quiz.questions.map((questionObj, id) => (
-                    <div key={id} className="correct-answers-container">
+                    <ComponentContainer key={id} variant='cardContainer'>
                         <p>
-                            {questionObj.question.id}.
+                            <b>Q:{' '}</b>
+                            {questionObj.question.id}.{' '}
                             {polishLanguage
                                 ? questionObj.question.pl
                                 : questionObj.question.en}
                         </p>
                         <p>
-                            -
+                            <b>A:{' '}</b>
                             {polishLanguage
                                 ? questionObj.answers.pl[
                                 questionObj.correctAnswer
@@ -83,7 +85,7 @@ function LastSlide({ quiz, maxQuestions }: Props) {
                                 questionObj.correctAnswer
                                 ]}
                         </p>
-                    </div>
+                    </ComponentContainer>
                 ))}
             <Button variant="back" onClick={handleBackToQuizzes}>
                 <>
@@ -91,7 +93,7 @@ function LastSlide({ quiz, maxQuestions }: Props) {
                     {t('quizzes.back_to_all_quizzes')}
                 </>
             </Button>
-        </div>
+        </ComponentContainer>
     );
 }
 

@@ -1,4 +1,4 @@
-.quizzes-container {
+.quizzesContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     flex-wrap: wrap;
@@ -6,15 +6,21 @@
     width: 100%;
     margin-top: var(--margin-top-container);
     margin-bottom: var(--margin-bottom-container);
+}
 
-    @media screen and (max-width: 900px) {
+@media screen and (max-width: 900px) {
+    .quizzesContainer {
         grid-template-columns: 1fr 1fr 1fr;
     }
+}
 
-    @media screen and (max-width: 660px) {
+@media screen and (max-width: 660px) {
+    .quizzesContainer {
         grid-template-columns: 1fr 1fr;
     }
-    @media screen and (max-width: 500px) {
+}
+@media screen and (max-width: 500px) {
+    .quizzesContainer {
         grid-template-columns: 1fr;
     }
 }

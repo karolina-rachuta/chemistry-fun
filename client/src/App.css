@@ -2,6 +2,7 @@
     --primary-color: #6a669d;
     --secondary-color: #9abf80;
     --bg-color: rgb(239, 239, 239);
+    --bg-card-color: #ebebe5;
     --additional-color: #1c325b;
     --bg-delete: rgb(175, 77, 77);
     --bg-cards: #fff;
@@ -11,8 +12,8 @@
     --breakpoint-tablet: 1024px;
     --breakpoint-sm-desktop: 1280px;
     --breakpoint-lg-desktop: 1920px;
-    --margin-top-container: 100px;
-    --margin-bottom-container: 100px;
+    --margin-top-container: 50px;
+    --margin-bottom-container: 50px;
     --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -43,4 +44,12 @@ a {
 
 .no-visible {
     display: none;
+}
+
+.hdl {
+    color: var(--additional-color);
+}
+
+.text-center {
+    text-align: center;
 }
