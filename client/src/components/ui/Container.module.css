@@ -1,0 +1,85 @@
+.componentContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 10px;
+    background-color: var(--bg-card-color);
+    box-shadow: var(--box-shadow);
+    padding: 10px;
+    width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+    .componentContainer {
+        padding: 20px;
+    }
+}
+
+/* spacing */
+.componentSpacing {
+    margin-top: var(--margin-top-container);
+    margin-bottom: var(--margin-bottom-container);
+}
+
+.componentBoxShawdow {
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+}
+
+.pageContainer {
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    box-shadow: none;
+}
+
+/* warianty */
+.quizContainer {
+    justify-content: space-between;
+    min-height: 250px;
+}
+
+.quizSlide {
+    align-items: center;
+    max-width: 800px;
+    padding: 20px;
+}
+
+@media screen and (min-width: 600px) {
+    .quizSlide {
+        padding: 40px;
+    }
+}
+
+.calculatorsContainer {
+    align-items: center;
+    gap: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: var(--bg-color);
+    box-shadow: none;
+}
+
+@media screen and (min-width: 600px) {
+    .calculatorsContainer {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}
+
+.calculatorContainer {
+    align-items: flex-start;
+    max-width: 100%;
+    background-color: var(--bg-card-color);
+}
+
+@media screen and (min-width: 600px) {
+    .calculatorContainer {
+        max-width: 900px;
+    }
+}
+
+.cardContainer {
+    background-color: var(--bg-card-color);
+}

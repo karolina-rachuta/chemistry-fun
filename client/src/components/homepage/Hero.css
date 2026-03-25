@@ -1,0 +1,31 @@
+.hero {
+  background: var(--gradient-hero);
+  opacity: 0.8;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+
+  @media screen and (min-width: 800px) {
+    height: 1000px;
+  }
+}
+
+.hdl__main {
+    font-size: 36px;
+    color: var(--font-color);
+    @media screen and (min-width: 800px) {
+        font-size: 60px;
+      }
+}
+
+.hdl__main-blue{
+    display: block;
+    color: hsl(195, 65%, 75%);
+    font-size: 36px;
+    @media screen and (min-width: 800px) {
+        font-size: 60px;
+      }
+}
