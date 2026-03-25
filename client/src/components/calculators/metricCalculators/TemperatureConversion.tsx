@@ -1,0 +1,98 @@
+import { useEffect } from 'react';
+
+import { useTranslation } from 'react-i18next';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+
+import { TEMPERATURE_CONVERSION } from './constants';
+import Button from '../../ui/Button';
+import ComponentContainer from '../../ui/ComponentContainer';
+import useContextTemperature from './hooks/useContextTemperature';
+
+import './ConversionCalculator.css';
+
+function TemperatureConversion() {
+    const { t } = useTranslation();
+    const {
+        handleNotes,
+        handleUnits,
+        handleUnitsEnter,
+        handleSavingNotes,
+        handleDeletingNotes,
+        state,
+        dispatch,
+    } = useContextTemperature();
+
+    useEffect(() => handleNotes('tempNotes'), []);
+
+    return (
+        <ComponentContainer variant="calculatorContainer">
+            <h2>{t('calculator.temperature_conversion.hdl')}</h2>
+            <div className="calculator-box">
+                <input
+                    type="number"
+                    value={state.input}
+                    className="calculator-input"
+                    onChange={(e) =>
+                        dispatch({
+                            type: 'SET_INPUT',
+                            payload: Number(e.target.value),
+                        })
+                    }
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter')
+                            handleUnitsEnter(0.55555, 32, '°C', '°F');
+                    }}
+                />
+                {TEMPERATURE_CONVERSION.map(
+                    ({ value, multiplier, substract, unit, id }) => (
+                        <Button
+                            variant="mobile"
+                            key={id}
+                            onClick={() =>
+                                handleUnits(multiplier, substract, unit, value)
+                            }
+                            active={id === 1 && state.active}
+                        >
+                            {value} <FontAwesomeIcon icon={faArrowRight} />{' '}
+                            {unit}
+                        </Button>
+                    )
+                )}
+            </div>
+
+            <div className="calculator-box-result">
+                <h3 className="calculator-result">
+                    {t('calculator.result')} {state.result}
+                </h3>
+                <Button
+                    variant="primary"
+                    onClick={() => handleSavingNotes('tempNotes')}
+                    disabled={!state.input && !state.unit && !state.result}
+                >
+                    {t('calculator.save')}
+                </Button>
+            </div>
+            <div className={state.open ? 'calculator-notes-box' : 'no-visible'}>
+                <h2> {t('calculator.notes')}</h2>
+                {state.notes.length > 0 ? (
+                    <ul>
+                        {state.notes.map((note, index) => (
+                            <li key={index}>{note}</li>
+                        ))}
+                    </ul>
+                ) : (
+                    <p> {t('calculator.no_notes')}</p>
+                )}
+                <Button
+                    variant="delete"
+                    onClick={() => handleDeletingNotes('tempNotes')}
+                >
+                    {t('calculator.delete')}
+                </Button>
+            </div>
+        </ComponentContainer>
+    );
+}
+
+export default TemperatureConversion;

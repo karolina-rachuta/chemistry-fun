@@ -1,0 +1,7 @@
+.quiz-slide-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--additional-color);
+    width: 100%;
+}

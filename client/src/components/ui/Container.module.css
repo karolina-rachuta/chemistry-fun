@@ -1,0 +1,59 @@
+.componentContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+    background-color: var(--bg-cards);
+    padding: 20px;
+    width: 100%;
+}
+
+/* spacing */
+.componentSpacing {
+    margin-top: var(--margin-top-container);
+    margin-bottom: var(--margin-bottom-container);
+}
+
+.componentBoxShawdow {
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+}
+
+.pageContainer {
+    align-items: center;
+    justify-content: start;
+    min-height: 100vh;
+    background-color: var(--primary-color);
+    box-shadow: none;
+}
+
+/* warianty */
+.quizContainer {
+    justify-content: space-between;
+    min-height: 250px;
+}
+
+.quizSlide {
+    align-items: center;
+    max-width: 800px;
+    padding: 40px;
+}
+
+.calculatorsContainer {
+    align-items: center;
+    gap: 50px;
+    max-width: 900px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+.calculatorContainer {
+    align-items: start;
+    max-width: 700px;
+    background-color: var(--bg-card-color);
+}
+
+.cardContainer {
+    background-color: var(--bg-card-color);
+}

@@ -1,0 +1,19 @@
+.footer {
+    min-height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    background-color: var(--bg-color);
+}
+
+.container-footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
