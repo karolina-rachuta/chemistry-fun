@@ -48,7 +48,7 @@ function WeightConversion() {
                 />
                 {WEIGHT_CONVERSION.map(({ value, multiplier, unit, id }) => (
                     <Button
-                        variant="mobile"
+                        variant="nav"
                         key={id}
                         onClick={() => handleUnits(multiplier, unit, value)}
                         active={id === 1 && state.active}
@@ -65,7 +65,7 @@ function WeightConversion() {
                     {t('calculator.result')} {state.result}
                 </h3>
                 <Button
-                    variant="primary"
+                    variant="back"
                     onClick={() => handleSavingNotes('weightNotes')}
                     disabled={!state.input && !state.unit && !state.result}
                 >

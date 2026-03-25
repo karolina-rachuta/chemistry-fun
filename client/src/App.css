@@ -1,12 +1,15 @@
 :root {
-    --primary-color: #6a669d;
-    --secondary-color: #9abf80;
-    --bg-color: rgb(239, 239, 239);
-    --bg-card-color: #ebebe5;
-    --additional-color: #1c325b;
-    --bg-delete: rgb(175, 77, 77);
+    --primary-color: hsl(195 85% 45%);
+    --secondary-color: hsl(240 15% 90%);
+    --bg-color: hsl(240, 20%, 96%);
+    --bg-card-color: hsl(0 0% 100%);
+    --additional-color: hsl(220 40% 13%);
+    --bg-delete: hsl(0 84.2% 60.2%);
     --bg-cards: #fff;
     --font-color: #fff;
+    --text-foreground: hsl(220 40% 13%);
+    --text-muted: hsl(220 15% 45%);
+    --gradient-hero: linear-gradient(135deg,hsl(229, 79%, 57%) 0%, hsl(195 85% 45%) 50%, hsl(175 70% 50%) 100%);
     --breakpoint-mobile: 634px;
     --breakpoint-lg-mobile: 768px;
     --breakpoint-tablet: 1024px;
@@ -15,6 +18,7 @@
     --margin-top-container: 50px;
     --margin-bottom-container: 50px;
     --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+    --text-shadow: 0 4px 8px rgba(255, 255, 255, 1), 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -26,8 +30,8 @@
 html,
 body {
     width: 100%;
-    background-color: var(--primary-color);
     font-size: 16px;
+    background-color: var(--bg-color);
 }
 
 .container {
@@ -48,6 +52,25 @@ a {
 
 .hdl {
     color: var(--additional-color);
+    font-size: 32px;
+    margin-top: 20px;
+}
+
+.hdl-question {
+    color: var(--additional-color);
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.hdl-muted {
+    color: var(--text-muted);
+}
+
+.hdl-card {
+    font-size: 16px;
+    @media screen and (min-width: 600px) {
+        font-size: 20px
+    }
 }
 
 .text-center {

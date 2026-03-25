@@ -1,11 +1,11 @@
 .primary {
     padding: 10px 8px;
-    background-color: var(--primary-color);
-    color: var(--font-color);
+    background-color: var(--bg-color);
+    color: var(--additional-color);
     border-radius: 5px;
     border: 1px solid #fff;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
     min-width: 100px;
 }
 @media screen and (max-width: 1080px) {
@@ -15,6 +15,7 @@
 }
 .primary:hover {
     background-color: var(--additional-color);
+    color: var(--font-color);
 }
 
 .primary.active {
@@ -28,7 +29,7 @@
     border-radius: 5px;
     border: 1px solid #fff;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
     min-width: 100px;
     @media only screen and (max-width: 770px) {
         width: 100%;
@@ -36,17 +37,21 @@
 }
 
 .nav:disabled {
-    background-color: var(--secondary-color);
+    background-color: var(--text-muted);
+    color: var(--font-color);
     opacity: 0.5;
 }
 
 .answers:disabled {
-    background-color: var(--primary-color);
+    background-color: var(--text-muted);
+    color: var(--font-color);
 }
 
 .back {
     background-color: var(--additional-color);
+    color:  var(--font-color);
     align-self: flex-start;
+    font-size: 18px;
 
     @media screen and (max-width: 634px) {
         align-self: center;
@@ -54,10 +59,11 @@
 }
 
 .back:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
 }
 
 .delete {
     background-color: var(--bg-delete);
+    color: var(--bg-color);
     align-self: end;
 }

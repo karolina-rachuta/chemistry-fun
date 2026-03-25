@@ -47,7 +47,7 @@ function TemperatureConversion() {
                 {TEMPERATURE_CONVERSION.map(
                     ({ value, multiplier, substract, unit, id }) => (
                         <Button
-                            variant="mobile"
+                            variant="nav"
                             key={id}
                             onClick={() =>
                                 handleUnits(multiplier, substract, unit, value)
@@ -66,7 +66,7 @@ function TemperatureConversion() {
                     {t('calculator.result')} {state.result}
                 </h3>
                 <Button
-                    variant="primary"
+                    variant="back"
                     onClick={() => handleSavingNotes('tempNotes')}
                     disabled={!state.input && !state.unit && !state.result}
                 >

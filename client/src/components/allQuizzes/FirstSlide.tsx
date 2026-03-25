@@ -24,12 +24,12 @@ function FirstSlide({ quiz, id }: Props) {
         <ComponentContainer key={id} variant="quizContainer">
             <h1 className='hdl'>{polishLanguage ? quiz?.name_pl : quiz?.name_en}</h1>
             <div className="quiz-container-bottom">
-                <h3 className='hdl'>
+                <h3 className='hdl-muted'>
                     {t('quizzes.questions')}
                     {quiz?.questions.length}
                 </h3>
                 <Button
-                    variant="primary"
+                    variant="nav"
                     onClick={() => {
                         handleStart(id);
                     }}

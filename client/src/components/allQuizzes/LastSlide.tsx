@@ -52,7 +52,7 @@ function LastSlide({ quiz, maxQuestions }: Props) {
             </h3>
 
             <div className="last-slide-btn-box">
-                <Button onClick={handleStart} variant="primary">
+                <Button onClick={handleStart} variant="nav">
                     {t('quizzes.start_again')}
                 </Button>
                 <Button

@@ -1,20 +1,13 @@
 .header {
     width: 100%;
     padding: 20px 0;
-    background-color: var(--font-color);
+    background-color: var(--bg-card-color);
     border-radius: 5px;
     border-top-right-radius: 0;
     border-top-left-radius: 0;
-    box-shadow: var(--box-shadow);
     min-height: 79px;
     display: flex;
     align-items: center;
-}
-
-.header_homepage {
-    position: absolute;
-    background-color: transparent;
-    box-shadow: none;
 }
 
 .container-header {
@@ -39,12 +32,15 @@
 
 .logo {
     color: var(--additional-color);
-    text-shadow: 2px 2px 4px #fff, -1px -1px 2px #fff;
-    font-style: italic;
+    font-size: 20px;
     font-weight: bold;
     font-size: clamp(20px, 2vw, 30px);
     cursor: pointer;
     z-index: 9999;
+}
+
+.logo-span {
+    color: var(--primary-color)
 }
 
 .header-menu {
@@ -84,10 +80,11 @@
 
 .header-link {
     text-decoration: none;
-    color: var(--font-color);
-    text-transform: uppercase;
+    color: var(--text-muted);
+    font-size: 20px;
+    font-weight: 600;
     border-radius: 10px;
-    background-color: var(--primary-color);
+    background-color: var(--bg-card-color);
     padding: 10px 20px;
     z-index: 9999;
     min-width: 150px;
@@ -95,33 +92,44 @@
 
 .lang-container {
     display: flex;
+    width: 100%;
+    max-width: 100px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--bg-color);
+    height: 40px;
+    border-radius: 10px;
     z-index: 9999;
-    gap: 5px;
+    gap: 10px;
 }
 
 .lang-link {
     text-decoration: none;
-    color: var(--font-color);
+    color: var(--muted-color);
     text-transform: uppercase;
     border-radius: 10px;
+    font-size: 16px;
     background-color: var(--secondary-color);
-    padding: 5px;
+    height: 100%;
     z-index: 9999;
     width: 50px;
-    border: 1px solid #fff;
+    border: none;
 }
 
 .lang-link:hover {
     background-color: var(--primary-color);
+    color: var(--font-color);
 }
 
 .header-link.active,
 .lang-link.active {
-    background-color: var(--additional-color);
+    background-color: var(--primary-color);
+    color: var(--font-color);
 }
 
 .header-link:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
+    color: var(--font-color);
 }
 
 .language-nav {

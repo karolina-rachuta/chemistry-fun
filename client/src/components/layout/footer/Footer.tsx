@@ -7,10 +7,10 @@ function Footer() {
     return (
         <div className="footer">
             <div className="container container-footer">
-                <span className="logo" onClick={() => navigate('/')}>
-                    chemistry&fun
+                <span className="logo-footer" onClick={() => navigate('/')}>
+                chemistry<span className='logo-span'>&fun</span>
                 </span>
-                <span>Copyright © 2024 Karolina Rachuta. All rights reserved.</span>
+                <span className='copyright'>Copyright © 2024 Karolina Rachuta. All rights reserved.</span>
 
             </div>
         </div>

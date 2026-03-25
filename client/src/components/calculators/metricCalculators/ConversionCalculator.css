@@ -14,7 +14,7 @@
 .calculator-input {
     padding: 10px 8px;
     background-color: var(--secondary-color);
-    color: var(--font-color);
+    color: var(--additional-color);
     border-radius: 5px;
     border: 1px solid #fff;
     cursor: pointer;
@@ -33,11 +33,11 @@
     -webkit-appearance: none;
 }
 .calculator-input:hover {
-    background-color: var(--additional-color);
+    background-color: var(--secondary-color);
 }
 
 .calculator-input:focus {
-    background-color: var(--additional-color);
+    background-color: var(--secondary-color);
 }
 
 .calculator-box-result {
@@ -46,8 +46,8 @@
 }
 .calculator-result {
     padding: 10px 8px;
-    background-color: var(--additional-color);
-    color: var(--font-color);
+    background-color: var(--bg-color);
+    color: var(--additional-color);
     border-radius: 5px;
     border: 1px solid #fff;
     cursor: pointer;

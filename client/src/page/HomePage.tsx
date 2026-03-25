@@ -1,5 +1,5 @@
 import Header from '../components/layout/header/Header';
-import Parallax from '../components/homepage/Parallax';
+import Hero from '../components/homepage/Hero';
 import About from '../components/homepage/About';
 import Footer from '../components/layout/footer/Footer';
 
@@ -7,7 +7,7 @@ function HomePage() {
     return (
         <>
             <Header />
-            <Parallax />
+            <Hero />
             <About />
             <Footer />
         </>

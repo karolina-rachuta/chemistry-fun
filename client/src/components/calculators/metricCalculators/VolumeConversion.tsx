@@ -48,7 +48,7 @@ function VolumeConversion() {
                 {VOLUME_CONVERSION.map(({ value, multiplier, unit, id }) => (
                     <Button
                         key={id}
-                        variant="mobile"
+                        variant="nav"
                         onClick={() => handleUnits(multiplier, unit, value)}
                         active={id === 1 && state.active}
                     >
@@ -65,7 +65,7 @@ function VolumeConversion() {
                     {t('calculator.result')} {state.result}
                 </h3>
                 <Button
-                    variant="primary"
+                    variant="back"
                     onClick={() => handleSavingNotes('volumeNotes')}
                     disabled={!state.input && !state.unit && !state.result}
                 >

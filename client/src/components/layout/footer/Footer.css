@@ -8,12 +8,44 @@
     border-radius: 5px;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
-    background-color: var(--bg-color);
+    background-color: var(--additional-color);
+    color: var(--font-color);
 }
 
 .container-footer {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    flex-direction: column;
+    font-weight: 400;
+    gap: 10px;
+
+    @media screen and (min-width: 800px) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+}
+
+.logo-footer {
+    color: var(--font-color);
+    font-size: 20px;
+    font-weight: bold;
+    font-size: clamp(20px, 2vw, 30px);
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.logo-span {
+    color: var(--primary-color)
+}
+
+.copyright {
+    font-size: 12px;
+    font-weight: 400;
+
+
+    @media screen and (min-width: 800px) {
+        font-size: 16px;
+      }
 }

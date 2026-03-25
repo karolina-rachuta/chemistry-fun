@@ -40,12 +40,12 @@ function Header() {
     }
 
     return (
-        <header className={isHomePage ? 'header header_homepage' : 'header'}>
+        <header className='header'>
             <div className="container container-header">
                 <div className="header-navigation">
                     <div className="header-top">
                         <span className="logo" onClick={() => navigate('/')}>
-                            chemistry&fun
+                            chemistry<span className='logo-span'>&fun</span>
                         </span>
                         <div onClick={handleMenu} className="hamburger">
                             {isOpen ? (
@@ -75,6 +75,10 @@ function Header() {
                                 }, {
                                     to: '/calculators',
                                     label: t('header.calculators')
+                                },
+                                {
+                                    to: '/games',
+                                    label: t('header.games')
                                 }
                             ].map((item, idx) => (
                                 <Link

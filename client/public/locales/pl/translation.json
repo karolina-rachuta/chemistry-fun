@@ -9,16 +9,17 @@
     "header": {
         "home": "Strona Główna",
         "calculators": "Kalkulatory",
-        "quizzes": "Quizy"
-
+        "quizzes": "Quizy",
+        "games": "Gry"
     },
-    "parallax": {
-        "welcome": "Witaj!",
-        "hdl": "nauka jest super"
+    "hero": {
+        "welcome": "Witaj w",
+        "hdl": "chemistry&fun!"
     },
     "about": {
         "quizzes": "Zobacz nasze quizy!",
         "calculators": "Wypróbuj nasze metryczne kaloratory!",
+        "games": "Wypróbuj naszą grę memory!",
         "general": "Nowe funkcjonalności <br /> wkrótce"
     },
     "quizzes": {
@@ -68,5 +69,8 @@
             "litre": "litr",
             "ml": "ml"
         }
+    },
+    "games": {
+        "hdl": "Gry"
     }
 }

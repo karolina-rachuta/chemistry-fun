@@ -25,9 +25,9 @@ function About() {
                     active: true
                 },
                 {
-                    to: '/',
-                    label: t('about.general'),
-                    active: false
+                    to: '/games',
+                    label: t('about.games'),
+                    active: true
                 },
                 {
                     to: '/',

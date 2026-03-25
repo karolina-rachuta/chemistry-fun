@@ -27,7 +27,7 @@ function LengthConversion() {
 
     return (
         <ComponentContainer variant="calculatorContainer">
-            <h2 className='hdl'>{t('calculator.length_conversion.hdl')}</h2>
+            <h2 className='hdl-question'>{t('calculator.length_conversion.hdl')}</h2>
             <div className="calculator-box">
                 <input
                     type="number"
@@ -46,7 +46,7 @@ function LengthConversion() {
                 />
                 {LENGTH_CONVERSION.map(({ value, multiplier, unit, id }) => (
                     <Button
-                        variant="mobile"
+                        variant="nav"
                         key={id}
                         onClick={() => handleUnits(multiplier, unit, value)}
                         active={id === 1 && state.active}
@@ -62,7 +62,7 @@ function LengthConversion() {
                     {t('calculator.result')} {state.result}
                 </h3>
                 <Button
-                    variant="primary"
+                    variant="back"
                     type="button"
                     onClick={() => handleSavingNotes('lengthNotes')}
                     disabled={!state.input && !state.unit && !state.result}

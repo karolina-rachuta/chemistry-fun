@@ -41,7 +41,7 @@ export function Quiz({ quiz, maxQuestions }: Props) {
         <ComponentContainer variant="quizSlide" spacing>
             <div className="quiz-slide-top">
                 <Button
-                    variant="primary"
+                    variant="back"
                     onClick={handleStart}>
                     <>
                         <FontAwesomeIcon icon={faArrowLeft} />{' '}
