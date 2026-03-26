@@ -3,8 +3,9 @@
         "back": "Powrót",
         "prev": "Poprzedni",
         "next": "Następny",
-        "loading": "Ładowanie quizów..."
-
+        "loading": "Ładowanie quizów...",
+        "comming-soon": "Wkrótce",
+        "features": "Co oferujemy"
     },
     "header": {
         "home": "Strona Główna",
@@ -17,10 +18,21 @@
         "hdl": "chemistry&fun!"
     },
     "about": {
-        "quizzes": "Zobacz nasze quizy!",
-        "calculators": "Wypróbuj nasze metryczne kaloratory!",
-        "games": "Wypróbuj naszą grę memory!",
-        "general": "Nowe funkcjonalności <br /> wkrótce"
+        "desc": "Korzystaj z naszych narzędzi, które pomagają zrozumieć chemię w prosty, angażujący i przystępny sposób.",
+        "quizzes": "Interaktywne Quizy",
+        "calculators": "Kalkulatory Metryczne",
+        "games": "Gry pamięciowe",
+        "study": "Materiały do Nauki",
+        "lab": "Wirtualne Laboratorium",
+        "periodic": "Tablica Okresowa"
+    },
+    "desc": {
+        "quizzes": "Sprawdź swoją wiedzę chemiczną dzięki angażującym quizom z chemii organicznej, nieorganicznej i fizycznej.",
+        "calculators": "Przeliczaj jednostki, obliczaj masę molową i rozwiązuj złożone równania chemiczne bez wysiłku.",
+        "games": "Trenuj pamięć i utrwalaj wiedzę chemiczną, dopasowując pary w interaktywnej grze memory.",
+        "study": "Korzystaj z kompleksowych notatek, diagramów i wyjaśnień ze wszystkich działów chemii.",
+        "lab": "Przeprowadzaj wirtualne eksperymenty i ucz się praktycznych umiejętności chemicznych w bezpieczny sposób.",
+        "periodic": "Odkrywaj interaktywną tablicę okresową z dokładnymi informacjami o każdym pierwiastku."
     },
     "quizzes": {
         "questions": "Liczba pytań: ",
