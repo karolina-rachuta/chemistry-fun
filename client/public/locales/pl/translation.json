@@ -14,8 +14,12 @@
         "games": "Gry"
     },
     "hero": {
+        "feature": "Nauka chemii przez zabawę",
         "welcome": "Witaj w",
-        "hdl": "chemistry&fun!"
+        "hdl": "chemistry&fun!",
+        "desc": "Poznaj fascynujący świat chemii dzięki interaktywnym quizom, przydatnym kalkulatorom i ciekawym narzędziom do nauki.",
+        "cta1": "Wypróbuj quizy",
+        "cta2": "Odkryj kalkulatory"
     },
     "about": {
         "desc": "Korzystaj z naszych narzędzi, które pomagają zrozumieć chemię w prosty, angażujący i przystępny sposób.",

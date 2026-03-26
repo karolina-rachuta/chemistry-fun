@@ -6,22 +6,85 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 
 .hdl__main {
-    font-size: 36px;
+    font-size: 42px;
     color: var(--font-color);
-    @media screen and (min-width: 800px) {
-        font-size: 60px;
-      }
+    font-weight: 700;
 }
 
 .hdl__main-blue{
     display: block;
-    color: hsl(195, 65%, 75%);
-    font-size: 36px;
-    @media screen and (min-width: 800px) {
-        font-size: 60px;
-      }
+    /* color: hsl(195, 65%, 75%); */
+    background: linear-gradient(to right, white, hsl(187 70% 85%), hsl(175 60% 80%));
+    opacity: 0.9;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.hero-desc {
+    font-size: 20px;
+    color: var(--font-color);
+    max-width: 600px;
+    line-height: 1.4;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.hero-feature {
+    color: var(--bg-color);
+    font-weight: 600;
+    font-size: 18px;
+    border: 1px solid var(--bg-color);
+    opacity: 0.8;
+    border-radius: 10px;
+    padding:10px 15px;
+    margin-bottom: 30px;
+}
+
+.hero-btn-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.cta-btn {
+    font-weight: 800;
+    font-size: 20px;
+    padding: 12px 10px;
+    width: 220px;
+}
+
+.cta-btn:hover {
+    background-color: var(--bg-color);
+   color: var(--primary-color);
+}
+
+@media screen and (min-width: 600px) {
+    .hdl__main {
+        font-size: 72px;
+    }
+    .hdl__main-blue {
+    font-size: 72px;
+    }
+
+    .hero-desc {
+        font-size: 24px;
+    }
+
+    .hero-btn-box {
+        gap: 40px;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
 }

@@ -14,8 +14,12 @@
         "games": "Games"
     },
     "hero": {
+        "feature":"Learning Chemistry Made Fun",
         "welcome": "Welcome to",
-        "hdl": "chemistry&fun!"
+        "hdl": "chemistry&fun!",
+        "desc":"Discover the fascinating world of chemistry through interactive quizzes, powerful calculators, and engaging learning tools.",
+        "cta1": "Try Our Quizzes",
+        "cta2": "Explore Calculators"
     },
     "about": {
         "desc": "Explore our suite of tools designed to make chemistry accessible, engaging, and enjoyable for everyone.",
