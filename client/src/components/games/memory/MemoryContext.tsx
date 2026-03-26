@@ -27,14 +27,14 @@ export interface MemoryCard {
 }
 
 export const INITIAL_DATABASE: Compound[] = [
-    { idCompound: 1, name: 'Metanol', src: metanolImg },
-    { idCompound: 2, name: 'Kwas mrówkowy', src: kwasMrowkowyImg },
-    { idCompound: 3, name: 'Kwas masłowy', src: kwasMaslowyImg },
-    { idCompound: 4, name: 'Gliceryna', src: glicerynaImg },
+    { idCompound: 1, name: 'Methanol', src: metanolImg },
+    { idCompound: 2, name: 'Formic acid', src: kwasMrowkowyImg },
+    { idCompound: 3, name: 'Butyric acid', src: kwasMaslowyImg },
+    { idCompound: 4, name: 'Glycerin', src: glicerynaImg },
     { idCompound: 5, name: 'Chloroform', src: chloroformImg },
     { idCompound: 6, name: 'Butanol', src: butanolImg },
-    { idCompound: 7, name: 'Butan', src: butanImg },
-    { idCompound: 8, name: 'Acetylen', src: acetylenImg },
+    { idCompound: 7, name: 'Butane', src: butanImg },
+    { idCompound: 8, name: 'Acetylene', src: acetylenImg },
 ];
 
 interface MemoryContextType {
