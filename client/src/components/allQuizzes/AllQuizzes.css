@@ -4,7 +4,7 @@
     flex-wrap: wrap;
     gap: 20px;
     width: 100%;
-    margin-top: var(--margin-top-container);
+    margin-top: 100px;
     margin-bottom: var(--margin-bottom-container);
 }
 

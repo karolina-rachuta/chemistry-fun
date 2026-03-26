@@ -1,6 +1,7 @@
 :root {
     --primary-color: hsl(195 85% 45%);
     --secondary-color: hsl(240 15% 90%);
+    --violet-color: hsl(250 30% 55%);
     --bg-color: hsl(240, 20%, 96%);
     --bg-card-color: hsl(0 0% 100%);
     --additional-color: hsl(220 40% 13%);
@@ -75,4 +76,8 @@ a {
 
 .text-center {
     text-align: center;
+}
+
+.margin-top {
+    margin-top: 100px;
 }

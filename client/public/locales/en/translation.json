@@ -3,7 +3,9 @@
         "back": "Back",
         "prev": "Prev",
         "next": "Next",
-        "loading": "Loading quizzes..."
+        "loading": "Loading quizzes...",
+        "comming-soon": "Coming soon",
+        "features": "Features"
     },
     "header": {
         "home": "Home",
@@ -16,10 +18,21 @@
         "hdl": "chemistry&fun!"
     },
     "about": {
-        "quizzes": "Try our quizzes!",
-        "calculators": "Try our metric calculator!",
-        "games": "Try our memory game!",
-        "general": "new functionality <br /> coming soon!"
+        "desc": "Explore our suite of tools designed to make chemistry accessible, engaging, and enjoyable for everyone.",
+        "quizzes": "Interactive Quizzes",
+        "calculators": "Metric Calculators",
+        "games": "Memory Game",
+        "study": "Study Materials",
+        "lab": "Virtual Lab",
+        "periodic": "Periodic Table"
+    },
+    "desc": {
+        "quizzes": "Test your chemistry knowledge with engaging quizzes covering organic, inorganic, and physical chemistry.",
+        "calculators": "Convert between units, calculate molar mass, and solve complex chemistry equations effortlessly.",
+        "games": "Train your memory and reinforce chemistry concepts by matching pairs in an interactive memory game.",
+        "study": "Access comprehensive notes, diagrams, and explanations for all chemistry topics.",
+        "lab": "Conduct virtual experiments safely and learn practical chemistry skills.",
+        "periodic": "Explore an interactive periodic table with detailed information about each element."
     },
     "quizzes": {
         "questions": "Number of questions: ",
@@ -71,5 +84,9 @@
     },
     "games": {
         "hdl": "Games"
+    },
+    "memory": {
+        "hdl": "Memory Game",
+        "desc": "Match chemical compound names with their structural formulas in an interactive memory game that strengthens both recognition and understanding."
     }
 }

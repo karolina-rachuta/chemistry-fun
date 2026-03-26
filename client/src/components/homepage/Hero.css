@@ -7,10 +7,6 @@
   justify-content: center;
   flex-direction: column;
   gap: 20px;
-
-  @media screen and (min-width: 800px) {
-    height: 1000px;
-  }
 }
 
 .hdl__main {
