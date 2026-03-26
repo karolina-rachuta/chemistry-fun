@@ -84,5 +84,9 @@
     },
     "games": {
         "hdl": "Gry"
+    },
+    "memory": {
+        "hdl": "Chemiczna Gra Pamięciowa",
+        "desc": "Dopasuj nazwy związków chemicznych do ich wzorów strukturalnych w interaktywnej grze memory, która rozwija rozpoznawanie i zrozumienie."
     }
 }

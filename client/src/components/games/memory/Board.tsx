@@ -4,9 +4,12 @@ import useMemoryContext from './useMemoryContext';
 import { v4 as uuidv4 } from 'uuid';
 import Card from './Card';
 import Button from '../../ui/Button';
+import { useTranslation } from 'react-i18next';
+import clsx from 'clsx';
 import './Memory.css';
 
 function Board() {
+    const { t } = useTranslation();
     const { cards, setCards } = useMemoryContext();
     const [selectedCards, setSelectedCards] = useState<string[]>([]);
     const [isBoardLocked, setIsBoardLocked] = useState<boolean>(false);
@@ -118,6 +121,9 @@ function Board() {
 
     return (
         <div className="memory_container">
+            {/* <h2 className={clsx("hdl", "margin-top")}>{t('memory.hdl')}</h2>
+            <p className='about-desc'>{t('memory.desc')}</p> */}
+
              {cards.length === 0 && (
                 <Button
                     variant="nav"

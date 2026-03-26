@@ -84,5 +84,9 @@
     },
     "games": {
         "hdl": "Games"
+    },
+    "memory": {
+        "hdl": "Memory Game",
+        "desc": "Match chemical compound names with their structural formulas in an interactive memory game that strengthens both recognition and understanding."
     }
 }

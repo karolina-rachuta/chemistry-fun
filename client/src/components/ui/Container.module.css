@@ -61,13 +61,6 @@
     box-shadow: none;
 }
 
-@media screen and (min-width: 600px) {
-    .calculatorsContainer {
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
-}
-
 .calculatorContainer {
     align-items: flex-start;
     max-width: 100%;
