@@ -3,7 +3,6 @@ import { useQuizContext } from '../context/useQuizContext';
 import { type Quiz } from '../context/QuizContext';
 
 import Button from '../../ui/Button';
-import ComponentContainer from '../../ui/ComponentContainer';
 import './Answers.css';
 
 type Props = {

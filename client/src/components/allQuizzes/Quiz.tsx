@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
-import { type Quiz } from './context/QuizContext';
+import { type Quiz as QuizType} from './context/QuizContext';
 import { useQuizContext } from './context/useQuizContext';
 import { useNavigate } from 'react-router-dom';
 import Question from './quiz/Question';
@@ -14,7 +14,7 @@ import Button from '../ui/Button';
 import ComponentContainer from '../ui/ComponentContainer';
 
 type Props = {
-    quiz: Quiz,
+    quiz: QuizType,
     maxQuestions: number
 }
 
