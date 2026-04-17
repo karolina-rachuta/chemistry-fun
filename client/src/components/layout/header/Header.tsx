@@ -44,7 +44,7 @@ function Header() {
                 <div className="header-navigation">
                     <div className="header-top">
                         <span className="logo" onClick={() => navigate('/')}>
-                            Chemistry<span className='logo-span'>&Fun</span>
+                            chemistry<span className='logo-span'>&fun</span>
                         </span>
                         <div onClick={handleMenu} className="hamburger">
                             {isOpen ? (
