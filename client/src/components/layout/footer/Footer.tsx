@@ -8,7 +8,7 @@ function Footer() {
         <div className="footer">
             <div className="container container-footer">
                 <span className="logo-footer" onClick={() => navigate('/')}>
-                Chemistry<span className='logo-span'>&Fun</span>
+                chemistry<span className='logo-span'>fun</span>
                 </span>
                 <span className='copyright'>Copyright © 2024 Karolina Rachuta. All rights reserved.</span>
 
