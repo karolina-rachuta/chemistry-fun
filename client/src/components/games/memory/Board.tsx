@@ -5,11 +5,10 @@ import { v4 as uuidv4 } from 'uuid';
 import Card from './Card';
 import Button from '../../ui/Button';
 import { useTranslation } from 'react-i18next';
-import clsx from 'clsx';
+// import clsx from 'clsx';
 import './Memory.css';
 
 function Board() {
-    const { t } = useTranslation();
     const { cards, setCards } = useMemoryContext();
     const [selectedCards, setSelectedCards] = useState<string[]>([]);
     const [isBoardLocked, setIsBoardLocked] = useState<boolean>(false);

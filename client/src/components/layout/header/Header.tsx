@@ -22,7 +22,6 @@ function Header() {
     const navigate = useNavigate();
     const location = useLocation();
     const { t } = useTranslation();
-    const isHomePage = location.pathname === '/';
 
     const { setPolishLanguage } = useQuizContext();
 
